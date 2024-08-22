@@ -1,0 +1,27 @@
+(VAR N X Y Z)
+(REPLACEMENT-MAP
+  (add 1, 2)
+  (dbl 1)
+  (first 1, 2)
+  (sqr 1)
+  (terms 1)
+  (0)
+  (cons 1)
+  (nil)
+  (recip 1)
+  (s 1)
+)
+(RULES
+  add(0,X) -> X
+  add(s(X),Y) -> s(add(X,Y))
+  dbl(0) -> 0
+  dbl(s(X)) -> s(s(dbl(X)))
+  first(0,X) -> nil
+  first(s(X),cons(Y,Z)) -> cons(Y,first(X,Z))
+  sqr(0) -> 0
+  sqr(s(X)) -> s(add(sqr(X),dbl(X)))
+  terms(N) -> cons(recip(sqr(N)),terms(s(N)))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex2_Luc02a
+)

@@ -1,0 +1,35 @@
+(SIG
+   (elimdup   List -> List)
+   (delete    Nat List -> List)
+   (member    Nat List -> Bool)
+   (eq        Nat Nat -> Bool)
+   (ifBool    Bool Bool Bool -> Bool)
+   (ifList    Bool List List -> List)
+   (true      -> Bool)
+   (false     -> Bool)
+   (cons      Nat List -> List)
+   (nil       -> List)
+   (s         Nat -> Nat)
+   (0         -> Nat)
+)
+(RULES
+   delete(x,nil) -> nil
+   delete(x,cons(y,ys)) -> ifList(eq(x,y),cons(y,delete(x,ys)),delete(x,ys))
+   elimdup(nil) -> nil
+   elimdup(cons(x,xs)) -> cons(x,delete(x,elimdup(xs)))
+   elimdup(cons(x,xs)) -> ifList(member(x,xs),elimdup(xs),cons(x,elimdup(xs)))
+   member(x,nil) -> false
+   member(x,cons(y,ys)) -> ifBool(eq(x,y),true,member(x,ys))
+   eq(0,0) -> true
+   eq(0,s(y)) -> false
+   eq(s(x),0) -> false
+   eq(s(x),s(y)) -> eq(x,y)
+   ifBool(true,y,z) -> y
+   ifBool(false,y,z) -> z
+   ifList(true,ys,zs) -> ys
+   ifList(false,ys,zs) -> zs
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

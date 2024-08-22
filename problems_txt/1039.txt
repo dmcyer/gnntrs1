@@ -1,0 +1,5 @@
+(PROBLEM COMMUTATION)
+(COPS 10 225)
+(COMMENT
+submitted by: Kiraku Shintani
+)

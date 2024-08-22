@@ -1,0 +1,21 @@
+(VAR N X XS Y)
+(REPLACEMENT-MAP
+  (add 1, 2)
+  (fib 1)
+  (fib1 1, 2)
+  (sel 1, 2)
+  (0)
+  (cons 1)
+  (s 1)
+)
+(RULES
+  add(0,X) -> X
+  add(s(X),Y) -> s(add(X,Y))
+  fib(N) -> sel(N,fib1(s(0),s(0)))
+  fib1(X,Y) -> cons(X,fib1(Y,add(X,Y)))
+  sel(0,cons(X,XS)) -> X
+  sel(s(N),cons(X,XS)) -> sel(N,XS)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex8_BLR02
+)

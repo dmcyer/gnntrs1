@@ -1,0 +1,19 @@
+(VAR x)
+(REPLACEMENT-MAP
+  (F)
+  (G)
+  (A)
+  (B)
+  (H)
+)
+(RULES
+  F(x) -> G(F(x))
+  F(x) -> A
+  G(F(x)) -> F(H(x))
+  G(F(x)) -> B
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #43
+bottom replacement map
+)

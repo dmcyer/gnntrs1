@@ -1,0 +1,9 @@
+(PROBLEM INFEASIBILITY)
+(COPS 801)
+(VAR x)
+(CONDITION F(a,b) == F(x,x))
+(COMMENT 
+doi:10.1007/3-540-45744-5_49
+[153] Example 14
+submitted by: Raul Gutierrez and Salvador Lucas
+)

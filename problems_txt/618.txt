@@ -1,0 +1,23 @@
+(SIG
+   (le      Nat Nat -> Bool)
+   (or      Bool Bool -> Bool)
+   (true    -> Bool)
+   (false   -> Bool)
+   (s       Nat -> Nat)
+   (0       -> Nat)
+)
+(RULES
+   le(0,y) -> true
+   le(s(x),0) -> false
+   le(s(x),s(y)) -> le(x,y)
+   or(true,y) -> true
+   or(x,true) -> true
+   or(false,false) -> false
+   le(x,x) -> true
+   or(x,y) -> or(y,x)
+   or(le(x,y),le(y,x)) -> true
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

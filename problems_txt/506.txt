@@ -1,0 +1,12 @@
+(VAR x)
+(RULES
+  f(f(f(x))) -> a
+  f(f(a)) -> a
+  f(a) -> a
+  f(f(g(g(x)))) -> f(a)
+  g(f(a)) -> a
+  g(a) -> a
+)
+(COMMENT
+[111] p. 29
+)

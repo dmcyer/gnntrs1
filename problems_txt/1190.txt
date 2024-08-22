@@ -1,0 +1,56 @@
+(VAR I P V V1 V2 X Y Z)
+(REPLACEMENT-MAP
+  (U11 1) (U12 1) (U21 1) (U22 1) (U23 1) (U31 1)
+  (U32 1) (U41 1) (U42 1) (U43 1) (U51 1) (U52 1)
+  (U53 1) (U61 1) (U62 1) (U71 1) (U72 1)
+  (__ 1, 2) (and 1) (isList) (isNeList) (isNePal) (isPal)
+  (isPalListKind) (isQid) (a) (e) (i) (nil) (o) (tt) (u)
+)
+(RULES
+  U11(tt,V) -> U12(isNeList(V))
+  U12(tt) -> tt
+  U21(tt,V1,V2) -> U22(isList(V1),V2)
+  U22(tt,V2) -> U23(isList(V2))
+  U23(tt) -> tt
+  U31(tt,V) -> U32(isQid(V))
+  U32(tt) -> tt
+  U41(tt,V1,V2) -> U42(isList(V1),V2)
+  U42(tt,V2) -> U43(isNeList(V2))
+  U43(tt) -> tt
+  U51(tt,V1,V2) -> U52(isNeList(V1),V2)
+  U52(tt,V2) -> U53(isList(V2))
+  U53(tt) -> tt
+  U61(tt,V) -> U62(isQid(V))
+  U62(tt) -> tt
+  U71(tt,V) -> U72(isNePal(V))
+  U72(tt) -> tt
+  __(__(X,Y),Z) -> __(X,__(Y,Z))
+  __(nil,X) -> X
+  __(X,nil) -> X
+  and(tt,X) -> X
+  isList(__(V1,V2)) -> U21(and(isPalListKind(V1),isPalListKind(V2)),V1,V2)
+  isList(nil) -> tt
+  isList(V) -> U11(isPalListKind(V),V)
+  isNeList(__(V1,V2)) -> U41(and(isPalListKind(V1),isPalListKind(V2)),V1,V2)
+  isNeList(__(V1,V2)) -> U51(and(isPalListKind(V1),isPalListKind(V2)),V1,V2)
+  isNeList(V) -> U31(isPalListKind(V),V)
+  isNePal(__(I,__(P,I))) -> and(and(isQid(I),isPalListKind(I)),and(isPal(P),isPalListKind(P)))
+  isNePal(V) -> U61(isPalListKind(V),V)
+  isPal(nil) -> tt
+  isPal(V) -> U71(isPalListKind(V),V)
+  isPalListKind(__(V1,V2)) -> and(isPalListKind(V1),isPalListKind(V2))
+  isPalListKind(a) -> tt
+  isPalListKind(e) -> tt
+  isPalListKind(i) -> tt
+  isPalListKind(nil) -> tt
+  isPalListKind(o) -> tt
+  isPalListKind(u) -> tt
+  isQid(a) -> tt
+  isQid(e) -> tt
+  isQid(i) -> tt
+  isQid(o) -> tt
+  isQid(u) -> tt
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/PALINDROME_complete
+)

@@ -1,0 +1,16 @@
+(CONDITIONTYPE ORIENTED)
+(VAR u v x y z)
+(REPLACEMENT-MAP
+  (last 1)
+  (cons)
+  (nil)
+)
+(RULES
+  last(cons(x,y)) -> x | y == nil
+  last(cons(x,y)) -> z | y == cons(u,v), last(y) == z
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #439
+canonical replacement map
+)

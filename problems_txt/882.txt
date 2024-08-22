@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 439)
+(VAR x5 x2 x1 x4)
+(CONDITION x4 == nil, x4 == cons(x1,x2), last(x4) == x5)
+(COMMENT
+submitted by: Naoki Nishida
+)

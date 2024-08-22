@@ -1,0 +1,10 @@
+(VAR x)
+(RULES
+a -> b
+a -> c
+x -> D
+)
+(COMMENT
+doi:10.1007/978-3-540-71070-7_31
+[78] p. 362 (second item in Section 5.3)
+)

@@ -1,0 +1,11 @@
+(CONDITIONTYPE ORIENTED)
+(VAR)
+(RULES
+  h(b,c,b) -> h(c,c,c) | a == a
+  a -> a
+  a -> h(b,c,b)
+  a -> b | c == h(a,b,c)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+)

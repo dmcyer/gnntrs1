@@ -1,0 +1,18 @@
+(CONDITIONTYPE JOIN)
+(VAR x y)
+(REPLACEMENT-MAP
+  (a)
+  (f 1)
+  (g)
+  (b)
+)
+(RULES
+  a -> b
+  f(a) -> g(a)
+  g(x) -> f(x) | g(x) == f(x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #283
+canonical replacement map
+)

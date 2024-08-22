@@ -1,0 +1,9 @@
+(PROBLEM INFEASIBILITY)
+(COPS 1129)
+(VAR x y)
+(CONDITION
+  +(s(x),y) == s(y)
+)
+(COMMENT
+submitted by: Akihisa Yamada
+)

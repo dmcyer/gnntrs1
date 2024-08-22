@@ -1,0 +1,9 @@
+(VAR x y)
+(RULES
+  a -> b
+  a -> c
+  x -> f(x)
+)
+(COMMENT
+[77] Example 5
+)

@@ -1,0 +1,8 @@
+(VAR x y z)
+(RULES
+  f(f(x,y),z) -> f(f(x,z),f(y,z))
+)
+(COMMENT
+doi:10.1007/978-3-0348-8442-6
+[95] p. 14 (LD variation)
+)

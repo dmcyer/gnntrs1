@@ -1,0 +1,54 @@
+(VAR IL L M N V V1 V2 X)
+(REPLACEMENT-MAP
+  (U11 1) (U12 1) (U21 1) (U22 1) (U31 1) (U32 1) (U41 1) (U42 1)
+  (U43 1) (U51 1) (U52 1) (U53 1) (U61 1) (U62 1) (U63 1) (U71 1)
+  (U81 1) (U91 1)
+  (and 1) (isNat) (isNatIList) (isNatIListKind) (isNatKind)
+  (isNatList) (length 1) (take 1, 2) (zeros) (0) (cons 1)
+  (nil) (s 1) (tt)
+)
+(RULES
+  U11(tt,V1) -> U12(isNatList(V1))
+  U12(tt) -> tt
+  U21(tt,V1) -> U22(isNat(V1))
+  U22(tt) -> tt
+  U31(tt,V) -> U32(isNatList(V))
+  U32(tt) -> tt
+  U41(tt,V1,V2) -> U42(isNat(V1),V2)
+  U42(tt,V2) -> U43(isNatIList(V2))
+  U43(tt) -> tt
+  U51(tt,V1,V2) -> U52(isNat(V1),V2)
+  U52(tt,V2) -> U53(isNatList(V2))
+  U53(tt) -> tt
+  U61(tt,V1,V2) -> U62(isNat(V1),V2)
+  U62(tt,V2) -> U63(isNatIList(V2))
+  U63(tt) -> tt
+  U71(tt,L) -> s(length(L))
+  U81(tt) -> nil
+  U91(tt,IL,M,N) -> cons(N,take(M,IL))
+  and(tt,X) -> X
+  isNat(length(V1)) -> U11(isNatIListKind(V1),V1)
+  isNat(0) -> tt
+  isNat(s(V1)) -> U21(isNatKind(V1),V1)
+  isNatIList(zeros) -> tt
+  isNatIList(cons(V1,V2)) -> U41(and(isNatKind(V1),isNatIListKind(V2)),V1,V2)
+  isNatIList(V) -> U31(isNatIListKind(V),V)
+  isNatIListKind(take(V1,V2)) -> and(isNatKind(V1),isNatIListKind(V2))
+  isNatIListKind(zeros) -> tt
+  isNatIListKind(cons(V1,V2)) -> and(isNatKind(V1),isNatIListKind(V2))
+  isNatIListKind(nil) -> tt
+  isNatKind(length(V1)) -> isNatIListKind(V1)
+  isNatKind(0) -> tt
+  isNatKind(s(V1)) -> isNatKind(V1)
+  isNatList(take(V1,V2)) -> U61(and(isNatKind(V1),isNatIListKind(V2)),V1,V2)
+  isNatList(cons(V1,V2)) -> U51(and(isNatKind(V1),isNatIListKind(V2)),V1,V2)
+  isNatList(nil) -> tt
+  length(cons(N,L)) -> U71(and(and(isNatList(L),isNatIListKind(L)),and(isNat(N),isNatKind(N))),L)
+  length(nil) -> 0
+  take(0,IL) -> U81(and(isNatIList(IL),isNatIListKind(IL)))
+  take(s(M),cons(N,IL)) -> U91(and(and(isNatIList(IL),isNatIListKind(IL)),and(and(isNat(M),isNatKind(M)),and(isNat(N),isNatKind(N)))),IL,M,N)
+  zeros -> cons(0,zeros)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/OvConsOS_complete
+)

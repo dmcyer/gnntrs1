@@ -1,0 +1,8 @@
+(VAR x y)
+(RULES
+  f(h(x,d),y) -> f(h(y,d),x)
+  h(c,x) -> h(x,x)
+)
+(COMMENT
+[103] Example 2.5
+)

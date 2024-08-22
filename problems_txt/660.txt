@@ -1,0 +1,11 @@
+(RULES
+  b -> f(b)
+  f(a) -> f(h(h(h(h(c,b),a),f(c)),c))
+  c -> h(f(c),f(h(c,a)))
+  c -> f(b)
+)
+(COMMENT
+Cops #647 - #721: generated ground TRSs; evenly distributed in the
+UNR/UNC/NFP/CR hierarchy
+submitted by: Bertram Felgenhauer
+)

@@ -1,0 +1,13 @@
+(VAR x)
+(RULES
+   f(x,x) -> x
+   f(x,e) -> x
+   f(e,x) -> x
+   f(x,i(x)) -> e
+   f(i(x),x) -> e
+)
+(COMMENT
+doi:10.1016/0890-5401(90)90023-B
+[122] p. 30
+submitted by: Takahito Aoto
+)

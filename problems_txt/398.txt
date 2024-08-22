@@ -1,0 +1,12 @@
+(VAR x y z)
+(RULES
+f(x) -> x
+f(x) -> g(x,a)
+g(x,y) -> g(x,z)
+g(x,x) -> x
+H(x) -> H(x)
+)
+(COMMENT
+doi:10.1007/978-3-540-71070-7_31
+[78] Example 21 with dummy rule
+)

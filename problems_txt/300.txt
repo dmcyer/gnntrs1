@@ -1,0 +1,11 @@
+(CONDITIONTYPE JOIN)
+(VAR x)
+(RULES
+  F(x) -> F(A) | x == B
+  e(x) -> x
+)
+(COMMENT
+doi:10.1006/inco.1993.1027
+[61] Example 4.11
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

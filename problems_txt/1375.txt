@@ -1,0 +1,16 @@
+(CONDITIONTYPE JOIN)
+(VAR x)
+(REPLACEMENT-MAP
+  (b)
+  (c)
+  (e)
+)
+(RULES
+  b -> c(b)
+  c(x) -> e | x == c(x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #269
+bottom replacement map
+)

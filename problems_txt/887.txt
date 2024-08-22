@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 493)
+(VAR x1 x3 r' x2 x4)
+(CONDITION mod(x4,x2) == r', eq(x3,r') == true, mod(x4,x2) == x1, eq(x3,x1) == false)
+(COMMENT
+submitted by: Naoki Nishida
+)

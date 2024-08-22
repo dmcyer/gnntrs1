@@ -1,0 +1,18 @@
+(VAR x)
+(REPLACEMENT-MAP
+  (a)
+  (f)
+  (h)
+  (g)
+)
+(RULES
+  a(x) -> x
+  f(x,a(g(x))) -> g(f(x,x))
+  f(x,g(x)) -> g(f(x,x))
+  h(x) -> h(a(h(x)))
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #89
+bottom replacement map
+)

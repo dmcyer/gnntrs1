@@ -1,0 +1,15 @@
+(VAR x)
+(RULES 
+  C(x) -> c(x)
+  c(c(x)) -> x
+  b(b(x)) -> B(x)
+  B(B(x)) -> b(x)
+  c(B(c(b(c(x))))) -> B(c(b(c(B(c(b(x)))))))
+  b(B(x)) -> x
+  B(b(x)) -> x
+  c(C(x)) -> x
+  C(c(x)) -> x
+)
+(COMMENT
+TPDB SRS_Standard/Zantema_04/z068
+)

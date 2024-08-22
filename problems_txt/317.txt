@@ -1,0 +1,11 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(RULES
+  f(x) -> x | x == a, b == x
+  a -> b
+)
+(COMMENT
+doi:10.2168/LMCS-8(3:4)2012
+[64] Example 3.5 (R_5)
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

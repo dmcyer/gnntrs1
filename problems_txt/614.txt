@@ -1,0 +1,13 @@
+(VAR y x)
+(RULES
+   +(0,y) -> y
+   +(s(x),y) -> s(+(x,y))
+   +(p(x),y) -> +(x,p(y))
+   p(s(x)) -> s(p(x))
+   s(p(x)) -> p(s(x))
+   p(s(0)) -> 0
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

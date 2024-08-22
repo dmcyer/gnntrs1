@@ -1,0 +1,10 @@
+(VAR x)
+(SIG (s 1) (p 1) (0 0))
+(RULES
+   s(p(x)) -> x
+   p(s(x)) -> x
+)
+(COMMENT
+experiments for [36]
+submitted by: Takahito Aoto
+)

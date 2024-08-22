@@ -1,0 +1,31 @@
+(VAR
+  d: data
+  X: proc 
+  Y: proc 
+  Z: proc 
+  E: data 
+  P: data -> proc 
+  Q: data -> proc 
+)
+(FUN
+  xplus : proc -> proc -> proc
+  xtimes : proc -> proc -> proc
+  delta : proc
+  sigma : (data -> proc) -> proc
+)
+(RULES
+  xplus(X,X) -> X,
+  xtimes(xplus(X,Y),Z) -> xplus(xtimes(X,Z),xtimes(Y,Z)),
+  xtimes(xtimes(X,Y),Z) -> xtimes(X,xtimes(Y,Z)),
+  xplus(X,delta) -> X,
+  xtimes(delta,X) -> delta,
+  sigma((\d.X)) -> X,
+  xplus(sigma((\d.(P d))),(P E)) -> sigma((\d.(P d))),
+  sigma((\d.xplus((P d),(Q d)))) -> xplus(sigma((\d.(P d))),sigma((\d.(Q d)))),
+  xtimes(sigma((\d.(P d))),X) -> sigma((\d.xtimes((P d),X)))
+)
+(COMMENT
+doi:10.1007/3-540-58233-9_14
+[134] Section 6.1
+submitted by: Makoto Hamana
+)

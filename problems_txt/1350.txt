@@ -1,0 +1,14 @@
+(VAR x y z)
+(REPLACEMENT-MAP
+  (join)
+)
+(RULES
+  join(join(x,y),z) -> join(x,join(y,z))
+  join(x,x) -> x
+  join(x,y) -> join(y,x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #143
+bottom replacement map
+)

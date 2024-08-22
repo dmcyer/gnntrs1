@@ -1,0 +1,26 @@
+(VAR L X)
+(REPLACEMENT-MAP
+  (adx 1)
+  (head 1)
+  (incr 1)
+  (nats)
+  (tail 1)
+  (zeros)
+  (0)
+  (cons 1)
+  (nil)
+  (s 1)
+)
+(RULES
+  adx(cons(X,L)) -> incr(cons(X,adx(L)))
+  adx(nil) -> nil
+  head(cons(X,L)) -> X
+  incr(cons(X,L)) -> cons(s(X),incr(L))
+  incr(nil) -> nil
+  nats -> adx(zeros)
+  tail(cons(X,L)) -> L
+  zeros -> cons(0,zeros)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/ExIntrod_GM01
+)

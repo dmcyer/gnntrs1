@@ -1,0 +1,25 @@
+(FUN 
+  abs : (term -> term) -> term
+  app : term -> term -> term
+  D: term
+  D0: term
+  D1: term
+)
+(VAR
+  x : term
+  S : term
+  F : term -> term
+  z : term
+  z0 : term
+  z1 : term
+)
+(RULES
+  app(abs(\x.F x),S) -> F(S),
+  app(D0,app(app(D,z0),z1)) -> z0,
+  app(D1,app(app(D,z0),z1)) -> z1,
+  app(app(D,app(D0,z)),app(D1,z)) -> z
+)
+(COMMENT 
+[14] p. 195; the question about CR was raised by Colin Mann, according to [155]
+submitted by Aart Middeldorp
+)

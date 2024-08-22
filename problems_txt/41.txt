@@ -1,0 +1,11 @@
+(VAR x)
+(RULES
+  f(x) -> g(k(x))
+  f(x) -> a
+  g(x) -> a
+  k(a) -> k(k(a))
+)
+(COMMENT
+[11] Example 3.5.7
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

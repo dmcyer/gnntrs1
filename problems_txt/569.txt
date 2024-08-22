@@ -1,0 +1,19 @@
+(VAR x y)
+(RULES
+   s(p(x)) -> x
+   p(s(x)) -> x
+   +(x,0) -> x
+   +(x,s(y)) -> s(+(x,y))
+   +(x,p(y)) -> p(+(x,y))
+   -(x,0) -> x
+   -(x,s(y)) -> p(-(x,y))
+   -(x,p(y)) -> s(-(x,y))
+   *(x,0) -> 0
+   *(x,s(y)) -> +(*(x,y),x)
+   *(x,p(y)) -> -(*(x,y),x)
+)
+(COMMENT
+doi:10.1007/3-540-56610-4_55
+[123] Example 7.1
+submitted by: Takahito Aoto
+)

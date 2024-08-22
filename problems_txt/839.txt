@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 310)
+(VAR x x2)
+(CONDITION leq(x2,add(x,x2)) == false)
+(COMMENT
+submitted by: Naoki Nishida
+)

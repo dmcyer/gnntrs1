@@ -1,0 +1,23 @@
+(VAR x y z)
+(REPLACEMENT-MAP
+  (+ 1, 2)
+  (dbl)
+  (s 1)
+  (0)
+)
+(RULES
+  +(+(x,y),z) -> +(x,+(y,z))
+  +(s(x),y) -> s(+(x,y))
+  +(0,y) -> y
+  +(x,s(y)) -> s(+(x,y))
+  +(x,0) -> x
+  +(x,y) -> +(y,x)
+  dbl(x) -> +(x,x)
+  s(s(x)) -> s(x)
+  s(x) -> s(s(x))
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #120
+canonical replacement map
+)

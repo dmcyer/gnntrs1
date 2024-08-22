@@ -1,0 +1,25 @@
+(VAR M N)
+(REPLACEMENT-MAP
+  (U11 1)
+  (U12 1)
+  (U21 1)
+  (U22 1)
+  (plus 1, 2)
+  (x 1, 2)
+  (0)
+  (s 1)
+  (tt)
+)
+(RULES
+  U11(tt,M,N) -> U12(tt,M,N)
+  U12(tt,M,N) -> s(plus(N,M))
+  U21(tt,M,N) -> U22(tt,M,N)
+  U22(tt,M,N) -> plus(x(N,M),N)
+  plus(N,0) -> N
+  plus(N,s(M)) -> U11(tt,M,N)
+  x(N,0) -> 0
+  x(N,s(M)) -> U21(tt,M,N)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/MYNAT_nosorts-noand
+)

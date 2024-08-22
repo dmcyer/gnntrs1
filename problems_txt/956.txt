@@ -1,0 +1,13 @@
+(VAR x)
+(RULES 
+  r(e(x)) -> w(r(x))
+  i(t(x)) -> e(r(x))
+  e(w(x)) -> r(i(x))
+  t(e(x)) -> r(e(x))
+  w(r(x)) -> i(t(x))
+  e(r(x)) -> e(w(x))
+  r(i(t(e(r(x))))) -> e(w(r(i(t(e(x))))))
+)
+(COMMENT
+TPDB SRS_Standard/Secret_05_SRS/matchbox1
+)

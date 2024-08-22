@@ -1,0 +1,38 @@
+(SIG
+   (seteq      List List -> Bool)
+   (subseteq   List List -> Bool)
+   (member     Nat List -> Bool)
+   (if         Bool Bool Bool -> Bool)
+   (eq         Nat Nat -> Bool)
+   (or         Bool Bool -> Bool)
+   (and        Bool Bool -> Bool)
+   (app        List List -> List)
+   (cons       Nat List -> List)
+   (true       -> Bool)
+   (false      -> Bool)
+   (nil        -> List)
+   (s          Nat -> Nat)
+   (0          -> Nat)
+)
+(RULES
+   seteq(xs,ys) -> and(subseteq(xs,ys),subseteq(ys,xs))
+   subseteq(nil,ys) -> true
+   subseteq(cons(x,xs),ys) -> and(member(x,ys),subseteq(xs,ys))
+   if(true,y,z) -> y
+   if(false,y,z) -> z
+   eq(0,0) -> true
+   eq(0,s(y)) -> false
+   eq(s(x),0) -> false
+   eq(s(x),s(y)) -> eq(x,y)
+   member(x,nil) -> false
+   member(x,cons(y,ys)) -> if(eq(x,y),false,member(x,ys))
+   or(x,y) -> if(x,true,y)
+   and(x,y) -> if(x,y,false)
+   app(nil,ys) -> ys
+   app(cons(x,xs),ys) -> cons(x,app(xs,ys))
+   seteq(app(xs,ys),app(ys,xs)) -> true
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

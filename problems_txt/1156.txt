@@ -1,0 +1,16 @@
+(VAR x)
+(RULES
+  a(b(x)) -> b(c(x))
+  a(c(x)) -> c(a(x))
+  b(b(x)) -> a(c(x))
+  c(b(x)) -> b(c(x))
+  c(b(x)) -> c(c(x))
+  c(c(x)) -> c(b(x))
+  0(1(2(x))) -> 2(0(1(x)))
+  2(2(2(2(2(2(2(1(1(1(1(2(x)))))))))))) -> 2(1(2(2(0(1(2(1(1(0(1(0(x))))))))))))
+)
+(COMMENT
+submitted by: Raul Gutierrez
+secret problem 2021
+category: SRS
+)

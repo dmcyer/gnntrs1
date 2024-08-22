@@ -1,0 +1,11 @@
+(VAR x)
+(RULES
+  f(g(h(x))) -> g(f(h(g(x))))
+  f(x) -> x
+  g(x) -> x
+  h(x) -> x
+)
+(COMMENT
+  submitted by: Akihisa Yamada
+  used by COPS #1278
+)

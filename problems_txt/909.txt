@@ -1,0 +1,6 @@
+(PROBLEM INFEASIBILITY)
+(COPS 553)
+(CONDITION h(f(a)) == k(g(b)))
+(COMMENT
+submitted by: Naoki Nishida
+)

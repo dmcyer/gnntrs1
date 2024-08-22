@@ -1,0 +1,6 @@
+(PROBLEM INFEASIBILITY)
+(COPS 354)
+(CONDITION pos(0) == true)
+(COMMENT
+submitted by: Naoki Nishida
+)

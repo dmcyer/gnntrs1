@@ -1,0 +1,13 @@
+(VAR x y z)
+(RULES
+  H(F(x,y)) -> F(H(R(x)),y)
+  F(x,K(y,z)) -> G(P(y),Q(z,x))
+  H(Q(x,y)) -> Q(x,H(R(y)))
+  Q(x,H(R(y))) -> H(Q(x,y))
+  H(G(x,y)) -> G(x,H(y))
+)
+(COMMENT
+doi:10.1145/322217.322230
+[12] p. 814
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

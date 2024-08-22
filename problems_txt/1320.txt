@@ -1,0 +1,20 @@
+(VAR x y z)
+(REPLACEMENT-MAP
+  (Ap 1)
+  (Ds)
+  (E)
+  (I)
+  (K)
+  (S)
+)
+(RULES
+  Ap(Ap(Ap(S,x),y),z) -> Ap(Ap(x,z),Ap(y,z))
+  Ap(Ap(Ds,z),z) -> E
+  Ap(Ap(K,x),y) -> x
+  Ap(I,x) -> x
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #57
+canonical replacement map
+)

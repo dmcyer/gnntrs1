@@ -1,0 +1,22 @@
+(VAR x)
+(RULES
+  a(b(a(x))) -> b(a(b(x)))
+  b(a(b(x))) -> a(b(a(x)))
+  a(c(a(x))) -> c(a(c(x)))
+  c(a(c(x))) -> a(c(a(x)))
+  b(d(b(x))) -> d(b(d(x)))
+  d(b(d(x))) -> b(d(b(x)))
+  c(d(c(x))) -> d(c(d(x)))
+  d(c(d(x))) -> c(d(c(x)))
+  b(c(x)) -> c(b(x))
+  c(b(x)) -> b(c(x))
+  a(d(x)) -> d(a(x))
+  d(a(x)) -> a(d(x))
+  p -> a(p)
+  p -> b(p)
+  p -> c(p)   
+  p -> d(p)
+)
+(COMMENT
+submitted by: Hans Zantema
+)

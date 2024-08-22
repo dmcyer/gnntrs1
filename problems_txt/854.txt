@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 330)
+(VAR x2 x1)
+(CONDITION pin(x1) == pout(g(x2)))
+(COMMENT
+submitted by: Naoki Nishida
+)

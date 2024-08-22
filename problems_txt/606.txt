@@ -1,0 +1,15 @@
+(VAR y x)
+(RULES
+   not(true) -> false
+   not(false) -> true
+   or(true,y) -> true
+   or(x,true) -> true
+   or(false,false) -> false
+   implies(true,y) -> y
+   implies(false,y) -> true
+   implies(x,y) -> or(not(x),y)
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

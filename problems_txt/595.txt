@@ -1,0 +1,22 @@
+(SIG
+   (eq      Nat Nat -> Bool)
+   (neq     Nat Nat -> Bool)
+   (not     Bool -> Bool)
+   (true    -> Bool)
+   (false   -> Bool)
+   (s       Nat -> Nat)
+   (0       -> Nat)
+)
+(RULES
+   eq(x,x) -> true
+   eq(0,s(y)) -> false
+   eq(s(x),0) -> false
+   not(true) -> false
+   not(false) -> true
+   neq(x,y) -> not(eq(x,y))
+   neq(x,s(x)) -> true
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

@@ -1,0 +1,14 @@
+(VAR x)
+(RULES
+  b(x) -> c(d(x))
+  d(x) -> c(b(x))
+  c(x) -> b(d(x))
+  b(x) -> c(d(x))
+  a(x) -> a(b(x))
+  a(x) -> b(c(x))
+)
+(COMMENT
+submitted by: Johannes Waldmann
+secret problem 2019
+category: SRS
+)

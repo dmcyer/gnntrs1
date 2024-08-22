@@ -1,0 +1,36 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (and)
+  (f)
+  (implies)
+  (not)
+  (or)
+  (0)
+  (1)
+)
+(RULES
+  and(not(x),x) -> 0
+  and(0,x) -> 0
+  and(1,x) -> x
+  and(x,not(x)) -> 0
+  and(x,0) -> 0
+  and(x,1) -> x
+  f(x) -> f(0) | implies(x,0) == y, implies(x,y) == z, implies(z,0) == 1
+  implies(x,y) -> 0 | x == 1, y == 0
+  implies(x,y) -> 1 | not(x) == 1
+  implies(x,y) -> 1 | y == 1
+  not(0) -> 1
+  not(1) -> 0
+  or(not(x),x) -> 1
+  or(0,x) -> x
+  or(1,x) -> 1
+  or(x,not(x)) -> 1
+  or(x,0) -> x
+  or(x,1) -> 1
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #798
+bottom replacement map
+)

@@ -1,0 +1,30 @@
+(CONDITIONTYPE ORIENTED)
+(VAR m n l)
+(REPLACEMENT-MAP
+  (insert)
+  (lte)
+  (ordered)
+  (0)
+  (cons)
+  (false)
+  (nil)
+  (s)
+  (true)
+)
+(RULES
+  insert(cons(n,l),m) -> cons(m,cons(n,l)) | lte(m,n) == true
+  insert(cons(n,l),m) -> cons(n,insert(l,m)) | lte(m,n) == false
+  insert(nil,m) -> cons(m,nil)
+  lte(0,n) -> true
+  lte(s(m),0) -> false
+  lte(s(m),s(n)) -> lte(m,n)
+  ordered(cons(m,cons(n,l))) -> ordered(cons(n,l)) | lte(m,n) == true
+  ordered(cons(m,cons(n,l))) -> false | lte(m,n) == false
+  ordered(cons(m,nil)) -> true
+  ordered(nil) -> true
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #272
+bottom replacement map
+)

@@ -1,0 +1,42 @@
+(VAR N X XS Y YS ZS)
+(REPLACEMENT-MAP
+  (U11 1) (U12 1) (U21 1) (U22 1) (U31 1) (U32 1)
+  (U41 1) (U42 1) (U51 1) (U52 1) (U61 1) (U62 1)
+  (U63 1) (U64 1) (U71 1) (U72 1) (U81 1) (U82 1)
+  (afterNth 1, 2) (fst 1) (head 1) (natsFrom 1) (sel 1, 2)
+  (snd 1) (splitAt 1, 2) (tail 1) (take 1, 2) (0)
+  (cons 1) (nil) (pair 1, 2) (s 1) (tt)
+)
+(RULES
+  U11(tt,N,XS) -> U12(tt,N,XS)
+  U12(tt,N,XS) -> snd(splitAt(N,XS))
+  U21(tt,X) -> U22(tt,X)
+  U22(tt,X) -> X
+  U31(tt,N) -> U32(tt,N)
+  U32(tt,N) -> N
+  U41(tt,N,XS) -> U42(tt,N,XS)
+  U42(tt,N,XS) -> head(afterNth(N,XS))
+  U51(tt,Y) -> U52(tt,Y)
+  U52(tt,Y) -> Y
+  U61(tt,N,X,XS) -> U62(tt,N,X,XS)
+  U62(tt,N,X,XS) -> U63(tt,N,X,XS)
+  U63(tt,N,X,XS) -> U64(splitAt(N,XS),X)
+  U64(pair(YS,ZS),X) -> pair(cons(X,YS),ZS)
+  U71(tt,XS) -> U72(tt,XS)
+  U72(tt,XS) -> XS
+  U81(tt,N,XS) -> U82(tt,N,XS)
+  U82(tt,N,XS) -> fst(splitAt(N,XS))
+  afterNth(N,XS) -> U11(tt,N,XS)
+  fst(pair(X,Y)) -> U21(tt,X)
+  head(cons(N,XS)) -> U31(tt,N)
+  natsFrom(N) -> cons(N,natsFrom(s(N)))
+  sel(N,XS) -> U41(tt,N,XS)
+  snd(pair(X,Y)) -> U51(tt,Y)
+  splitAt(0,XS) -> pair(nil,XS)
+  splitAt(s(N),cons(X,XS)) -> U61(tt,N,X,XS)
+  tail(cons(N,XS)) -> U71(tt,XS)
+  take(N,XS) -> U81(tt,N,XS)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/LISTUTILITIES_nosorts-noand
+)

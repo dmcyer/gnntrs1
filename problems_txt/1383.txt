@@ -1,0 +1,29 @@
+(CONDITIONTYPE JOIN)
+(VAR x)
+(REPLACEMENT-MAP
+  (a)
+  (eq)
+  (f 1)
+  (h 1)
+  (p 1)
+  (q 1)
+  (b)
+  (g)
+  (k)
+  (true)
+)
+(RULES
+  a -> b | b == b
+  eq(x,x) -> true
+  f(x) -> g(x) | h(f(x)) == k(g(b))
+  h(f(a)) -> p(a) | b == b
+  h(x) -> k(x) | b == b
+  p(b) -> k(f(a))
+  p(x) -> q(x) | eq(x,a) == true
+  q(b) -> k(g(a))
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #275
+canonical replacement map
+)

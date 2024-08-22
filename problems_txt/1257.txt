@@ -1,0 +1,16 @@
+(VAR X)
+(REPLACEMENT-MAP
+  (c)
+  (f 1)
+  (h 1)
+  (d)
+  (g)
+)
+(RULES
+  c(X) -> d(X)
+  f(f(X)) -> c(f(g(f(X))))
+  h(X) -> c(d(X))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex25_Luc06
+)

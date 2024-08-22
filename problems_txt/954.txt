@@ -1,0 +1,14 @@
+(VAR x)
+(RULES 
+  sq(0(x)) -> p(s(p(s(p(p(p(p(s(s(s(s(0(p(s(p(s(x)))))))))))))))))
+  sq(s(x)) -> s(p(s(p(s(p(p(s(s(twice(p(s(p(s(p(p(p(s(s(s(sq(p(p(p(p(p(p(s(s(s(s(s(s(x)))))))))))))))))))))))))))))))))
+  twice(0(x)) -> p(p(p(p(s(s(p(s(s(s(0(p(p(p(s(s(s(p(p(s(s(p(s(p(s(p(s(x)))))))))))))))))))))))))))
+  twice(s(x)) -> p(p(s(s(s(p(p(s(s(s(twice(p(s(p(s(x)))))))))))))))
+  p(p(s(x))) -> p(x)
+  p(s(x)) -> x
+  p(0(x)) -> 0(s(s(s(s(s(s(s(s(s(s(s(x))))))))))))
+  0(x) -> x
+)
+(COMMENT
+TPDB SRS_Standard/Secret_06_SRS/aprove04
+)

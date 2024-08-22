@@ -1,0 +1,24 @@
+(CONDITIONTYPE JOIN)
+(VAR x)
+(REPLACEMENT-MAP
+  (a)
+  (c)
+  (f)
+  (h)
+  (b)
+  (g)
+  (k)
+)
+(RULES
+  a -> b
+  c -> k(f(a))
+  c -> k(g(a))
+  f(x) -> g(x) | h(f(x)) == k(g(b))
+  h(f(a)) -> c
+  h(x) -> k(x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #273
+bottom replacement map
+)

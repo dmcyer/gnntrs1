@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 329)
+(VAR x5 x4 x2 zs xs x3 x1)
+(CONDITION split(x1,x3) == pair(xs,zs), le(x1,x2) == true, split(x1,x3) == pair(x4,x5), le(x1,x2) == false)
+(COMMENT
+submitted by: Naoki Nishida
+)

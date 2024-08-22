@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 312)
+(VAR x x1)
+(CONDITION iadd(x1) == tp2(x,0))
+(COMMENT
+submitted by: Naoki Nishida
+)

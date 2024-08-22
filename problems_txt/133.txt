@@ -1,0 +1,11 @@
+(VAR x y z)
+(RULES
+  +(x,0)  -> x
+  +(s(x),y)  -> s(+(x,y))
+  +(+(x,y),z) -> +(x,+(y,z))
+  +(x,y) -> + (y,x)
+)
+(COMMENT
+full experiments for [35]
+submitted by: Takahito Aoto and Yoshihito Toyama
+)

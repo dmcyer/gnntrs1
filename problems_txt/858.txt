@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 337)
+(VAR x2 x1 x)
+(CONDITION lt(x,x1) == true, lt(x1,x2) == true)
+(COMMENT
+submitted by: Naoki Nishida
+)

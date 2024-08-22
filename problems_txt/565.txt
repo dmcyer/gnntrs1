@@ -1,0 +1,17 @@
+(SIG
+   (from Nat -> List)
+   (sel Nat List -> Nat)
+   (cons Nat List -> List)
+   (nil -> List)
+   (s Nat -> Nat)
+   (0 -> Nat)
+)
+(RULES
+   from(x) -> cons(x,from(s(x)))
+   sel(0,cons(y,zs)) -> y
+   sel(s(x),cons(y,zs)) -> sel(x,zs)
+)
+(COMMENT
+Cops #23 with sort attachment
+submitted by: anonymous
+)

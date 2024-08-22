@@ -1,0 +1,10 @@
+(CONDITIONTYPE SEMI-EQUATIONAL)
+(VAR x y z w)
+(RULES
+f(f(x,y), f(z,w)) -> f(f(x,z), f(y,w))
+f(f(x,y), x) -> x
+)
+(COMMENT
+submitted by: Sarah Winkler
+used by secret problem 2019 COPS #1136
+)

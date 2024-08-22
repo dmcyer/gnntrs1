@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 405)
+(VAR x2 x1 x)
+(CONDITION les(x,x1) == true, les(x1,x2) == true)
+(COMMENT
+submitted by: Naoki Nishida
+)

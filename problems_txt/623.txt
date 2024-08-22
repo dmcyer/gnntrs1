@@ -1,0 +1,32 @@
+(SIG
+   (null    List -> Bool)
+   (tl      List -> List)
+   (len     List -> Nat)
+   (if      Bool Nat Nat -> Nat)
+   (round   List -> List)
+   (app     List List -> List)
+   (cons    Nat List -> List)
+   (nil     -> List)
+   (true    -> Bool)
+   (false   -> Bool)
+   (s       Nat -> Nat)
+   (0       -> Nat)
+)
+(RULES
+   null(nil) -> true
+   null(cons(x,xs)) -> false
+   tl(nil) -> nil
+   tl(cons(x,xs)) -> xs
+   len(xs) -> if(null(xs),0,s(len(tl(xs))))
+   if(true,x,y) -> x
+   if(false,x,y) -> y
+   round(nil) -> nil
+   round(cons(x,xs)) -> app(xs,cons(x,nil))
+   app(nil,ys) -> ys
+   app(cons(x,xs),ys) -> cons(x,app(xs,ys))
+   len(round(xs)) -> len(xs)
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

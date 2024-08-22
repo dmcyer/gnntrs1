@@ -1,0 +1,16 @@
+(VAR x y)
+(REPLACEMENT-MAP
+  (max 1, 2)
+  (0)
+  (s)
+)
+(RULES
+  max(s(x),s(y)) -> s(max(x,y))
+  max(x,0) -> x
+  max(x,y) -> max(y,x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #165
+canonical replacement map
+)

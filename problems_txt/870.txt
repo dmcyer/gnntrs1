@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 378)
+(VAR x5 x4 x2 z2 z1 x1 x)
+(CONDITION orient(x,x1) == pair(z1,z2), orient(x1,x2) == pair(x4,x5))
+(COMMENT
+submitted by: Naoki Nishida
+)

@@ -1,0 +1,8 @@
+(PROBLEM INFEASIBILITY)
+(COPS 800)
+(CONDITION F(a) == F(g(a)))
+(COMMENT 
+doi:10.1007/3-540-45744-5_49
+[153] Example 13
+submitted by: Raul Gutierrez and Salvador Lucas
+)

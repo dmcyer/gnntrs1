@@ -1,0 +1,22 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(REPLACEMENT-MAP
+  (p)
+  (q)
+  (r)
+  (s)
+  (0)
+  (1)
+  (h)
+)
+(RULES
+  p(q(x)) -> p(r(x))
+  q(h(x)) -> r(x)
+  r(x) -> r(h(x)) | s(x) == 0
+  s(x) -> 1
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #271
+bottom replacement map
+)

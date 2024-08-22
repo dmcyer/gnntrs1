@@ -1,0 +1,21 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (pin)
+  (tc)
+  (a)
+  (b)
+  (c)
+  (pout)
+)
+(RULES
+  pin(a) -> pout(b)
+  pin(b) -> pout(c)
+  tc(x) -> x
+  tc(x) -> y | pin(x) == pout(z), tc(z) == y
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #391
+bottom replacement map
+)

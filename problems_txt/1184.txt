@@ -1,0 +1,22 @@
+(VAR x y)
+(REPLACEMENT-MAP
+  (if 1)
+  (isZero 1)
+  (p 1)
+  (plus 1, 2)
+  (0)
+  (false)
+  (s 1)
+  (true)
+)
+(RULES
+  if(false,x,y) -> y
+  if(true,x,y) -> x
+  isZero(0) -> true
+  isZero(s(x)) -> false
+  p(s(x)) -> x
+  plus(x,y) -> if(isZero(x),y,s(plus(p(x),y)))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/emmes
+)

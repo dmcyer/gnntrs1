@@ -1,0 +1,29 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y)
+(REPLACEMENT-MAP
+  (gcd)
+  (lt)
+  (m)
+  (0)
+  (false)
+  (s)
+  (true)
+)
+(RULES
+  gcd(0,s(y)) -> s(y)
+  gcd(s(x),0) -> s(x)
+  gcd(s(x),s(y)) -> gcd(m(x,y),s(y)) | lt(y,x) == true
+  gcd(s(x),s(y)) -> gcd(s(x),m(y,x)) | lt(x,y) == true
+  gcd(x,x) -> x
+  lt(0,s(x)) -> true
+  lt(s(x),s(y)) -> lt(x,y)
+  lt(x,0) -> false
+  m(0,s(y)) -> 0
+  m(s(x),s(y)) -> m(x,y)
+  m(x,0) -> x
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #327
+bottom replacement map
+)

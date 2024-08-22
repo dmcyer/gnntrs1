@@ -1,0 +1,10 @@
+(VAR x)
+(RULES
+  H(H(x)) -> K(x)
+  H(K(x)) -> K(H(x))
+)
+(COMMENT
+doi:10.1145/322217.322230
+[12] p. 811
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

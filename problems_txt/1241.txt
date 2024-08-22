@@ -1,0 +1,31 @@
+(VAR N X XS Y YS)
+(REPLACEMENT-MAP
+  (incr 1)
+  (oddNs)
+  (pairNs)
+  (repItems 1)
+  (tail 1)
+  (take 1, 2)
+  (zip 1, 2)
+  (0)
+  (cons 1)
+  (nil)
+  (pair 1, 2)
+  (s 1)
+)
+(RULES
+  incr(cons(X,XS)) -> cons(s(X),incr(XS))
+  oddNs -> incr(pairNs)
+  pairNs -> cons(0,incr(oddNs))
+  repItems(cons(X,XS)) -> cons(X,cons(X,repItems(XS)))
+  repItems(nil) -> nil
+  tail(cons(X,XS)) -> XS
+  take(0,XS) -> nil
+  take(s(N),cons(X,XS)) -> cons(X,take(N,XS))
+  zip(cons(X,XS),cons(Y,YS)) -> cons(pair(X,Y),zip(XS,YS))
+  zip(nil,XS) -> nil
+  zip(X,nil) -> nil
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex5_DLMMU04
+)

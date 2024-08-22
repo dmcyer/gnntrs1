@@ -1,0 +1,17 @@
+(CONDITIONTYPE SEMI-EQUATIONAL)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (f)
+  (a)
+  (unit)
+)
+(RULES
+  f(f(x,y),z) -> f(x,f(y,z))
+  f(x,unit) -> x
+  f(x,x) -> unit | x == a
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #1135
+bottom replacement map
+)

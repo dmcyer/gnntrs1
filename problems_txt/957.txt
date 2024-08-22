@@ -1,0 +1,12 @@
+(VAR x)
+(RULES 
+  a(b(x)) -> c(d(x))
+  d(d(x)) -> b(e(x))
+  b(x) -> d(c(x))
+  d(x) -> x
+  e(c(x)) -> d(a(x))
+  a(x) -> e(d(x))
+)
+(COMMENT
+TPDB SRS_Standard/Secret_07_SRS/x02
+)

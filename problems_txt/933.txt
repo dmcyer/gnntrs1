@@ -1,0 +1,8 @@
+(PROBLEM INFEASIBILITY)
+(COPS 494)
+(CONDITION f(a,b) == b, f(a,a) == a)
+(COMMENT 
+doi:10.4230/LIPIcs.FSCD.2016.29
+[90] Example 16
+submitted by: Raul Gutierrez and Salvador Lucas
+)

@@ -1,0 +1,27 @@
+(VAR X Y)
+(REPLACEMENT-MAP
+  (div 1, 2)
+  (gt 1, 2)
+  (if 1)
+  (minus 1, 2)
+  (p 1)
+  (0)
+  (false)
+  (s 1)
+  (true)
+)
+(RULES
+  div(0,s(Y)) -> 0
+  div(s(X),s(Y)) -> s(div(minus(X,Y),s(Y)))
+  gt(0,Y) -> false
+  gt(s(X),0) -> true
+  gt(s(X),s(Y)) -> gt(X,Y)
+  if(false,X,Y) -> Y
+  if(true,X,Y) -> X
+  minus(X,Y) -> if(gt(Y,0),minus(p(X),p(Y)),X)
+  p(0) -> 0
+  p(s(X)) -> X
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/csrdiv
+)

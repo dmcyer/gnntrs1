@@ -1,0 +1,7 @@
+(VAR x)
+(RULES 
+  a(a(b(a(b(a(b(a(b(x))))))))) -> a(b(a(b(a(b(a(b(a(a(a(a(a(b(x))))))))))))))
+)
+(COMMENT
+TPDB SRS_Standard/Wenzel_16/aabababab-ababababaaaaab.srs
+)

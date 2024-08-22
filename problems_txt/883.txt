@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 440)
+(VAR y x1)
+(CONDITION c(f(c(c(x1)),y)) == c(a(b)), c(f(c(x1),c(c(c(c(y)))))) == c(a(a(b))))
+(COMMENT
+submitted by: Naoki Nishida
+)

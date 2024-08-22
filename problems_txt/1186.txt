@@ -1,0 +1,18 @@
+(VAR I P X Y Z)
+(REPLACEMENT-MAP
+  (__ 1, 2)
+  (and 1)
+  (isNePal 1)
+  (nil)
+  (tt)
+)
+(RULES
+  __(__(X,Y),Z) -> __(X,__(Y,Z))
+  __(nil,X) -> X
+  __(X,nil) -> X
+  and(tt,X) -> X
+  isNePal(__(I,__(P,I))) -> tt
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/PALINDROME_nosorts
+)

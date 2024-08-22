@@ -1,0 +1,17 @@
+(VAR x y z)
+(RULES
+  +(x,+(y,z)) -> +(+(x,y),z)
+  +(+(x,y),z) -> +(x,+(y,z)) 
+  +(x,y) -> + (y,x)
+  +(s(x),y) -> +(x,s(y))
+  +(x,s(y)) -> +(s(x),y)
+  *(x,s(y)) -> +(x,*(x,y))
+  *(s(x),y) -> +(*(x,y),y)
+  *(x,y) -> *(y,x)
+  sq(x) -> *(x,x)
+  sq(s(x)) -> +(*(x,x),s(+(x,x)))
+)
+(COMMENT
+[16] Example 1
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

@@ -1,0 +1,10 @@
+(VAR x y)
+(RULES
+  or(x,T) -> T
+  or(x,F) -> x
+  or(x,y) -> or(y,x)
+)
+(COMMENT
+full experiments for [35]
+submitted by: Takahito Aoto and Yoshihito Toyama
+)

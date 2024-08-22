@@ -1,0 +1,19 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(REPLACEMENT-MAP
+  (f)
+  (h)
+  (A)
+  (d)
+  (e)
+  (l)
+)
+(RULES
+  f(x) -> e | d == l
+  h(x,x) -> A
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #319
+bottom replacement map
+)

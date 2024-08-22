@@ -1,0 +1,17 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y xs ys)
+(REPLACEMENT-MAP
+  (isnoc)
+  (cons)
+  (nil)
+  (tp2)
+)
+(RULES
+  isnoc(cons(x,ys)) -> tp2(cons(x,xs),y) | isnoc(ys) == tp2(xs,y)
+  isnoc(cons(y,nil)) -> tp2(nil,y)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #326
+bottom replacement map
+)

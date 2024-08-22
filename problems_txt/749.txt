@@ -1,0 +1,45 @@
+(FUN
+  abs : (a -> b) -> ab
+  app : ab -> a -> b
+  absBG : (BGa -> BGb) -> BGaBGb
+  appBGaBGb : BGaBGb -> BGa -> BGb
+  appBGbBGc : BGbBGc -> BGb -> BGc
+  banga : a -> BGa
+  let : BGa -> (a -> BGb) -> BGb
+  letbc : BGb -> (b -> BGc) -> BGc
+  letBGaBGb : BGa -> (a -> BGaBGb) -> BGaBGb
+  letac : BGa -> (a -> BGc) -> BGc
+)
+(VAR
+  M: a -> b
+  N: a
+  S: ab
+  x: a
+  M1: BGa -> BGb
+  N1: BGa
+  S1: BGaBGb
+  S2: BGbBGc
+  x1: BGa
+  L: BGa
+  C: BGa -> BGb
+  Q: a -> BGb
+  P: BGa -> a -> BGb
+  K: b -> BGc
+  y: b
+  bc : BGc
+)
+(RULES
+  app(abs(\x.M x), N) -> M N,
+  abs(\x.app(S, x)) -> S,
+  appBGaBGb(absBG(\x1.M1 x1), N1) -> M1 N1,
+  absBG(\x1.appBGaBGb(S1, x1)) -> S1,
+  let(banga(N), \x.Q x) -> Q N,
+  let(L, \x.C (banga x)) -> C L,
+  letbc(let(L,\x.Q x), \y.K y) -> letac(L, \x.letbc(Q x,\y.K y)),
+  appBGbBGc(S2,let(L,\x.Q x)) -> letac(L, \x.appBGbBGc(S2, Q x))
+)
+(COMMENT
+doi:10.1007/11805618_13
+[132] Section 3.2 with (com2) and (com4)
+submitted by: Makoto Hamana
+)

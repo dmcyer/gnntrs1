@@ -1,0 +1,16 @@
+(VAR x)
+(RULES
+ a -> b
+ a -> c
+ a -> e
+ b -> d
+ c -> a
+ d -> a
+ d -> e
+ g(x) -> h(a)
+ h(x) -> e
+)
+(COMMENT
+doi:10.1007/978-3-642-12251-4_20
+[32] Example 3.2
+)

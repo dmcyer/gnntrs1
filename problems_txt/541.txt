@@ -1,0 +1,12 @@
+(VAR x y z)
+(RULES
+   +(a,b) -> b
+   +(c,a) -> a
+   +(x,y) -> +(y,x)
+   +(+(x,y),z) -> +(x,+(y,z))
+)
+(COMMENT
+doi:10.1007/978-3-319-63046-5_24
+[118] Example 4
+submitted by: Aart Middeldorp
+)

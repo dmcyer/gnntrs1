@@ -1,0 +1,13 @@
+(RULES
+  a -> b
+  a -> f(a)
+  b -> f(f(b))
+  f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(
+  f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(
+  f(b)
+  )))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) -> b
+)
+(COMMENT
+doi:10.4230/LIPIcs.RTA.2012.165
+[37] Section 4 (R_65)
+)

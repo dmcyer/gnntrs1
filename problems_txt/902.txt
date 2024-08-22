@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 529)
+(VAR x5 x2 x1 y x3 n' x4)
+(CONDITION x4 == s(n'), mod(x4,s(s(0))) == 0, power(x3,div(x4,s(s(0)))) == y, x4 == s(x1), mod(x4,s(s(0))) == s(x2), power(x3,div(x4,s(s(0)))) == x5)
+(COMMENT
+submitted by: Naoki Nishida
+)

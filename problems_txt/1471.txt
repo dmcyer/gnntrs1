@@ -1,0 +1,28 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y q r)
+(REPLACEMENT-MAP
+  (div)
+  (lt)
+  (m)
+  (0)
+  (false)
+  (pair)
+  (s)
+  (true)
+)
+(RULES
+  div(0,s(x)) -> pair(0,0)
+  div(s(x),s(y)) -> pair(0,s(x)) | lt(x,y) == true
+  div(s(x),s(y)) -> pair(s(q),r) | lt(x,y) == false, div(m(x,y),s(y)) == pair(q,r)
+  lt(0,s(x)) -> true
+  lt(s(x),s(y)) -> lt(x,y)
+  lt(x,0) -> false
+  m(0,s(y)) -> 0
+  m(s(x),s(y)) -> m(x,y)
+  m(x,0) -> x
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #335
+bottom replacement map
+)

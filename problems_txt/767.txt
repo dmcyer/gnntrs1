@@ -1,0 +1,19 @@
+(VAR
+  y : term -> term
+  x : term
+  t : term
+  u : term
+)
+(FUN
+  F : term -> term -> term
+  D : term
+  G : term -> term
+)
+(RULES
+  G (y (F t u)) -> F t u,
+  F x x -> D
+)
+(COMMENT
+doi:10.1007/3-540-61254-8_22
+[139] Theorem 4
+)

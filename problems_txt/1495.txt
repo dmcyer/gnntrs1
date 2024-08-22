@@ -1,0 +1,26 @@
+(CONDITIONTYPE ORIENTED)
+(VAR w x y z)
+(REPLACEMENT-MAP
+  (div)
+  (gt 1, 2)
+  (mul 1, 2)
+  (0)
+  (add)
+  (ff)
+  (s)
+  (tt)
+)
+(RULES
+  div(z,y) -> x | mul(x,y) == z, gt(y,0) == tt
+  gt(0,y) -> ff
+  gt(s(x),0) -> tt
+  gt(s(x),s(y)) -> z | gt(x,y) == z
+  mul(0,y) -> 0
+  mul(s(x),s(y)) -> s(z) | mul(x,s(y)) == w, add(w,y) == z
+  mul(x,0) -> 0
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #348
+canonical replacement map
+)

@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 489)
+(VAR x1)
+(CONDITION even(x1) == true, odd(x1) == true)
+(COMMENT
+submitted by: Naoki Nishida
+)

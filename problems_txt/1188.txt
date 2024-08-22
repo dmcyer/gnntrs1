@@ -1,0 +1,30 @@
+(VAR I P V V1 V2 X Y Z)
+(REPLACEMENT-MAP
+  (__ 1, 2) (and 1)
+  (isList) (isNeList) (isNePal) (isPal) (isQid)
+  (a) (e) (i) (nil) (o) (tt) (u)
+)
+(RULES
+  __(__(X,Y),Z) -> __(X,__(Y,Z))
+  __(nil,X) -> X
+  __(X,nil) -> X
+  and(tt,X) -> X
+  isList(__(V1,V2)) -> and(isList(V1),isList(V2))
+  isList(nil) -> tt
+  isList(V) -> isNeList(V)
+  isNeList(__(V1,V2)) -> and(isList(V1),isNeList(V2))
+  isNeList(__(V1,V2)) -> and(isNeList(V1),isList(V2))
+  isNeList(V) -> isQid(V)
+  isNePal(__(I,__(P,I))) -> and(isQid(I),isPal(P))
+  isNePal(V) -> isQid(V)
+  isPal(nil) -> tt
+  isPal(V) -> isNePal(V)
+  isQid(a) -> tt
+  isQid(e) -> tt
+  isQid(i) -> tt
+  isQid(o) -> tt
+  isQid(u) -> tt
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/PALINDROME_nokinds
+)

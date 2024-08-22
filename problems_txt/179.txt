@@ -1,0 +1,8 @@
+(VAR x y)
+(RULES
+ +(x,y) -> +(y,x)
+)
+(COMMENT
+full experiments for [35]
+submitted by: Takahito Aoto and Yoshihito Toyama
+)

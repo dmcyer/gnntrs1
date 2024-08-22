@@ -1,0 +1,25 @@
+(CONDITIONTYPE SEMI-EQUATIONAL)
+(VAR x y)
+(REPLACEMENT-MAP
+  (lte)
+  (p)
+  (s)
+  (0)
+  (F)
+  (T)
+)
+(RULES
+  lte(p(x),y) -> lte(x,s(y))
+  lte(s(x),y) -> lte(x,p(y))
+  lte(0,p(0)) -> F
+  lte(0,p(x)) -> F | lte(0,x) == F
+  lte(0,s(x)) -> T | lte(0,x) == T
+  lte(0,0) -> T
+  p(s(x)) -> x
+  s(p(x)) -> x
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #291
+bottom replacement map
+)

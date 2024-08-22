@@ -1,0 +1,8 @@
+(VAR x)
+(RULES
+  f(g(x),g(g(x))) -> h(g(x),g(c))
+  c -> g(c)
+)
+(COMMENT
+[8] TRS R_2
+)

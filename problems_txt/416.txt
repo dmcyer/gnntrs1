@@ -1,0 +1,9 @@
+(VAR x y)
+(RULES
+  f(x,g(x)) -> f(g(x),g(x))
+  f(x,h(y)) -> f(h(y),h(y))
+  g(x) -> h(x)
+)
+(COMMENT
+full experiments for [80]
+)

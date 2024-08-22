@@ -1,0 +1,13 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z1 z2 z3)
+(RULES
+  plus(0, y) -> y
+  plus(s(x), y) -> s(plus(x, y))
+  fib(0) -> pair(s(0), 0)
+  fib(s(x)) -> pair(z3, z1) | fib(x) == pair(z1, z2), plus(z1, z2) == z3
+)
+(COMMENT
+doi:10.1007/3-540-58216-9_40
+[45] Example 2.1(b)
+submitted by: Thomas Sternagel
+)

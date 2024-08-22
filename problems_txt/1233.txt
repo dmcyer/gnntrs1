@@ -1,0 +1,21 @@
+(VAR M N X Y)
+(REPLACEMENT-MAP
+  (filter 1, 2, 3)
+  (nats 1)
+  (sieve 1)
+  (zprimes)
+  (0)
+  (cons 1)
+  (s 1)
+)
+(RULES
+  filter(cons(X,Y),0,M) -> cons(0,filter(Y,M,M))
+  filter(cons(X,Y),s(N),M) -> cons(X,filter(Y,N,M))
+  nats(N) -> cons(N,nats(s(N)))
+  sieve(cons(0,Y)) -> cons(0,sieve(Y))
+  sieve(cons(s(N),Y)) -> cons(s(N),sieve(filter(Y,N,N)))
+  zprimes -> sieve(nats(s(s(0))))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex9_BLR02
+)

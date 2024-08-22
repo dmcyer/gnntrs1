@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 1139)
+(VAR x y z)
+(CONDITION f(x, y) == g(z, z))
+(COMMENT
+submitted by: Florian Messner
+)

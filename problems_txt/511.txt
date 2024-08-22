@@ -1,0 +1,15 @@
+(VAR x)
+(RULES
+  b -> a
+  b -> c
+  c -> c
+  d -> c
+  d -> e
+  f(x,a) -> A
+  f(x,e) -> A
+  f(x,A) -> A  
+  f(c,x) -> A
+)
+(COMMENT
+[111] p. 30 (GUN & ~UN & ~GUNC)
+)

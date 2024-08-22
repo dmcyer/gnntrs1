@@ -1,0 +1,9 @@
+(VAR x)
+(RULES
+  f(f(x,a),a) -> f(f(f(f(x,f(a,a)),a),a),a)
+)
+(COMMENT
+submitted by: Johannes Waldmann
+secret problem 2020
+category: TRS
+)

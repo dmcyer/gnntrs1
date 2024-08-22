@@ -1,0 +1,26 @@
+(VAR L X Y)
+(REPLACEMENT-MAP
+  (eq)
+  (inf 1)
+  (length 1)
+  (take 1, 2)
+  (0)
+  (cons)
+  (false)
+  (nil)
+  (s)
+  (true)
+)
+(RULES
+  eq(0,0) -> true
+  eq(s(X),s(Y)) -> eq(X,Y)
+  eq(X,Y) -> false
+  inf(X) -> cons(X,inf(s(X)))
+  length(cons(X,L)) -> s(length(L))
+  length(nil) -> 0
+  take(0,X) -> nil
+  take(s(X),cons(Y,L)) -> cons(Y,take(X,L))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex1_GL02a
+)

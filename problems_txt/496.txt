@@ -1,0 +1,11 @@
+(VAR x)
+(RULES
+  f(x,x) -> a
+  f(x,c(x)) -> b
+  g -> c(g)
+  a -> b
+)
+(COMMENT
+doi:10.4230/LIPIcs.CSL.2015.423
+[102] p. 431 (NKH^1)
+)

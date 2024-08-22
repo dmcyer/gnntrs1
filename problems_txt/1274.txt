@@ -1,0 +1,19 @@
+(VAR X Y)
+(REPLACEMENT-MAP
+  (from 1)
+  (length)
+  (length1)
+  (0)
+  (cons 1)
+  (nil)
+  (s 1)
+)
+(RULES
+  from(X) -> cons(X,from(s(X)))
+  length(cons(X,Y)) -> s(length1(Y))
+  length(nil) -> 0
+  length1(X) -> length(X)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex14_AEGL02
+)

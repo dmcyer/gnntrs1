@@ -1,0 +1,26 @@
+(VAR X Y Z)
+(REPLACEMENT-MAP
+  (dbl 1)
+  (dbls 1)
+  (from)
+  (indx 1)
+  (sel 1, 2)
+  (0)
+  (cons)
+  (nil)
+  (s)
+)
+(RULES
+  dbl(0) -> 0
+  dbl(s(X)) -> s(s(dbl(X)))
+  dbls(cons(X,Y)) -> cons(dbl(X),dbls(Y))
+  dbls(nil) -> nil
+  from(X) -> cons(X,from(s(X)))
+  indx(cons(X,Y),Z) -> cons(sel(X,Z),indx(Y,Z))
+  indx(nil,X) -> nil
+  sel(0,cons(X,Y)) -> X
+  sel(s(X),cons(Y,Z)) -> sel(X,Z)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex3_2_Luc97
+)

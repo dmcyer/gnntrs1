@@ -1,0 +1,13 @@
+(VAR x y)
+(RULES 
+  c -> f(a,b)
+  c -> f(a,a)
+  f(x,x) -> x
+  f(x,y) -> f(y,x)
+  f(a,a) -> f(b,b)
+  f(b,b) -> f(a,a)
+)
+(COMMENT
+doi:10.1016/j.ic.2016.06.011
+[76] Example 28
+)

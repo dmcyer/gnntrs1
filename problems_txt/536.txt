@@ -1,0 +1,25 @@
+(VAR x y z)
+(RULES
+   xor(x,0) -> x
+   xor(0,x) -> x
+   xor(x,x) -> 0
+   and(x,0) -> 0
+   and(0,x) -> 0
+   and(x,1) -> x
+   and(1,x) -> x
+   and(x,x) -> x
+   xor(xor(x,y),z) -> xor(x,xor(y,z))
+   xor(x,xor(y,z)) -> xor(y,xor(x,z))
+   xor(x,y) -> xor(y,x)
+   xor(x,xor(x,y)) -> and(x,y)
+   and(and(x,y),z) -> and(x,and(y,z))
+   and(x,and(y,z)) -> and(y,and(x,z))
+   and(x,y) -> and(y,x)
+   and(x,and(x,y)) -> and(x,y)
+   and(x,xor(y,z)) -> xor(and(x,y),xor(x,z))
+   and(xor(x,y),z) -> xor(and(x,z),and(y,z))
+)
+(COMMENT
+[113] Example 4.15 with typo; corrected as Cops #765
+submitted by: Aart Middeldorp
+)

@@ -1,0 +1,15 @@
+(CONDITIONTYPE JOIN)
+(VAR x)
+(RULES
+  c -> k(f(a))
+  c -> k(g(a))
+  a -> b
+  h(x) -> k(x)
+  h(f(a)) -> c
+  f(x) -> g(x) | h(f(x)) == k(g(b))
+)
+(COMMENT
+doi:10.1007/3-540-19242-5_3
+[49] Example B with typo; corrected as Cops #553
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

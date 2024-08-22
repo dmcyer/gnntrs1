@@ -1,0 +1,14 @@
+(VAR x y)
+(RULES
+  f(g(x,a,b)) -> x
+  g(f(h(c,d)),x,y) -> h(k1(x),k2(y))
+  k1(a) -> c
+  k2(b) -> d
+  f(h(k1(a),k2(b))) -> f(h(c,d))
+  f(h(c,k2(b))) -> f(h(c,d))
+  f(h(k1(a),d)) -> f(h(c,d))
+)
+(COMMENT
+[17] Example 6
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

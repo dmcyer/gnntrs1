@@ -1,0 +1,15 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z)
+(RULES
+  f(k(z),a) -> g(x,x) | h(z) == x, x == b
+  f(k(a),h(a)) -> k(x) | a == x
+  k(x) -> h(x)
+  k(x) -> b
+  k(x) -> a
+  a -> b
+  g(x,x) -> a
+)
+(COMMENT
+submitted by: Florian Messner
+used by COPS #1145
+)

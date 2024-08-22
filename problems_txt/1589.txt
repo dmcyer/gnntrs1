@@ -1,0 +1,23 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(REPLACEMENT-MAP
+  (even)
+  (odd)
+  (0)
+  (false)
+  (s)
+  (true)
+)
+(RULES
+  even(0) -> true
+  even(s(x)) -> false | even(x) == true
+  even(s(x)) -> true | odd(x) == true
+  odd(0) -> false
+  odd(s(x)) -> false | odd(x) == true
+  odd(s(x)) -> true | even(x) == true
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #489
+bottom replacement map
+)

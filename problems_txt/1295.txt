@@ -1,0 +1,9 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y)
+(RULES
+  f(x,x,y) -> b | a == a
+  h'(g(x,h(b))) -> h'(y) | x == f(f(g(a,h'(a)),a,h(h(a))),a,g(g(h(b),h(x)),h(f(a,a,a)))), a == y
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+)

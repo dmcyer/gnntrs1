@@ -1,0 +1,10 @@
+(VAR x y)
+(RULES
+ a(x) -> c(x)
+ b(x) -> b(b(x))
+ f(x,x,y) -> f(a(x),x,b(y))
+)
+(COMMENT
+from experiments for [43]
+submitted by: Tsubasa Suzuki, Takahito Aoto, and Yoshihito Toyama
+)

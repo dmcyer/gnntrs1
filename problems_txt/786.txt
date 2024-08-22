@@ -1,0 +1,31 @@
+(FUN
+  case : Sum<a_b> -> (a -> c) -> (b -> c) -> c
+  inl : a -> Sum<a_b>
+  inr : b -> Sum<a_b>
+  app : Ar<a_b> -> a -> b
+  lam : (a -> b) -> Ar<a_b>
+)
+(VAR
+  x: a
+  y: b
+  X: a
+  Y: b
+  Z: Sum<a_b>
+  F: a -> c
+  G: b -> c
+  H: Sum<a_b> -> c
+  M : a -> b
+  N : a
+  M1 : Ar<a_b>
+)
+(RULES
+  app(lam (\x.M x), N) -> M N,
+  lam(\x.app(M1, x)) -> M1,
+  case(inl(X), \x.F x , \y.G y ) -> F X,
+  case(inr(Y), \x.F x , \y.G y ) -> G Y,
+  case(Z,\x.H (inl x), \y.H (inr y)) -> H Z
+)
+(COMMENT
+[145] subsystem of Definition 2.4; part of Cops #780
+submitted by: Makoto Hamana
+)

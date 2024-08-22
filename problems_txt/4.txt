@@ -1,0 +1,10 @@
+(VAR x y)
+(RULES
+  or(true,true) -> true
+  or(x,y) -> or(y,x)
+)
+(COMMENT
+doi:10.1017/CBO9781139172752
+[4] Exercise 6.17
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

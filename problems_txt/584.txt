@@ -1,0 +1,13 @@
+(VAR y z x)
+(RULES
+   br(0,y,z) -> y
+   br(s(x),y,z) -> z
+   p(0) -> 0
+   p(s(x)) -> x
+   +(x,y) -> br(x,y,+(p(x),s(y)))
+   +(x,y) -> br(y,x,+(s(x),p(y)))
+)
+(COMMENT
+experiments for [36]
+submitted by: Takahito Aoto
+)

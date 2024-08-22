@@ -1,0 +1,24 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (a)
+  (f)
+  (g)
+  (k)
+  (b)
+  (h)
+)
+(RULES
+  a -> b
+  f(y,a) -> g(x,x) | h(z) == x, y == k(z), x == b
+  f(y,z) -> k(x) | z == h(a), y == k(a), a == x
+  g(x,x) -> a
+  k(x) -> a
+  k(x) -> b
+  k(x) -> h(x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #1138
+bottom replacement map
+)

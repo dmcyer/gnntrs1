@@ -1,0 +1,17 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y)
+(RULES
+  zero(0) -> true
+  zero(s(x)) -> false
+  even(x) -> true     | zero(x) == true
+  even(s(x)) -> true  | odd(x) == true
+  even(s(x)) -> false | even(x) == true
+  odd(x) -> false     | zero(x) == true
+  odd(s(x)) -> true   | even(x) == true
+  odd(s(x)) -> false  | odd(x) == true
+)
+(COMMENT
+variant of COPS #489 and COPS #522, presented by Naoki Nishida at the
+50th TRS meeting in Atami, Japan
+submitted by: Naoki Nishida
+)

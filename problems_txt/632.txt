@@ -1,0 +1,18 @@
+(VAR x y)
+(RULES
+   inv(0) -> 0
+   inv(s(x)) -> p(inv(x))
+   inv(p(x)) -> s(inv(x))
+   minus(x,0) -> x
+   minus(x,p(y)) -> s(minus(x,y))
+   minus(x,s(y)) -> p(minus(x,y))
+   minus(0,x) -> inv(x)
+   inv(x) -> minus(0,x)
+   inv(minus(x,y)) -> minus(y,x)
+   s(p(x)) -> x
+   p(s(x)) -> x
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

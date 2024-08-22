@@ -1,0 +1,244 @@
+#!/usr/bin/ruby
+
+require 'optparse'
+
+PROBLEMS = "*.{*rs,xml,p}"
+
+$limit = nil
+$seed = 0
+$path = "."
+$tagdir = "#{$path}/tags"
+
+def set_path(p)
+  $path = p
+  $tagdir = "#{$path}/tags"
+end
+
+# Sort in natural order: 1.trs 2.trs .. 10.trs 11.trs .. a1.trs a2.trs ..
+
+def natsort(a)
+  a.sort_by {|path|
+    b = path.split(/(\d+)/).collect {|x| x.match(/\d+/) ? x.to_i : x }
+    b && b[0].match(/\d+/) ? b : [-1] + b
+  }
+end
+
+def limit(n, k, seed)
+  if n <= k || seed == nil
+    (0 ... [n, k].min).to_a
+  else
+    srand(seed)
+    a = (0 ... n).to_a
+    b = []
+    (0 ... k).each {
+      begin
+	i = rand(a.length) 
+      end while b.include?(a[i])
+      b << a[i]
+      a.delete_at(i)
+    }
+    b.sort
+  end
+end
+
+# LL(1) parser for the BNF:
+#   s ::= EOF | e EOF
+#   e ::= ID | ID..ID | '{' e '}' | '!' e | e e | e 'OR' e   with ! > (AND) > OR
+#  ID ::= [_a-zA-Z0-9]+
+
+def lex(s)
+  #s.split(/([!\-{}])|\s/).compact.select{|x| x != "" } + [:EOF]
+  s.split(/(!|\{|\})|\s/).map {|x|
+    x.split(/(\A-)/)
+  }.flatten.select {|x| x != "" } + [:EOF]
+end
+
+def parse_error(s)
+  abort "Parse error: '#{s}'"
+end
+
+def consume(a, x)
+  s = a.shift
+  parse_error s unless s == x 
+end
+
+def parse(a)
+  case a[0];
+  when :EOF; [:true]
+  else e = parse_or(a); consume(a, :EOF); e
+  end
+end
+
+def parse_or(a)
+  e = parse_and(a)
+  case a[0];
+  when "or", "OR"; a.shift; [:or, e, parse_or(a)] 
+  when "}", :EOF; e
+  else parse_error a[0]
+  end
+end
+
+def parse_and(a)
+  e = parse_not(a)
+  case a[0]
+  when "or", "OR", "}", :EOF; e
+  else [:and, e, parse_and(a)]
+  end
+end
+
+def parse_not(a)
+  case a[0]
+  when "!", "-"; a.shift; [:not, parse_not(a)] 
+  when "{"; a.shift; e = parse_or(a); consume(a, "}"); e
+  when :EOF, "or", "OR", "true", "TRUE", "}"; parse_error a[0]
+  else parse_literal(a)
+  end
+end
+
+def parse_literal(a)
+  s = a.shift
+  if s.to_i.to_s == s then
+    [:id, s]
+  elsif s =~ /^(\d+)\.\.(\d+)$/
+    [:ids, ($1.to_i..$2.to_i).map {|i| i.to_s}]
+  elsif s =~ /^\.\.(\d+)$/
+    [:ids, (0..$1.to_i).map {|i| i.to_s}]
+  elsif s =~ /^(\d+)\.\.$/
+    [:ids, ($1.to_i..all_files.length).map {|i| i.to_s}]
+  elsif s =~ /^limit:(\d+)$/
+    $limit = $1.to_i
+    $seed = nil
+    [:true]
+  elsif s =~ /^limit:(\d+),(\d+)$/
+    $limit = $1.to_i
+    $seed = $2.to_i
+    [:true]
+  else
+    [:tag, s]
+  end
+end
+
+
+# Evaluation of queries
+
+def load_tag(tag)
+  begin
+    all_files & IO.readlines("#{$tagdir}/#{tag}.tag").map {|s| s.strip }
+  rescue
+    []
+  end
+end
+
+def all_files
+  Dir.chdir($path) { Dir.glob(PROBLEMS) }
+end
+
+def load_ids(ids)
+  begin
+    all_files.select {|file| ids.include?(File.basename(file, ".*")) } 
+  rescue
+   []
+  end
+end
+
+def match(q)
+  case q[0]
+  when :true; all_files
+  when :tag;  load_tag(q[1])
+  when :id;   load_ids([q[1]])
+  when :ids;  load_ids(q[1])
+  when :not;  all_files - match(q[1])
+  when :and;  match(q[1]) & match(q[2])
+  when :or;   match(q[1]) | match(q[2])
+  else error "Failed to interpret the query."
+  end
+end
+
+# For tag files.
+
+def save_tag(tag, files)
+  Dir.mkdir($tagdir) unless File.exist?($tagdir)
+  File.umask(0003)
+  File.open("#{$tagdir}/#{tag}.tag", 'w+') {|f| f.puts natsort(files.uniq) }
+end
+
+def add_tags(tags, file)
+  for tag in tags
+    save_tag(tag, load_tag(tag) | [file])
+  end
+end
+
+def remove_tags(tags, file)
+  for tag in tags
+    save_tag(tag, load_tag(tag) - [file])
+  end
+end
+
+# Main routine
+
+USAGE = <<EOS
+Usage:
+  cops [option] [QUERY]..                List all TRSs that match <QUERY>.
+  cops [option] --add    [TAG].. <FILE>  Set tags to <FILE>.
+  cops [option] --remove [TAG].. <FILE>  Unset tags to <FILE>.
+  cops [option] --tags <FILE>            List all tags of <FILE>
+
+Option:
+  --path <PATH>  A path to a directory of TRS files.
+
+Examples:
+  cops non_left_linear '!terminating'
+  cops '!{left_linear OR terminating}' 
+  cops '1..200 !ground'
+  cops --add ground left_linear linear 1.trs
+  cops --remove ground left_linear linear 1.trs
+  cops --tags 1.trs
+EOS
+
+opt = OptionParser.new
+command = nil
+opt.on('--path PATH') {|v| set_path(v) }
+opt.on('--add')       {|v| command = '--add' }
+opt.on('--remove')    {|v| command = '--remove' }
+opt.on('--tags')      {|v| command = '--tags' }
+opt.on('--help')      {|v| command = '--help' }
+opt.on('-help')       {|v| command = '--help' }
+opt.on('-h')          {|v| command = '--help' }
+args = opt.parse(ARGV)
+
+case command
+when "--help"
+  puts USAGE
+
+when "--add", "--remove"
+  abort USAGE unless args.length >= 1
+  tags = args[0..-2]
+  file = args[-1]
+  case command
+  when "--add"
+    unless Dir.chdir($path) { FileTest.exist?(file) }
+      abort "Error: The file '#{file}' does not exist'."
+    end
+    add_tags(tags, file)
+  when "--remove"
+    remove_tags(tags, file)
+  end
+
+when "--tags"
+  abort USAGE unless args.length == 1
+  file = args[0]
+  tags = []
+  for path in Dir.glob("#{$tagdir}/*.tag")
+    tag = File.basename(path, ".tag")
+    tags.push tag if load_tag(tag).include?(file)
+  end
+  puts tags.sort
+
+else # cops [QUERY]
+  a = natsort(match(parse(lex(args.join(" ")))))
+  if $limit
+    puts limit(a.length, $limit, $seed).map {|i| a[i] }
+  else
+    puts a
+  end
+end

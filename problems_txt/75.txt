@@ -1,0 +1,10 @@
+(VAR x)
+(RULES
+  f(x) -> x
+  f(x) -> f(f(x))
+)
+(COMMENT
+doi:10.1007/BFb0052357
+[21] TRS R_3
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

@@ -1,0 +1,12 @@
+(VAR x)
+(RULES
+  b(w(x)) -> w(w(w(b(x))))
+  w(b(x)) -> b(x)
+  b(b(x)) -> w(w(w(w(x))))
+  w(w(x)) -> w(x)
+)
+(COMMENT
+doi:10.1007/978-1-4757-3661-8
+[18] Exercise 4.2.2
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

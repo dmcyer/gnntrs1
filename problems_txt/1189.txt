@@ -1,0 +1,42 @@
+(VAR I P V V1 V2 X Y Z)
+(REPLACEMENT-MAP
+  (U11 1) (U21 1) (U22 1) (U31 1) (U41 1) (U42 1)
+  (U51 1) (U52 1) (U61 1) (U71 1) (U72 1) (U81 1)
+  (__ 1, 2) (isList) (isNeList) (isNePal) (isPal)
+  (isQid) (a) (e) (i) (nil) (o) (tt) (u)
+)
+(RULES
+  U11(tt) -> tt
+  U21(tt,V2) -> U22(isList(V2))
+  U22(tt) -> tt
+  U31(tt) -> tt
+  U41(tt,V2) -> U42(isNeList(V2))
+  U42(tt) -> tt
+  U51(tt,V2) -> U52(isList(V2))
+  U52(tt) -> tt
+  U61(tt) -> tt
+  U71(tt,P) -> U72(isPal(P))
+  U72(tt) -> tt
+  U81(tt) -> tt
+  __(__(X,Y),Z) -> __(X,__(Y,Z))
+  __(nil,X) -> X
+  __(X,nil) -> X
+  isList(__(V1,V2)) -> U21(isList(V1),V2)
+  isList(nil) -> tt
+  isList(V) -> U11(isNeList(V))
+  isNeList(__(V1,V2)) -> U41(isList(V1),V2)
+  isNeList(__(V1,V2)) -> U51(isNeList(V1),V2)
+  isNeList(V) -> U31(isQid(V))
+  isNePal(__(I,__(P,I))) -> U71(isQid(I),P)
+  isNePal(V) -> U61(isQid(V))
+  isPal(nil) -> tt
+  isPal(V) -> U81(isNePal(V))
+  isQid(a) -> tt
+  isQid(e) -> tt
+  isQid(i) -> tt
+  isQid(o) -> tt
+  isQid(u) -> tt
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/PALINDROME_nokinds-noand
+)

@@ -1,0 +1,13 @@
+(VAR x y)
+(RULES
+  nats -> :(0,inc(nats))
+  inc(:(x,y)) -> :(s(x),inc(y))
+  hd(:(x,y)) -> x
+  tl(:(x,y)) -> y
+  inc(tl(nats)) -> tl(inc(nats))
+)
+(COMMENT
+doi:10.1007/11805618_6
+[7] Example 2
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

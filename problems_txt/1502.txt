@@ -1,0 +1,32 @@
+(CONDITIONTYPE ORIENTED)
+(VAR v x y z ws xs ys zs)
+(REPLACEMENT-MAP
+  (add)
+  (del)
+  (ssp')
+  (subseteq_m)
+  (sum)
+  (0)
+  (cons)
+  (nil)
+  (none)
+  (s)
+  (some)
+  (tt)
+)
+(RULES
+  add(x,0) -> x
+  add(x,s(y)) -> s(z) | add(x,y) == z
+  del(x,cons(x,ys)) -> some(ys)
+  del(x,cons(y,ys)) -> some(cons(y,zs)) | del(x,ys) == some(zs)
+  del(x,nil) -> none
+  ssp'(xs,v) -> ys | subseteq_m(ys,xs) == tt, sum(ys) == v
+  subseteq_m(cons(x,xs),ys) -> z | del(x,ys) == some(ws), subseteq_m(xs,ws) == z
+  subseteq_m(nil,ys) -> tt
+  sum(nil) -> 0
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #352
+bottom replacement map
+)

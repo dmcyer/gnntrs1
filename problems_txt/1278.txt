@@ -1,0 +1,9 @@
+(PROBLEM INFEASIBILITY)
+(COPS 1651)
+(VAR x)
+(CONDITION
+  f(g(h(x))) == g(f(g(h(x))))
+)
+(COMMENT
+submitted by: Akihisa Yamada
+)

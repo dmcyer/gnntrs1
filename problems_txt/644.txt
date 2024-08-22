@@ -1,0 +1,20 @@
+(SIG
+   (max      Nat Nat -> Nat)
+   (s        Nat -> Nat)
+   (0        -> Nat)
+   (node     Tree Tree -> Tree)
+   (leaf     -> Tree)
+   (height   Tree -> Nat)
+)
+(RULES
+   node(x,y) -> node(y,x)
+   max(x,0) -> x
+   max(0,y) -> y
+   max(s(x),s(y)) -> s(max(x,y))
+   height(leaf) -> 0
+   height(node(x,y)) -> s(max(height(x),height(y)))
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

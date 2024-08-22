@@ -1,0 +1,20 @@
+(VAR X Y Z)
+(REPLACEMENT-MAP
+  (first 1, 2)
+  (from 1)
+  (sel 1, 2)
+  (0)
+  (cons 1)
+  (nil)
+  (s 1)
+)
+(RULES
+  first(0,Z) -> nil
+  first(s(X),cons(Y,Z)) -> cons(Y,first(X,Z))
+  from(X) -> cons(X,from(s(X)))
+  sel(0,cons(X,Z)) -> X
+  sel(s(X),cons(Y,Z)) -> sel(X,Z)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex1_Luc02b
+)

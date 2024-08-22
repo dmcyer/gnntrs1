@@ -1,0 +1,20 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (add 2)
+  (isTwoThird)
+  (oneThird)
+  (0)
+  (s)
+)
+(RULES
+  add(x,0) -> x
+  add(x,s(y)) -> s(z) | add(x,y) == z
+  isTwoThird(y,z) -> x | add(x,x) == y, add(x,y) == z
+  oneThird(z) -> x | add(x,x) == y, add(x,y) == z
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #346
+canonical replacement map
+)

@@ -1,0 +1,22 @@
+(VAR x)
+(REPLACEMENT-MAP
+  (a)
+  (b)
+  (d)
+  (f)
+  (c)
+)
+(RULES
+  a -> c
+  b -> c
+  d -> f(a,c)
+  d -> f(c,b)
+  f(a,b) -> d
+  f(c,x) -> f(c,c)
+  f(x,c) -> f(c,c)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #74
+bottom replacement map
+)

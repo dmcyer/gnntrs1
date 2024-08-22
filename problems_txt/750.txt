@@ -1,0 +1,36 @@
+(FUN
+  abs : (a -> b) -> ab
+  app : ab -> a -> b
+  absBG : (BGa -> BGb) -> BGaBGb
+  appBG : BGaBGb -> BGa -> BGb
+  banga : a -> BGa
+  let : BGa -> (a -> BGb) -> BGb
+)
+(VAR
+  M: a -> b
+  N: a
+  S: ab
+  x: a
+  M1: BGa -> BGb
+  N1: BGa
+  S1: BGaBGb
+  x1: BGa
+  L: BGa
+  P: BGaBGb
+  C: BGa -> BGb
+  Q: a -> BGb
+  R: a
+)
+(RULES
+  app(abs(\x.M x), N) -> M N,
+  abs(\x.app(S, x)) -> S,
+  appBG(absBG(\x1.M1 x1), N1) -> M1 N1,
+  absBG(\x1.appBG(S1, x1)) -> S1,
+  let(banga(R), \x.Q x) -> Q R,
+  let(L, \x.C (banga x)) -> C L
+)
+(COMMENT
+doi:10.1007/11805618_13
+[132] Section 3.2 without commuting conversions
+submitted by: Makoto Hamana
+)

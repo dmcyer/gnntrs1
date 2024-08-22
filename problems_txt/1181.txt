@@ -1,0 +1,22 @@
+(VAR x)
+(REPLACEMENT-MAP
+  (*top*_0 1)
+  (f_0 1)
+  (f_1)
+  (g_1)
+  (s_0 1)
+  (a_0)
+  (b_0)
+)
+(RULES
+  *top*_0(g_1(x)) -> *top*_0(f_0(g_1(x)))
+  f_0(g_1(x)) -> f_1(f_0(g_1(x)))
+  f_1(f_0(x)) -> b_0
+  f_1(f_1(x)) -> b_0
+  f_1(g_1(a_0)) -> f_0(s_0(g_1(b_0)))
+  g_1(x) -> f_1(g_1(x))
+  s_0(g_1(x)) -> s_0(f_0(g_1(x)))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Transformed_outermost_08/cariboo_ex3
+)

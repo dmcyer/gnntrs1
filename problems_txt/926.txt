@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 806)
+(VAR x)
+(CONDITION b == x, c == x)
+(COMMENT
+submitted by: Raul Gutierrez and Salvador Lucas
+)

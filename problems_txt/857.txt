@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 335)
+(VAR x4 x3 x2 x1)
+(CONDITION lt(x1,x2) == true, lt(x1,x2) == false, div(m(x1,x2),s(x2)) == pair(x3,x4))
+(COMMENT
+submitted by: Naoki Nishida
+)

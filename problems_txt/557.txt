@@ -1,0 +1,12 @@
+(VAR x y z)
+(SIG (f 2) (a 0) (b 0) (c 0))
+(RULES
+  a -> b
+  f(x,a) -> f(b,b)
+  f(b,x) -> f(b,b)
+  f(f(x,y),z) -> f(b,b)
+)
+(COMMENT
+[111] Example 1 with additional constant c
+submitted by: Franziska Rapp
+)

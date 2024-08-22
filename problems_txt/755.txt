@@ -1,0 +1,25 @@
+(VAR
+  F: N -> N 
+  X: N 
+  Y: N 
+  Z: N 
+  x: VN
+  v: VN -> N
+)
+(FUN
+  o : N
+  s : N -> N
+  fun : (VN -> N) -> N -> N -> N
+  dom : N -> N -> N -> N
+  eval : N -> N -> N
+)
+(RULES
+  eval(fun(\x.F (v x),X,Y),Z) -> F(dom(X,Y,Z)),
+  dom(s(X),s(Y),s(Z)) -> s(dom(X,Y,Z)),
+  dom(o,s(Y),s(Z)) -> s(dom(o,Y,Z)),
+  dom(X,Y,o) -> X,
+  dom(o,o,Z) -> o
+)
+(COMMENT
+submitted by: Makoto Hamana
+)

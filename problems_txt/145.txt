@@ -1,0 +1,13 @@
+(VAR x y z)
+(RULES
+  +(+(x,y),z) -> +(x,+(y,z))
+  +(x,y) -> +(y,x)
+  *(*(x,y),z) -> *(x,*(y,z))
+  *(x,y) -> *(y,x)
+  *(+(x,y),z) -> +(*(x,z),*(y,z))
+  *(x,+(y,z)) -> +(*(x,y),*(x,z))
+)
+(COMMENT
+full experiments for [35]
+submitted by: Takahito Aoto and Yoshihito Toyama
+)

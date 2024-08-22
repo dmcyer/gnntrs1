@@ -1,0 +1,10 @@
+(VAR x y z)
+(RULES
+  f(f(x,y),z) -> f(x,f(y,z))
+  f(x,1) -> x
+)
+(COMMENT
+doi:10.1017/CBO9781139172752
+[4] Exercise 6.5(d)
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

@@ -1,0 +1,10 @@
+(VAR x)
+(RULES
+x -> f(x)
+G(A) -> A
+)
+(COMMENT
+doi:10.1007/978-3-540-71070-7_31
+[78] p. 362 (first item in Section 5.3)
+)
+

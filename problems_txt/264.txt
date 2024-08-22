@@ -1,0 +1,10 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(RULES
+  f(x,x) -> a | g(x) == b
+)
+(COMMENT
+doi:10.1007/978-3-319-08918-8_31
+[46] Example 8
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

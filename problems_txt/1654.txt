@@ -1,0 +1,15 @@
+(VAR x y)
+(RULES
+  f(g(x)) -> h(x,x)
+  g(a) -> b
+  f(x) -> h(x,x)
+  b -> a
+  h(x,y) -> h(g(x), g(y))
+  g(x) -> x
+  a -> b
+)
+(COMMENT
+submitted by: Christina Kohl
+secret problem 2022
+category: TRS
+)

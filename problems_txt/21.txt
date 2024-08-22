@@ -1,0 +1,14 @@
+(VAR )
+(RULES
+  b -> a
+  b -> c
+  c -> h(b)
+  c -> d
+  a -> h(a)
+  d -> h(d)
+)
+(COMMENT
+doi:10.1007/11805618_6
+[7] Example 3
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

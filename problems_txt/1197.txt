@@ -1,0 +1,82 @@
+(VAR IL L M N V V1 V2)
+(REPLACEMENT-MAP
+  (U101 1) (U102 1) (U103 1) (U104 1) (U105 1) (U106 1) (U11 1) (U111 1)
+  (U112 1) (U113 1) (U114 1) (U12 1) (U121 1) (U122 1) (U13 1) (U131 1)
+  (U132 1) (U133 1) (U134 1) (U135 1) (U136 1) (U21 1) (U22 1) (U23 1)
+  (U31 1) (U32 1) (U33 1) (U41 1) (U42 1) (U43 1) (U44 1) (U45 1)
+  (U46 1) (U51 1) (U52 1) (U61 1) (U62 1) (U71 1) (U81 1) (U91 1)
+  (U92 1) (U93 1) (U94 1) (U95 1) (U96 1)
+  (isNat) (isNatIList) (isNatIListKind) (isNatKind) (isNatList)
+  (length 1) (take 1, 2) (zeros) (0) (cons 1) (nil) (s 1) (tt)
+)
+(RULES
+  U101(tt,V1,V2) -> U102(isNatKind(V1),V1,V2)
+  U102(tt,V1,V2) -> U103(isNatIListKind(V2),V1,V2)
+  U103(tt,V1,V2) -> U104(isNatIListKind(V2),V1,V2)
+  U104(tt,V1,V2) -> U105(isNat(V1),V2)
+  U105(tt,V2) -> U106(isNatIList(V2))
+  U106(tt) -> tt
+  U11(tt,V1) -> U12(isNatIListKind(V1),V1)
+  U111(tt,L,N) -> U112(isNatIListKind(L),L,N)
+  U112(tt,L,N) -> U113(isNat(N),L,N)
+  U113(tt,L,N) -> U114(isNatKind(N),L)
+  U114(tt,L) -> s(length(L))
+  U12(tt,V1) -> U13(isNatList(V1))
+  U121(tt,IL) -> U122(isNatIListKind(IL))
+  U122(tt) -> nil
+  U13(tt) -> tt
+  U131(tt,IL,M,N) -> U132(isNatIListKind(IL),IL,M,N)
+  U132(tt,IL,M,N) -> U133(isNat(M),IL,M,N)
+  U133(tt,IL,M,N) -> U134(isNatKind(M),IL,M,N)
+  U134(tt,IL,M,N) -> U135(isNat(N),IL,M,N)
+  U135(tt,IL,M,N) -> U136(isNatKind(N),IL,M,N)
+  U136(tt,IL,M,N) -> cons(N,take(M,IL))
+  U21(tt,V1) -> U22(isNatKind(V1),V1)
+  U22(tt,V1) -> U23(isNat(V1))
+  U23(tt) -> tt
+  U31(tt,V) -> U32(isNatIListKind(V),V)
+  U32(tt,V) -> U33(isNatList(V))
+  U33(tt) -> tt
+  U41(tt,V1,V2) -> U42(isNatKind(V1),V1,V2)
+  U42(tt,V1,V2) -> U43(isNatIListKind(V2),V1,V2)
+  U43(tt,V1,V2) -> U44(isNatIListKind(V2),V1,V2)
+  U44(tt,V1,V2) -> U45(isNat(V1),V2)
+  U45(tt,V2) -> U46(isNatIList(V2))
+  U46(tt) -> tt
+  U51(tt,V2) -> U52(isNatIListKind(V2))
+  U52(tt) -> tt
+  U61(tt,V2) -> U62(isNatIListKind(V2))
+  U62(tt) -> tt
+  U71(tt) -> tt
+  U81(tt) -> tt
+  U91(tt,V1,V2) -> U92(isNatKind(V1),V1,V2)
+  U92(tt,V1,V2) -> U93(isNatIListKind(V2),V1,V2)
+  U93(tt,V1,V2) -> U94(isNatIListKind(V2),V1,V2)
+  U94(tt,V1,V2) -> U95(isNat(V1),V2)
+  U95(tt,V2) -> U96(isNatList(V2))
+  U96(tt) -> tt
+  isNat(length(V1)) -> U11(isNatIListKind(V1),V1)
+  isNat(0) -> tt
+  isNat(s(V1)) -> U21(isNatKind(V1),V1)
+  isNatIList(zeros) -> tt
+  isNatIList(cons(V1,V2)) -> U41(isNatKind(V1),V1,V2)
+  isNatIList(V) -> U31(isNatIListKind(V),V)
+  isNatIListKind(take(V1,V2)) -> U61(isNatKind(V1),V2)
+  isNatIListKind(zeros) -> tt
+  isNatIListKind(cons(V1,V2)) -> U51(isNatKind(V1),V2)
+  isNatIListKind(nil) -> tt
+  isNatKind(length(V1)) -> U71(isNatIListKind(V1))
+  isNatKind(0) -> tt
+  isNatKind(s(V1)) -> U81(isNatKind(V1))
+  isNatList(take(V1,V2)) -> U101(isNatKind(V1),V1,V2)
+  isNatList(cons(V1,V2)) -> U91(isNatKind(V1),V1,V2)
+  isNatList(nil) -> tt
+  length(cons(N,L)) -> U111(isNatList(L),L,N)
+  length(nil) -> 0
+  take(0,IL) -> U121(isNatIList(IL),IL)
+  take(s(M),cons(N,IL)) -> U131(isNatIList(IL),IL,M,N)
+  zeros -> cons(0,zeros)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/OvConsOS_complete-noand
+)

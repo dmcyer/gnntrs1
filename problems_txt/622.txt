@@ -1,0 +1,22 @@
+(SIG
+   (len     List -> Nat)
+   (round   List -> List)
+   (app     List List -> List)
+   (cons    Nat List -> List)
+   (nil     -> List)
+   (s       Nat -> Nat)
+   (0       -> Nat)
+)
+(RULES
+   len(nil) -> 0
+   len(cons(x,xs)) -> s(len(xs))
+   round(nil) -> nil
+   round(cons(x,xs)) -> app(xs,cons(x,nil))
+   app(nil,ys) -> ys
+   app(cons(x,xs),ys) -> cons(x,app(xs,ys))
+   len(round(xs)) -> len(xs)
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

@@ -1,0 +1,12 @@
+(VAR y x)
+(RULES
+   plus(0,y) -> y
+   plus(s(x),y) -> s(plus(x,y))
+   qplus(0,y) -> y
+   qplus(s(x),y) -> qplus(x,s(y))
+   plus(x,y) -> qplus(x,y)
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

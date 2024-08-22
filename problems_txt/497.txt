@@ -1,0 +1,10 @@
+(VAR x)
+(RULES
+  d(x,x) -> 0
+  f(x) -> d(x,f(x))
+  c -> f(c)
+)
+(COMMENT
+doi:10.4230/LIPIcs.CSL.2015.423
+[102] Example 37
+)

@@ -1,0 +1,6 @@
+(PROBLEM INFEASIBILITY)
+(COPS 355)
+(CONDITION a == b)
+(COMMENT
+submitted by: Florian Messner
+)

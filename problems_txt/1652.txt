@@ -1,0 +1,11 @@
+(VAR x y)
+(RULES
+  g(g(g(c,d),g(b,e)),b) -> a
+  g(a,y) -> g(b,b)
+  g(x,y) -> g(y,x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+secret problem 2022
+category: TRS
+)

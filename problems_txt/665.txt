@@ -1,0 +1,12 @@
+(RULES
+  a -> f(b)
+  h(b,f(c)) -> c
+  b -> f(b)
+  b -> f(c)
+  h(c,c) -> c
+)
+(COMMENT
+Cops #647 - #721: generated ground TRSs; evenly distributed in the
+UNR/UNC/NFP/CR hierarchy
+submitted by: Bertram Felgenhauer
+)

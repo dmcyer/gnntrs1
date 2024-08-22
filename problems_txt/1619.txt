@@ -1,0 +1,25 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y xs)
+(REPLACEMENT-MAP
+  (le 1, 2)
+  (min 1)
+  (0)
+  (cons 2)
+  (false)
+  (nil)
+  (s)
+  (true)
+)
+(RULES
+  le(0,s(y)) -> true
+  le(s(x),s(y)) -> le(x,y)
+  le(x,0) -> false
+  min(cons(x,nil)) -> x
+  min(cons(x,xs)) -> x | min(xs) == y, le(x,y) == true
+  min(cons(x,xs)) -> y | min(xs) == y, le(x,y) == false
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #551
+canonical replacement map
+)

@@ -1,0 +1,14 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(RULES
+  e(0) -> true
+  e(s(x)) -> true  | o(x) == true
+  e(s(x)) -> false | e(x) == true
+  o(0) -> false
+  o(s(x)) -> true  | e(x) == true
+  o(s(x)) -> false | o(x) == true
+)
+(COMMENT
+[79] Example 8; correction of Cops #404
+submitted by: Thomas Sternagel
+)

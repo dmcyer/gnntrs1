@@ -1,0 +1,26 @@
+(VAR x)
+(REPLACEMENT-MAP
+  (a)
+  (b)
+  (c)
+  (d)
+  (g)
+  (h)
+  (e)
+)
+(RULES
+  a -> b
+  a -> c
+  a -> e
+  b -> d
+  c -> a
+  d -> a
+  d -> e
+  g(x) -> h(a)
+  h(x) -> e
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #11
+bottom replacement map
+)

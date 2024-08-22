@@ -1,0 +1,13 @@
+(VAR x y z)
+(RULES
+  Ap(Ap(Ap(S,x),y),z) -> Ap(Ap(x,z),Ap(y,z))
+  Ap(Ap(K,x),y) -> x
+  Ap(I,x) -> x
+  B(true,x,y) -> x
+  B(false,x,y) -> y
+  B(z,x,x) -> x
+)
+(COMMENT
+[14] p. 246
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

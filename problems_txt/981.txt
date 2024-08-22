@@ -1,0 +1,9 @@
+(VAR x)
+(RULES
+  a(a(x)) -> a(b(b(c(x))))
+  b(a(x)) -> x
+  c(b(x)) -> a(c(x))
+)
+(COMMENT
+TPDB SRS_Standard/Waldmann_07_size12/size-12-alpha-3-num-478
+)

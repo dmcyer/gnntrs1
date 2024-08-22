@@ -1,0 +1,15 @@
+(VAR x y z)
+(RULES
+   +(x,y) -> if(y,x,s(+(x,-(y,s(0)))))
+   +(x,y) -> +(y,x)
+   if(0,y,z) -> y
+   if(s(x),y,z) -> z
+   if(x,y,y) -> y
+   -(x,0) -> x
+   -(0,s(y)) -> 0
+   -(s(x),s(y)) -> -(x,y)
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

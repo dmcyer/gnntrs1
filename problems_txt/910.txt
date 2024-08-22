@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 257)
+(VAR x)
+(CONDITION h(f(c,d),d) == x, f(c,d) == x)
+(COMMENT
+submitted by: Raul Gutierrez and Salvador Lucas
+)

@@ -1,0 +1,10 @@
+(VAR x y)
+(RULES
+  -(0, x) -> 0 
+  -(x, 0) -> x
+  -(s(x), s(y)) -> -(x, y)
+)
+(COMMENT
+submitted by: Yusuke Oi
+used by secret problem 2019 COPS #1128
+)

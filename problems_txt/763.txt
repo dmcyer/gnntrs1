@@ -1,0 +1,8 @@
+(VAR x)
+(RULES
+  f(f(x)) -> f(g(f(x),f(x)))
+)
+(COMMENT
+[130] Example 4.24
+submitted by: Julian Nagele
+)

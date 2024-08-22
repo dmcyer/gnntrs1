@@ -1,0 +1,10 @@
+(VAR x y z)
+(RULES
+  join(x,x) -> x
+  join(x,y) -> join(y,x)
+  join(join(x,y),z) -> join(x,join(y,z))
+)
+(COMMENT
+full experiments for [35]
+submitted by: Takahito Aoto and Yoshihito Toyama
+)

@@ -1,0 +1,11 @@
+(VAR y x)
+(RULES
+   +(0,y) -> y
+   +(s(0),y) -> s(y)
+   s(s(x)) -> x
+)
+(COMMENT
+doi:10.4230/LIPIcs.FSCD.2016.33
+[36] Example 11
+submitted by: Takahito Aoto
+)

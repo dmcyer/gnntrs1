@@ -1,0 +1,39 @@
+(SIG
+   (ordered   List -> Bool)
+   (leList    Nat List -> Bool)
+   (le        Nat Nat -> Bool)
+   (sort      List -> List)
+   (insert    Nat List -> List)
+   (if        Bool List List -> List)
+   (and       Bool Bool -> Bool)
+   (cons      Nat List -> List)
+   (true      -> Bool)
+   (false     -> Bool)
+   (nil       -> List)
+   (s         Nat -> Nat)
+   (0         -> Nat)
+)
+(RULES
+   ordered(nil) -> true
+   ordered(cons(x,ys)) -> and(leList(x,ys),ordered(ys))
+   leList(x,nil) -> true
+   leList(x,cons(y,ys)) -> and(le(x,y),leList(x,ys))
+   le(0,y) -> true
+   le(s(x),0) -> false
+   le(s(x),s(y)) -> le(x,y)
+   and(true,true) -> true
+   and(x,true) -> x
+   and(true,y) -> y
+   and(false,false) -> false
+   sort(nil) -> nil
+   sort(cons(x,ys)) -> insert(x,sort(ys))
+   insert(x,nil) -> cons(x,nil)
+   insert(x,cons(y,ys)) -> if(le(x,y),cons(x,cons(y,ys)),cons(y,insert(x,ys)))
+   if(true,y,z) -> y
+   if(false,y,z) -> z
+   ordered(sort(xs)) -> true
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

@@ -1,0 +1,30 @@
+(FUN
+  case : SAB -> (A -> C) -> (B -> C) -> C
+  inl : A -> SAB
+  inr : B -> SAB
+  f: A
+  a: A
+  b: A
+)
+(VAR
+  x: A
+  y: B
+  X: A
+  Y: B
+  Z: SAB
+  F: A -> C
+  G: B -> C
+  H: SAB -> C
+)
+(RULES
+  case(inl(X), \x.F x , \y.G y ) -> F X ,
+  case(inr(Y), \x.F x , \y.G y ) -> G Y,
+  case(Z,\x.H (inl x), \y.H (inr y)) -> H Z,
+  f -> a,
+  f -> b
+)
+(COMMENT
+doi:10.1007/3-540-58233-9_14
+[134] Section 6.3 (variant)
+submitted by: Makoto Hamana
+)

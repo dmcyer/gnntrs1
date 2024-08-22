@@ -1,0 +1,20 @@
+(VAR L N X)
+(REPLACEMENT-MAP
+  (and 1)
+  (length 1)
+  (zeros)
+  (0)
+  (cons 1)
+  (nil)
+  (s 1)
+  (tt)
+)
+(RULES
+  and(tt,X) -> X
+  length(cons(N,L)) -> s(length(L))
+  length(nil) -> 0
+  zeros -> cons(0,zeros)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/LengthOfFiniteLists_nosorts
+)

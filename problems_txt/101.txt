@@ -1,0 +1,8 @@
+(VAR x)
+(RULES
+  F(x,x) -> G(x)
+  A -> B
+)
+(COMMENT
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

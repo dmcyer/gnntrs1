@@ -1,0 +1,19 @@
+(FUN 
+  abs : (term -> term) -> term
+  app : term -> term -> term
+  Dh: term
+)
+(VAR
+  x : term
+  S : term
+  F : term -> term
+  z : term
+)
+(RULES
+  app(abs(\x.F x),S) -> F(S),
+  app(app(Dh,z),z) -> z
+)
+(COMMENT 
+[14] p. 197; attributed to Roger Hindley, see also [157, Problem I.1]
+submitted by Aart Middeldorp
+)

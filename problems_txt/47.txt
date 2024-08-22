@@ -1,0 +1,11 @@
+(VAR x)
+(RULES
+  F(x,x) -> A
+  G(x) -> F(x,G(x))
+  C -> G(C)
+)
+(COMMENT
+doi:10.1145/322217.322230
+[12] p. 813, attributed to Barendregt
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

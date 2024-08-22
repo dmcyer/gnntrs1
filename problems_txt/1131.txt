@@ -1,0 +1,13 @@
+(VAR x)
+(RULES
+  b(x) -> b(a(b(x)))
+  a(x) -> c(a(a(x)))
+  b(x) -> a(c(a(x)))
+  c(x) -> c(a(c(x)))
+  b(x) -> a(c(b(x)))
+)
+(COMMENT
+submitted by: Johannes Waldmann
+secret problem 2019
+category: SRS
+)

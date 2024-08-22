@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 1140)
+(VAR x y)
+(CONDITION f(k(b), x) == g(h(a), y))
+(COMMENT
+submitted by: Florian Messner
+)

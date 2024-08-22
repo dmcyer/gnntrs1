@@ -1,0 +1,15 @@
+(VAR x y z)
+(RULES
+  +(x,0)  -> x
+  +(x,s(y))  -> s(+(x,y))
+  +(0,y)  -> y
+  +(s(x),y)  -> s(+(x,y))
+  +(+(x,y),z) -> +(x,+(y,z))
+  +(x,y) -> + (y,x)
+  s(s(x)) -> s(x)
+  s(x) -> s(s(x))
+)
+(COMMENT
+doi:10.2168/LMCS-8(1:31)2012
+[35] Example 3.34 (R_5)
+)

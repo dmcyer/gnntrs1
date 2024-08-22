@@ -1,0 +1,50 @@
+(VAR N V1 V2 X XS Y YS ZS)
+(REPLACEMENT-MAP
+  (U101 1) (U11 1) (U21 1) (U31 1) (U41 1) (U51 1)
+  (U61 1) (U71 1) (U81 1) (U82 1) (U91 1)
+  (afterNth 1, 2) (and 1) (fst 1) (head 1) (isLNat)
+  (isNatural) (isPLNat) (natsFrom 1) (sel 1, 2) (snd 1)
+  (splitAt 1, 2) (tail 1) (take 1, 2) (0) (cons 1)
+  (nil) (pair 1, 2) (s 1) (tt)
+)
+(RULES
+  U101(tt,N,XS) -> fst(splitAt(N,XS))
+  U11(tt,N,XS) -> snd(splitAt(N,XS))
+  U21(tt,X) -> X
+  U31(tt,N) -> N
+  U41(tt,N) -> cons(N,natsFrom(s(N)))
+  U51(tt,N,XS) -> head(afterNth(N,XS))
+  U61(tt,Y) -> Y
+  U71(tt,XS) -> pair(nil,XS)
+  U81(tt,N,X,XS) -> U82(splitAt(N,XS),X)
+  U82(pair(YS,ZS),X) -> pair(cons(X,YS),ZS)
+  U91(tt,XS) -> XS
+  afterNth(N,XS) -> U11(and(isNatural(N),isLNat(XS)),N,XS)
+  and(tt,X) -> X
+  fst(pair(X,Y)) -> U21(and(isLNat(X),isLNat(Y)),X)
+  head(cons(N,XS)) -> U31(and(isNatural(N),isLNat(XS)),N)
+  isLNat(afterNth(V1,V2)) -> and(isNatural(V1),isLNat(V2))
+  isLNat(fst(V1)) -> isPLNat(V1)
+  isLNat(natsFrom(V1)) -> isNatural(V1)
+  isLNat(snd(V1)) -> isPLNat(V1)
+  isLNat(tail(V1)) -> isLNat(V1)
+  isLNat(take(V1,V2)) -> and(isNatural(V1),isLNat(V2))
+  isLNat(cons(V1,V2)) -> and(isNatural(V1),isLNat(V2))
+  isLNat(nil) -> tt
+  isNatural(head(V1)) -> isLNat(V1)
+  isNatural(sel(V1,V2)) -> and(isNatural(V1),isLNat(V2))
+  isNatural(0) -> tt
+  isNatural(s(V1)) -> isNatural(V1)
+  isPLNat(splitAt(V1,V2)) -> and(isNatural(V1),isLNat(V2))
+  isPLNat(pair(V1,V2)) -> and(isLNat(V1),isLNat(V2))
+  natsFrom(N) -> U41(isNatural(N),N)
+  sel(N,XS) -> U51(and(isNatural(N),isLNat(XS)),N,XS)
+  snd(pair(X,Y)) -> U61(and(isLNat(X),isLNat(Y)),Y)
+  splitAt(0,XS) -> U71(isLNat(XS),XS)
+  splitAt(s(N),cons(X,XS)) -> U81(and(isNatural(N),and(isNatural(X),isLNat(XS))),N,X,XS)
+  tail(cons(N,XS)) -> U91(and(isNatural(N),isLNat(XS)),XS)
+  take(N,XS) -> U101(and(isNatural(N),isLNat(XS)),N,XS)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/LISTUTILITIES_nokinds
+)

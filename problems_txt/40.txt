@@ -1,0 +1,13 @@
+(VAR )
+(RULES
+  f(a) -> b
+  f(a) -> f(c)
+  a -> d
+  f(d) -> b
+  f(c) -> b
+  d -> c
+)
+(COMMENT
+[11] Example 3.4.23
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

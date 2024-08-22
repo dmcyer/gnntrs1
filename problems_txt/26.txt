@@ -1,0 +1,10 @@
+(VAR x)
+(RULES
+  f(g(x),x) -> a
+  c -> h(c,g(c))
+  h(x,g(x)) -> f(g(x),h(x,g(c)))
+)
+(COMMENT
+[8] TRS R_6
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

@@ -1,0 +1,6 @@
+(PROBLEM INFEASIBILITY)
+(COPS 797)
+(CONDITION f(a,c) == a)
+(COMMENT 
+submitted by: Raul Gutierrez and Salvador Lucas
+)

@@ -1,0 +1,9 @@
+(VAR x)
+(RULES
+  f(f(x)) -> g(x)
+)
+(COMMENT
+doi:10.1017/CBO9781139172752
+[4] Example 6.2.7
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

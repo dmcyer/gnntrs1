@@ -1,0 +1,19 @@
+(VAR x xs)
+(REPLACEMENT-MAP
+  (cons_1)
+  (from_1)
+  (from_2)
+  (from_3)
+  (cons_0 1, 2)
+  (overflow_0)
+  (s_0 1)
+)
+(RULES
+  cons_1(s_0(x),xs) -> overflow_0
+  from_1(x) -> cons_0(x,from_3(s_0(x)))
+  from_2(x) -> cons_0(x,from_3(s_0(x)))
+  from_3(x) -> cons_1(x,from_3(s_0(x)))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Transformed_outermost_08/ex5.3
+)

@@ -1,0 +1,13 @@
+(VAR x)
+(RULES
+  -(+(x,-(x))) -> 0
+  +(x,-(x)) -> 0
+  -(+(0,0)) -> 0
+  +(0,0) -> 0
+  -(0) -> 0
+)
+(COMMENT
+doi:10.1007/s00200-004-0148-6
+[9] Example 5
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

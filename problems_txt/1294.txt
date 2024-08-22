@@ -1,0 +1,11 @@
+(CONDITIONTYPE ORIENTED)
+(VAR )
+(RULES
+  a -> b | b == a
+  a -> g(b) | b == a
+  b -> a
+  f(a) -> a
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+)

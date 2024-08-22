@@ -1,0 +1,27 @@
+(FUN
+  app : arrab -> a -> b
+  lam : (Va -> b) -> arrab
+  var : Va -> a
+  pia : prodab -> a
+  pib : prodab -> b
+  pair : a -> b -> prodab
+)
+(VAR
+  x : Va
+  M : a -> b
+  N : a
+  L : arrab
+  M1 : a
+  N1 : b
+  M2 : prodab
+)
+(RULES
+  app(lam(\x.M (var x)), N) -> M N,
+  lam(\x.app(L, (var x))) -> L,
+  pia(pair(M1,N1)) -> M1,
+  pib(pair(M1,N1)) -> N1
+)
+(COMMENT
+simply-typed lambda calculus with binary products in the style of [137,138]
+submitted by: Makoto Hamana
+)

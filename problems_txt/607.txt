@@ -1,0 +1,25 @@
+(SIG
+   (inc    List -> List)
+   (dec    List -> List)
+   (app    List List -> List)
+   (cons   Nat List -> List)
+   (nil    -> List)
+   (s      Nat -> Nat)
+   (0      -> Nat)
+)
+(RULES
+   inc(nil) -> nil
+   inc(cons(x,xs)) -> cons(s(x),inc(xs))
+   app(nil,ys) -> ys
+   app(cons(x,xs),ys) -> cons(x,app(xs,ys))
+   inc(app(xs,ys)) -> app(inc(xs),inc(ys))
+   dec(nil) -> nil
+   dec(cons(0,xs)) -> cons(0,dec(xs))
+   dec(cons(s(x),xs)) -> cons(x,dec(xs))
+   dec(app(xs,ys)) -> app(dec(xs),dec(ys))
+   dec(inc(xs)) -> xs
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

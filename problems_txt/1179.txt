@@ -1,0 +1,14 @@
+(VAR x)
+(REPLACEMENT-MAP
+  (f_1)
+  (g_1)
+  (a_0)
+)
+(RULES
+  f_1(x) -> g_1(f_1(x))
+  g_1(f_1(x)) -> x
+  g_1(x) -> a_0
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Transformed_outermost_08/cariboo_ex5
+)

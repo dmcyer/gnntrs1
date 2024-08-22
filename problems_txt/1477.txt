@@ -1,0 +1,21 @@
+(CONDITIONTYPE SEMI-EQUATIONAL)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (App)
+  (D)
+  (E)
+  (I)
+  (K)
+  (S)
+)
+(RULES
+  App(App(App(S,x),y),z) -> App(App(x,z),App(y,z))
+  App(App(D,x),y) -> E | x == y
+  App(App(K,x),y) -> x
+  App(I,x) -> x
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #338
+bottom replacement map
+)

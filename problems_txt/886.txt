@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 493)
+(VAR x1 x2)
+(CONDITION lte(x2,x1) == true, lte(x2,x1) == false)
+(COMMENT
+submitted by: Naoki Nishida
+)

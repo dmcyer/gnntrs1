@@ -1,0 +1,17 @@
+(FUN
+  c : v -> a
+  d : v -> a
+  f : (v -> b) -> b
+  0 : b
+)
+(VAR
+  x : v
+  M : a -> b
+)
+(RULES
+  f(\x.M (c(x))) -> 0,
+  f(\x.M (d(x))) -> 0
+)
+(COMMENT
+submitted by: Makoto Hamana
+)

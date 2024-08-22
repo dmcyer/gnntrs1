@@ -1,0 +1,11 @@
+(CONDITIONTYPE SEMI-EQUATIONAL)
+(VAR x y z)
+(RULES
+ f(x,x) -> unit | x == a
+ f(x,unit) -> x
+ f(f(x,y),z) -> f(x,f(y,z))
+)
+(COMMENT
+submitted by: Sarah Winkler
+used by secret problem 2019 COPS #1137
+)

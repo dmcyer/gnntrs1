@@ -1,0 +1,11 @@
+(CONDITIONTYPE ORIENTED)
+(VAR )
+(RULES
+  b -> a
+  a -> b | a == b
+  a -> h(h(h(a))) | b == a
+  h(h(b)) -> a | b == a
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+)

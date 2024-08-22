@@ -1,0 +1,11 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z)
+(RULES
+  add(x, 0) -> x
+  add(x, s(y)) -> s(add(x, y))
+  quad(x) -> z | add(x, x) == y, add(y, y) == z
+)
+(COMMENT
+[75] Example 12
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

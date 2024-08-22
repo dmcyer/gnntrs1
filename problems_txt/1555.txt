@@ -1,0 +1,17 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(REPLACEMENT-MAP
+  (f 1)
+  (g 1)
+  (0)
+  (s)
+)
+(RULES
+  f(g(x)) -> x | x == s(0)
+  g(s(x)) -> g(x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #387
+canonical replacement map
+)

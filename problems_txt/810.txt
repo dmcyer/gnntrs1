@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 279)
+(VAR x2 x1 x6)
+(CONDITION empty(fstsplit(x6,x1)) == false, empty(map_f(two,head(x2))) == true)
+(COMMENT
+submitted by: Naoki Nishida
+)

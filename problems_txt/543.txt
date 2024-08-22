@@ -1,0 +1,10 @@
+(VAR )
+(RULES
+   f(c) -> g(c)
+   g(c) -> f(c)
+      c -> d
+)
+(COMMENT
+[120] Example 1
+submitted by: Aart Middeldorp
+)

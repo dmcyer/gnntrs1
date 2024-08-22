@@ -1,0 +1,21 @@
+(CONDITIONTYPE JOIN)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (App 1)
+  (D)
+  (E)
+  (I)
+  (K)
+  (S)
+)
+(RULES
+  App(App(App(S,x),y),z) -> App(App(x,z),App(y,z))
+  App(App(K,x),y) -> x
+  App(I,x) -> y
+  D(x,y) -> E | x == y
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #265
+canonical replacement map
+)

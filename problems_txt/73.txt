@@ -1,0 +1,15 @@
+(VAR x)
+(RULES
+  f(g(g(x))) -> a
+  f(g(h(x))) -> b
+  f(h(g(x))) -> b
+  f(h(h(x))) -> c
+  g(x) -> h(x)
+  a -> b
+  b -> c
+)
+(COMMENT
+doi:10.1007/BFb0052357
+[21] TRS R_1, attributed to Middeldorp
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

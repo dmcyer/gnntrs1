@@ -1,0 +1,29 @@
+(VAR X Y Z)
+(REPLACEMENT-MAP
+  (filter 1, 2)
+  (from 1)
+  (head 1)
+  (if 1)
+  (primes)
+  (sieve 1)
+  (tail 1)
+  (0)
+  (cons 1)
+  (divides 1, 2)
+  (false)
+  (s 1)
+  (true)
+)
+(RULES
+  filter(s(s(X)),cons(Y,Z)) -> if(divides(s(s(X)),Y),filter(s(s(X)),Z),cons(Y,filter(X,sieve(Y))))
+  from(X) -> cons(X,from(s(X)))
+  head(cons(X,Y)) -> X
+  if(false,X,Y) -> Y
+  if(true,X,Y) -> X
+  primes -> sieve(from(s(s(0))))
+  sieve(cons(X,Y)) -> cons(X,filter(X,sieve(Y)))
+  tail(cons(X,Y)) -> Y
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/ExIntrod_GM99
+)

@@ -1,0 +1,16 @@
+(VAR x y)
+(REPLACEMENT-MAP
+  (+)
+  (0)
+  (s)
+)
+(RULES
+  +(0,y) -> y
+  +(s(x),y) -> s(+(x,y))
+  +(x,y) -> +(y,x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #131
+bottom replacement map
+)

@@ -1,0 +1,12 @@
+(VAR x)
+(RULES
+  f(x,x) -> g(i(b),x)
+  g(x,x) -> f(x,i(a))
+  i(x) -> j(x)
+  a -> b
+)
+(COMMENT
+doi:10.1007/BF01190830
+[30] Example 5.12
+submitted by: Aart Middeldorp
+)

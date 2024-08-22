@@ -1,0 +1,33 @@
+(VAR N X Y Z)
+(REPLACEMENT-MAP
+  (2ndsneg 1, 2)
+  (2ndspos 1, 2)
+  (from 1)
+  (pi 1)
+  (plus 1, 2)
+  (square 1)
+  (times 1, 2)
+  (0)
+  (cons 1)
+  (negrecip 1)
+  (posrecip 1)
+  (rcons 1, 2)
+  (rnil)
+  (s 1)
+)
+(RULES
+  2ndsneg(0,Z) -> rnil
+  2ndsneg(s(N),cons(X,cons(Y,Z))) -> rcons(negrecip(Y),2ndspos(N,Z))
+  2ndspos(0,Z) -> rnil
+  2ndspos(s(N),cons(X,cons(Y,Z))) -> rcons(posrecip(Y),2ndsneg(N,Z))
+  from(X) -> cons(X,from(s(X)))
+  pi(X) -> 2ndspos(X,from(0))
+  plus(0,Y) -> Y
+  plus(s(X),Y) -> s(plus(X,Y))
+  square(X) -> times(X,X)
+  times(0,Y) -> 0
+  times(s(X),Y) -> plus(Y,times(X,Y))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex1_2_AEL03
+)

@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 529)
+(VAR x4 x2 x1)
+(CONDITION 0 == s(x1), mod(0,s(s(0))) == 0, power(x2,div(0,s(s(0)))) == x4)
+(COMMENT
+submitted by: Naoki Nishida
+)

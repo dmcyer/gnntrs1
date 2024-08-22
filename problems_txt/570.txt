@@ -1,0 +1,20 @@
+(SIG
+   (le Nat Nat -> Bool)
+   (true -> Bool)
+   (false -> Bool)
+   (+ Nat Nat -> Nat)
+   (s Nat -> Nat)
+   (0 -> Nat)
+)
+(RULES
+   le(0,x) -> true
+   le(s(x),0) -> false
+   le(s(x),s(y)) -> le(x,y)
+   +(0,y) -> y
+   +(s(x),y) -> s(+(x,y))
+)
+(COMMENT
+doi:10.1016/S0747-7171(89)80069-0
+[124] p.225
+submitted by: anonymous
+)

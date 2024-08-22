@@ -1,0 +1,15 @@
+(VAR x y)
+(RULES
+  +(x,0) -> x
+  +(x,s(y)) -> s(+(x,y))
+  d(0) -> 0
+  d(s(x)) -> s(s(d(x)))
+  f(0) -> 0
+  f(s(x)) -> +(+(s(x),s(x)),s(x))
+  f(g(0)) -> +(+(g(0),g(0)),g(0))
+  g(x) -> s(d(x))
+)
+(COMMENT
+[26] Example 4.2
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

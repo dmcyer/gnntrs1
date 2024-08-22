@@ -1,0 +1,8 @@
+(PROBLEM INFEASIBILITY)
+(COPS 327)
+(VAR x y)
+(CONDITION lt(y,x) == true, lt(x,y) == true)
+(COMMENT 
+[101] Example 6.1 
+submitted by: Raul Gutierrez and Salvador Lucas
+)

@@ -1,0 +1,22 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (double 1)
+  (even)
+  (odd)
+  (0)
+  (ff)
+  (s)
+  (tt)
+)
+(RULES
+  double(0) -> 0
+  double(s(y)) -> s(s(z)) | double(y) == z
+  even(x) -> tt | double(y) == x
+  odd(x) -> ff | double(y) == x
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #349
+canonical replacement map
+)

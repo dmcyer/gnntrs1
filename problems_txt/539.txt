@@ -1,0 +1,19 @@
+(VAR x y z)
+(RULES
+   0(sharp) -> sharp
+   +(x,sharp) -> x
+   +(0(x),0(y)) -> 0(+(x,y))
+   +(0(x),1(y)) -> 1(+(x,y))
+   +(1(x),1(y)) -> j(+(x,+(y,1(sharp))))
+   +(0(x),j(y)) -> j(+(x,y))
+   +(j(x),1(y)) -> 0(+(x,y))
+   +(j(x),j(y)) -> 1(+(x,+(y,j(sharp))))
+   +(x,+(y,z)) -> +(+(x,y),z)
+   +(+(x,y),z) -> +(x,+(y,z))
+   +(x,y) -> +(y,x)
+)
+(COMMENT
+doi:10.1016/j.jsc.2004.02.003
+[116] p. 890 (R_+ union R_int)
+submitted by: Aart Middeldorp
+)

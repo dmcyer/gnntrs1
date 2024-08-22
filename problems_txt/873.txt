@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 403)
+(VAR x1)
+(CONDITION e(x1) == false, e(x1) == true)
+(COMMENT
+submitted by: Naoki Nishida
+)

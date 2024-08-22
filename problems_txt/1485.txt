@@ -1,0 +1,16 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (add 2)
+  (0)
+  (s)
+)
+(RULES
+  add(x,0) -> x
+  add(x,s(y)) -> s(z) | add(x,y) == z
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #343
+canonical replacement map
+)

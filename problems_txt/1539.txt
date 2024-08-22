@@ -1,0 +1,20 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z1 z2 rest)
+(REPLACEMENT-MAP
+  (cons)
+  (orient)
+  (0)
+  (pair)
+  (s)
+)
+(RULES
+  cons(x,cons(x,rest)) -> cons(x,rest)
+  cons(x,cons(y,rest)) -> cons(z1,cons(z2,rest)) | orient(x,y) == pair(z1,z2)
+  orient(s(x),0) -> pair(0,s(x))
+  orient(s(x),s(y)) -> pair(s(z1),s(z2)) | orient(x,y) == pair(z1,z2)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #378
+bottom replacement map
+)

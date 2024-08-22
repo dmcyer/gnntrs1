@@ -1,0 +1,8 @@
+(PROBLEM INFEASIBILITY)
+(COPS 1135)
+(CONDITION a == f(a,a))
+(COMMENT
+submitted by: Sarah Winkler
+secret problem 2019
+category: INF
+)

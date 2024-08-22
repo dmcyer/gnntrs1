@@ -1,0 +1,34 @@
+(VAR N X XS YS ZS)
+(REPLACEMENT-MAP
+  (afterNth 1, 2)
+  (fst 1)
+  (head 1)
+  (natsFrom 1)
+  (sel 1, 2)
+  (snd 1)
+  (splitAt 1, 2)
+  (tail 1)
+  (take 1, 2)
+  (u 1)
+  (0)
+  (cons 1)
+  (nil)
+  (pair 1, 2)
+  (s 1)
+)
+(RULES
+  afterNth(N,XS) -> snd(splitAt(N,XS))
+  fst(pair(XS,YS)) -> XS
+  head(cons(N,XS)) -> N
+  natsFrom(N) -> cons(N,natsFrom(s(N)))
+  sel(N,XS) -> head(afterNth(N,XS))
+  snd(pair(XS,YS)) -> YS
+  splitAt(0,XS) -> pair(nil,XS)
+  splitAt(s(N),cons(X,XS)) -> u(splitAt(N,XS),N,X,XS)
+  tail(cons(N,XS)) -> XS
+  take(N,XS) -> fst(splitAt(N,XS))
+  u(pair(YS,ZS),N,X,XS) -> pair(cons(X,YS),ZS)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/ExSec4_2_DLMMU04
+)

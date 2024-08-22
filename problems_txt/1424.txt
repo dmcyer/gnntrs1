@@ -1,0 +1,20 @@
+(CONDITIONTYPE ORIENTED)
+(VAR W X Y Z)
+(REPLACEMENT-MAP
+  (fib 1)
+  (plus 1)
+  (0)
+  (pair)
+  (s)
+)
+(RULES
+  fib(0) -> pair(s(0),0)
+  fib(s(X)) -> pair(W,Y) | fib(X) == pair(Y,Z), plus(Y,Z) == W
+  plus(0,X) -> X
+  plus(s(X),Y) -> plus(X,s(Y))
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #307
+canonical replacement map
+)

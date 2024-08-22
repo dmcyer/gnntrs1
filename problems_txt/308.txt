@@ -1,0 +1,11 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(RULES
+  not(x) -> false | x == true
+  not(x) -> true | x == false
+)
+(COMMENT
+doi:10.1007/978-3-319-08918-8_31
+[46] p. 462
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

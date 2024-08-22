@@ -1,0 +1,8 @@
+(VAR x)
+(RULES 
+  a(a(x)) -> a(b(a(x)))
+  b(a(b(x))) -> a(c(a(x)))
+)
+(COMMENT
+TPDB SRS_Standard/Mixed_SRS/3
+)

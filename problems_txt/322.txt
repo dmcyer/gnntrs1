@@ -1,0 +1,15 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y ys zs1 zs2)
+(RULES
+  split(x, nil) -> tp2(nil, nil)
+  split(x, cons(y, ys)) -> tp2(zs1, cons(y, zs2)) | split(x, ys) == tp2(zs1, zs2), le(x, y) == true
+  split(x, cons(y, ys)) -> tp2(cons(y, zs1), zs2) | split(x, ys) == tp2(zs1, zs2), le(x, y) == false
+  le(0, y) -> true
+  le(s(x), 0) -> false
+  le(s(x), s(y)) -> le(x, y)
+)
+(COMMENT
+doi:10.2168/LMCS-8(3:4)2012
+[64] Example 4.4 (R_7)
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

@@ -1,0 +1,11 @@
+(VAR x y)
+(RULES
+  F(x,y) -> c(A)
+  G(x)  -> x
+  h(x) -> c(x)
+)
+(COMMENT
+doi:10.1007/BFb0017487
+[19] Example 4.4
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

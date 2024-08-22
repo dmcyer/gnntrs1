@@ -1,0 +1,8 @@
+(PROBLEM INFEASIBILITY)
+(COPS 293)
+(CONDITION b == c)
+(COMMENT
+[155] Example 11
+doi:10.1007/978-3-030-17462-0_15
+submitted by: Florian Messner
+)

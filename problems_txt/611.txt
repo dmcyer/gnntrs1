@@ -1,0 +1,46 @@
+(SIG
+   (ordered   List -> Bool)
+   (leList    Nat List -> Bool)
+   (zero      Nat -> Bool)
+   (prec      Nat -> Nat)
+   (le        Nat Nat -> Bool)
+   (sort      List -> List)
+   (insert    Nat List -> List)
+   (ifBool    Bool Bool Bool -> Bool)
+   (ifList    Bool List List -> List)
+   (and       Bool Bool -> Bool)
+   (cons      Nat List -> List)
+   (true      -> Bool)
+   (false     -> Bool)
+   (nil       -> List)
+   (s         Nat -> Nat)
+   (0         -> Nat)
+)
+(RULES
+   ordered(nil) -> true
+   ordered(cons(x,ys)) -> and(leList(x,ys),ordered(ys))
+   leList(x,nil) -> true
+   leList(x,cons(y,ys)) -> and(le(x,y),leList(x,ys))
+   zero(0) -> true
+   zero(s(x)) -> false
+   prec(0) -> 0
+   prec(s(x)) -> x
+   le(x,y) -> ifBool(zero(x),true,le(prec(x),prec(y)))
+   and(true,true) -> true
+   and(x,true) -> x
+   and(true,y) -> y
+   and(false,false) -> false
+   sort(nil) -> nil
+   sort(cons(x,ys)) -> insert(x,sort(ys))
+   insert(x,nil) -> cons(x,nil)
+   insert(x,cons(y,ys)) -> ifList(le(x,y),cons(x,cons(y,ys)),cons(y,insert(x,ys)))
+   ifBool(true,y,z) -> y
+   ifBool(false,y,z) -> z
+   ifList(true,y,z) -> y
+   ifList(false,y,z) -> z
+   ordered(sort(xs)) -> true
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

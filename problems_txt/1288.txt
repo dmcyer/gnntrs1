@@ -1,0 +1,10 @@
+(CONDITIONTYPE ORIENTED)
+(VAR)
+(RULES
+  h(h(a,a),a) -> f(a)
+  f(a) -> h(a,a) | f(a) == f(a)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+june 2022
+)

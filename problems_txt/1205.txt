@@ -1,0 +1,21 @@
+(VAR M N V1 V2)
+(REPLACEMENT-MAP
+  (U11 1) (U12 1) (U21 1) (U31 1) (U41 1) (U42 1)
+  (isNat) (plus 1, 2) (0) (s 1) (tt)
+)
+(RULES
+  U11(tt,V2) -> U12(isNat(V2))
+  U12(tt) -> tt
+  U21(tt) -> tt
+  U31(tt,N) -> N
+  U41(tt,M,N) -> U42(isNat(N),M,N)
+  U42(tt,M,N) -> s(plus(N,M))
+  isNat(plus(V1,V2)) -> U11(isNat(V1),V2)
+  isNat(0) -> tt
+  isNat(s(V1)) -> U21(isNat(V1))
+  plus(N,0) -> U31(isNat(N),N)
+  plus(N,s(M)) -> U41(isNat(M),M,N)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/MYNAT_nokinds-noand-peanoSimple
+)

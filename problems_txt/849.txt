@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 324)
+(VAR x1)
+(CONDITION eq(even(x1),true) == eq(T,T), eq(even(x1),false) == eq(T,T))
+(COMMENT
+submitted by: Naoki Nishida
+)

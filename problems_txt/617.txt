@@ -1,0 +1,20 @@
+(SIG
+   (le      Nat Nat -> Bool)
+   (if      Bool Nat Nat -> Nat)
+   (true    -> Bool)
+   (false   -> Bool)
+   (s       Nat -> Nat)
+   (0       -> Nat)
+)
+(RULES
+   le(0,y) -> true
+   le(s(x),0) -> false
+   le(s(x),s(y)) -> le(x,y)
+   if(true,x,y) -> x
+   if(false,x,y) -> y
+   if(le(x,y),s(x),s(y)) -> s(if(le(x,y),x,y))
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

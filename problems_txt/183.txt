@@ -1,0 +1,17 @@
+(VAR x y z)
+(RULES
+  +(0,x) -> x
+  +(x,0) -> x
+  +(1,-(1)) -> 0
+  +(-(1),1) -> 0
+  -(0) -> 0
+  -(-(x)) -> x
+  -(+(x,y)) -> +(-(x),-(y))
+  +(+(x,y),z) -> +(x,+(y,z))
+  +(x,y) -> +(y,x)
+)
+(COMMENT
+doi:10.4230/LIPIcs.FSCD.2016.33
+[36] Example 25
+submitted by: Takahito Aoto and Yoshihito Toyama
+)

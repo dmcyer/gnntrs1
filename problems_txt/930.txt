@@ -1,0 +1,8 @@
+(PROBLEM INFEASIBILITY)
+(COPS 361)
+(VAR w x y z)
+(CONDITION leq(x,w) == true, div(m(w,x),x) == pair(y,z), greater(x,w) == true)
+(COMMENT 
+[101] Example 5.1
+submitted by: Raul Gutierrez and Salvador Lucas
+)

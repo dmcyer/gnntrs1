@@ -1,0 +1,21 @@
+(CONDITIONTYPE JOIN)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (F)
+  (G)
+  (e)
+  (f)
+  (A)
+  (B)
+)
+(RULES
+  F(x,y,z) -> G(z) | x == y
+  G(A) -> F(A,B,A)
+  e(x) -> f(x,x)
+  f(x,y) -> x
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #301
+bottom replacement map
+)

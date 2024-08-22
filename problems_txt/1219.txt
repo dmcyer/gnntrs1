@@ -1,0 +1,78 @@
+(VAR N V1 V2 X XS Y YS ZS)
+(REPLACEMENT-MAP
+  (U101 1) (U102 1) (U11 1) (U111 1) (U12 1) (U121 1) (U131 1) (U132 1)
+  (U141 1) (U142 1) (U151 1) (U152 1) (U161 1) (U171 1) (U172 1) (U181 1)
+  (U182 1) (U191 1) (U201 1) (U202 1) (U203 1) (U204 1) (U21 1) (U211 1)
+  (U212 1) (U22 1) (U221 1) (U222 1) (U31 1) (U32 1) (U41 1) (U42 1)
+  (U51 1) (U52 1) (U61 1) (U71 1) (U81 1) (U91 1)
+  (afterNth 1, 2) (fst 1) (head 1) (isLNat) (isNatural) (isPLNat)
+  (natsFrom 1) (sel 1, 2) (snd 1) (splitAt 1, 2) (tail 1)
+  (take 1, 2) (0) (cons 1) (nil) (pair 1, 2) (s 1) (tt)
+)
+(RULES
+  U101(tt,V2) -> U102(isLNat(V2))
+  U102(tt) -> tt
+  U11(tt,N,XS) -> U12(isLNat(XS),N,XS)
+  U111(tt) -> tt
+  U12(tt,N,XS) -> snd(splitAt(N,XS))
+  U121(tt) -> tt
+  U131(tt,V2) -> U132(isLNat(V2))
+  U132(tt) -> tt
+  U141(tt,V2) -> U142(isLNat(V2))
+  U142(tt) -> tt
+  U151(tt,V2) -> U152(isLNat(V2))
+  U152(tt) -> tt
+  U161(tt,N) -> cons(N,natsFrom(s(N)))
+  U171(tt,N,XS) -> U172(isLNat(XS),N,XS)
+  U172(tt,N,XS) -> head(afterNth(N,XS))
+  U181(tt,Y) -> U182(isLNat(Y),Y)
+  U182(tt,Y) -> Y
+  U191(tt,XS) -> pair(nil,XS)
+  U201(tt,N,X,XS) -> U202(isNatural(X),N,X,XS)
+  U202(tt,N,X,XS) -> U203(isLNat(XS),N,X,XS)
+  U203(tt,N,X,XS) -> U204(splitAt(N,XS),X)
+  U204(pair(YS,ZS),X) -> pair(cons(X,YS),ZS)
+  U21(tt,X,Y) -> U22(isLNat(Y),X)
+  U211(tt,XS) -> U212(isLNat(XS),XS)
+  U212(tt,XS) -> XS
+  U22(tt,X) -> X
+  U221(tt,N,XS) -> U222(isLNat(XS),N,XS)
+  U222(tt,N,XS) -> fst(splitAt(N,XS))
+  U31(tt,N,XS) -> U32(isLNat(XS),N)
+  U32(tt,N) -> N
+  U41(tt,V2) -> U42(isLNat(V2))
+  U42(tt) -> tt
+  U51(tt,V2) -> U52(isLNat(V2))
+  U52(tt) -> tt
+  U61(tt) -> tt
+  U71(tt) -> tt
+  U81(tt) -> tt
+  U91(tt) -> tt
+  afterNth(N,XS) -> U11(isNatural(N),N,XS)
+  fst(pair(X,Y)) -> U21(isLNat(X),X,Y)
+  head(cons(N,XS)) -> U31(isNatural(N),N,XS)
+  isLNat(afterNth(V1,V2)) -> U41(isNatural(V1),V2)
+  isLNat(fst(V1)) -> U61(isPLNat(V1))
+  isLNat(natsFrom(V1)) -> U71(isNatural(V1))
+  isLNat(snd(V1)) -> U81(isPLNat(V1))
+  isLNat(tail(V1)) -> U91(isLNat(V1))
+  isLNat(take(V1,V2)) -> U101(isNatural(V1),V2)
+  isLNat(cons(V1,V2)) -> U51(isNatural(V1),V2)
+  isLNat(nil) -> tt
+  isNatural(head(V1)) -> U111(isLNat(V1))
+  isNatural(sel(V1,V2)) -> U131(isNatural(V1),V2)
+  isNatural(0) -> tt
+  isNatural(s(V1)) -> U121(isNatural(V1))
+  isPLNat(splitAt(V1,V2)) -> U151(isNatural(V1),V2)
+  isPLNat(pair(V1,V2)) -> U141(isLNat(V1),V2)
+  natsFrom(N) -> U161(isNatural(N),N)
+  sel(N,XS) -> U171(isNatural(N),N,XS)
+  snd(pair(X,Y)) -> U181(isLNat(X),Y)
+  splitAt(0,XS) -> U191(isLNat(XS),XS)
+  splitAt(s(N),cons(X,XS)) -> U201(isNatural(N),N,X,XS)
+  tail(cons(N,XS)) -> U211(isNatural(N),XS)
+  take(N,XS) -> U221(isNatural(N),N,XS)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/LISTUTILITIES_nokinds-noand
+)

@@ -1,0 +1,9 @@
+(PROBLEM INFEASIBILITY)
+(COPS 495)
+(VAR x)
+(CONDITION h(x) == b)
+(COMMENT 
+doi:10.4230/LIPIcs.FSCD.2016.29
+[90] Example 17
+submitted by: Raul Gutierrez and Salvador Lucas
+)

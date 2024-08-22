@@ -1,0 +1,17 @@
+(VAR x y z)
+(RULES
+   *(e,x) -> x
+   *(-(x),x) -> e
+   *(*(x,y),z) -> *(x,*(y,z))
+   *(-(x),*(x,y)) -> y
+   *(x,e) -> x
+   -(e) -> e
+   -(-(x)) -> x
+   *(x,-(x)) -> e
+   *(x,*(-(x),y)) -> y
+   -(*(x,y)) -> *(-(y),-(x))
+)
+(COMMENT
+[13] Example 1
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

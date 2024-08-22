@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 384)
+(VAR x1)
+(CONDITION s(x1) == t)
+(COMMENT
+submitted by: Naoki Nishida
+)

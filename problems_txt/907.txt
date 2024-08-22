@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 552)
+(VAR x1)
+(CONDITION le(x1,min(nil)) == false)
+(COMMENT
+submitted by: Naoki Nishida
+)

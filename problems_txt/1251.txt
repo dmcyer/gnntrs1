@@ -1,0 +1,22 @@
+(VAR L X XS Y YS)
+(REPLACEMENT-MAP
+  (app 1, 2)
+  (from 1)
+  (prefix 1)
+  (zWadr 1, 2)
+  (cons 1)
+  (nil)
+  (s 1)
+)
+(RULES
+  app(cons(X,XS),YS) -> cons(X,app(XS,YS))
+  app(nil,YS) -> YS
+  from(X) -> cons(X,from(s(X)))
+  prefix(L) -> cons(nil,zWadr(L,prefix(L)))
+  zWadr(cons(X,XS),cons(Y,YS)) -> cons(app(Y,cons(X,nil)),zWadr(XS,YS))
+  zWadr(nil,YS) -> nil
+  zWadr(XS,nil) -> nil
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex3_3_25_Bor03
+)

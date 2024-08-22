@@ -1,0 +1,15 @@
+(VAR x)
+(RULES 
+  P(x) -> Q(Q(p(x)))
+  p(p(x)) -> q(q(x))
+  p(Q(Q(x))) -> Q(Q(p(x)))
+  Q(p(q(x))) -> q(p(Q(x)))
+  q(q(p(x))) -> p(q(q(x)))
+  q(Q(x)) -> x
+  Q(q(x)) -> x
+  p(P(x)) -> x
+  P(p(x)) -> x
+)
+(COMMENT
+TPDB SRS_Standard/Zantema_04/z067
+)

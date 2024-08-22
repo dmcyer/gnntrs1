@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 408)
+(VAR x1)
+(CONDITION c(g(x1)) == c(a), c(h(x1)) == c(a))
+(COMMENT
+submitted by: Naoki Nishida
+)

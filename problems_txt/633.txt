@@ -1,0 +1,22 @@
+(SIG
+   (mirror   Tree -> Tree)
+   (leaf     Nat -> Tree)
+   (node     Nat Tree Tree -> Tree)
+   (sum      Tree -> Nat)
+   (+        Nat Nat -> Nat)
+   (s        Nat -> Nat)
+   (0        -> Nat)
+)
+(RULES
+   mirror(leaf(x)) -> leaf(x)
+   mirror(node(x,yt,zt)) -> node(x,mirror(zt),mirror(yt))
+   sum(leaf(x)) -> x
+   sum(node(x,yt,zt)) -> +(sum(yt),sum(zt))
+   +(0,y) -> y
+   +(s(x),y) -> s(+(x,y))
+   sum(mirror(xt)) -> sum(xt)
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

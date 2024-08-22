@@ -1,0 +1,26 @@
+(CONDITIONTYPE ORIENTED)
+(VAR w x y z)
+(REPLACEMENT-MAP
+  (iadd)
+  (imult)
+  (iquad)
+  (itwice)
+  (0)
+  (s)
+  (tp1)
+  (tp2)
+)
+(RULES
+  iadd(s(z)) -> tp2(s(x),y) | iadd(z) == tp2(x,y)
+  iadd(y) -> tp2(0,y)
+  imult(0) -> tp2(0,y)
+  imult(0) -> tp2(x,0)
+  imult(s(z)) -> tp2(s(x),s(y)) | iadd(z) == tp2(w,y), imult(w) == tp2(x,s(y))
+  iquad(y) -> tp1(x) | itwice(y) == tp1(z), itwice(z) == tp1(x)
+  itwice(y) -> tp1(x) | iadd(y) == tp2(x,x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #318
+bottom replacement map
+)

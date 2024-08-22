@@ -1,0 +1,14 @@
+(VAR x y)
+(REPLACEMENT-MAP
+  (+)
+  (- 1)
+)
+(RULES
+  +(x,y) -> +(y,x)
+  -(+(x,y)) -> +(-(x),-(y))
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #149
+canonical replacement map
+)

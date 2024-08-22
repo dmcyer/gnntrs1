@@ -1,0 +1,9 @@
+(PROBLEM INFEASIBILITY)
+(COPS 1650)
+(VAR x)
+(CONDITION
+  x == g(x)
+)
+(COMMENT
+submitted by: Akihisa Yamada
+)

@@ -1,0 +1,11 @@
+(VAR )
+(RULES
+  g(f(a)) -> f(g(f(a)))
+  g(f(a)) -> f(f(a))
+  f(f(a)) -> f(a)
+)
+(COMMENT
+doi:10.1016/0890-5401(90)90015-A
+[24] p. 188
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

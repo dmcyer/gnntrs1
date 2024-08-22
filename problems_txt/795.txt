@@ -1,0 +1,11 @@
+(VAR x y z)
+(RULES
+  f(x,f(y,z)) -> f(f(x,y),f(x,z))
+  f(f(x,y),z) -> f(f(x,z),f(y,z))
+  f(f(x,y),f(y,z)) -> y
+)
+(COMMENT
+doi:10.1007/978-3-642-40885-4_22
+[44] Example 16
+submitted by: Raul Gutierrez and Salvador Lucas
+)

@@ -1,0 +1,25 @@
+(VAR vNonEmpty)
+(REPLACEMENT-MAP
+  (b)
+  (c)
+  (f)
+  (a)
+  (d)
+  (e)
+  (e')
+)
+(RULES
+  b -> e
+  c -> e'
+  f(b) -> f(c)
+  f(b) -> a
+  f(c) -> f(b)
+  f(c) -> d
+  f(e) -> a
+  f(e') -> d
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #39
+bottom replacement map
+)

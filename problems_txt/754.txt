@@ -1,0 +1,30 @@
+(VAR
+  x: var
+  y: var
+  F: var -> real 
+  G: var -> real 
+  M: real -> real
+  N: real
+)
+(FUN
+  0 : real
+  1 : real
+  sin : real -> real
+  cos : real -> real
+  ln : real -> real
+  der : realfun -> realfun
+  fn : (var -> real) -> realfun
+  evalv : realfun -> var -> real
+  eval : realfun -> real -> real
+  v : var -> real
+)
+(RULES
+  (der(fn(\x.v y ))) -> fn(\x.(0)),
+  (der(fn(\x.v x ))) -> fn(\x.(1)),
+  evalv(fn(\x.F x), y) -> F y,
+  (der(fn(\x.(sin(v x))))) -> fn(\x.(cos(v x))),
+  eval(fn(\x.M (v x)), N) -> M N
+)
+(COMMENT
+submitted by: Makoto Hamana
+)

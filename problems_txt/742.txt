@@ -1,0 +1,13 @@
+(VAR
+  F: o -> o 
+)
+(FUN
+  f : o -> o
+  a : o
+)
+(RULES
+  f(F(a)) -> a
+)
+(COMMENT
+submitted by: anonymous
+)

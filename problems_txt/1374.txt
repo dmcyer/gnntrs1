@@ -1,0 +1,20 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(REPLACEMENT-MAP
+  (a)
+  (c)
+  (p 1)
+  (0)
+  (b)
+  (q)
+)
+(RULES
+  a(x) -> b | p(x) == 0
+  c -> c
+  p(q(x)) -> 0
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #268
+canonical replacement map
+)

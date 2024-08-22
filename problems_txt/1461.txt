@@ -1,0 +1,39 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y n r xs r' n')
+(REPLACEMENT-MAP
+  (eq 1, 2)
+  (filter 3)
+  (lte 1, 2)
+  (m 1, 2)
+  (mod 1, 2)
+  (0)
+  (cons)
+  (false)
+  (nil)
+  (s)
+  (true)
+)
+(RULES
+  eq(0,0) -> true
+  eq(0,s(y)) -> false
+  eq(s(x),0) -> false
+  eq(s(x),s(y)) -> eq(x,y)
+  filter(n,r,cons(x,xs)) -> filter(n,r,xs) | mod(x,n) == n', eq(r,r') == false
+  filter(n,r,cons(x,xs)) -> cons(x,filter(n,r,xs)) | mod(x,n) == r', eq(r,r') == true
+  filter(n,r,nil) -> nil
+  lte(0,y) -> true
+  lte(s(x),0) -> false
+  lte(s(x),s(y)) -> lte(x,y)
+  m(0,s(y)) -> 0
+  m(s(x),s(y)) -> m(x,y)
+  m(x,0) -> x
+  mod(0,y) -> 0
+  mod(s(x),0) -> 0
+  mod(s(x),s(y)) -> mod(m(x,y),s(y)) | lte(y,x) == true
+  mod(s(x),s(y)) -> s(x) | lte(y,x) == false
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #328
+canonical replacement map
+)

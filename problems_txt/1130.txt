@@ -1,0 +1,9 @@
+(PROBLEM INFEASIBILITY)
+(COPS 1129)
+(VAR x)
+(CONDITION +(x, a) == 0 )
+(COMMENT
+submitted by: Yusuke Oi
+secret problem 2019
+category: INF
+)

@@ -1,0 +1,18 @@
+(CONDITIONTYPE ORIENTED)
+(VAR a b c)
+(REPLACEMENT-MAP
+  (App 1)
+  (I)
+  (K)
+  (S)
+)
+(RULES
+  App(App(App(S,a),b),c) -> App(App(a,c),App(b,c)) | a == I, b == I, c == I
+  App(App(K,a),b) -> a | a == I, b == I
+  App(I,a) -> a | a == I
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #266
+canonical replacement map
+)

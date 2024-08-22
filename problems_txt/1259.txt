@@ -1,0 +1,15 @@
+(VAR X Y)
+(REPLACEMENT-MAP
+  (b)
+  (f)
+  (g 1)
+  (c)
+)
+(RULES
+  b -> c
+  f(X,g(X),Y) -> f(Y,Y,Y)
+  g(b) -> c
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex24_GM04
+)

@@ -1,0 +1,10 @@
+(VAR x y)
+(RULES
+  f(x,x) -> g(x)
+  f(x,g(x)) -> b
+  h(c,y) -> f(h(y,c),h(y,y))
+)
+(COMMENT
+[5] p. 287, attributed to Sivakumar
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

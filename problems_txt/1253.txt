@@ -1,0 +1,16 @@
+(VAR X Y Z)
+(REPLACEMENT-MAP
+  (from 1)
+  (sel 1, 2)
+  (0)
+  (cons 1)
+  (s 1)
+)
+(RULES
+  from(X) -> cons(X,from(s(X)))
+  sel(0,cons(X,Y)) -> X
+  sel(s(X),cons(Y,Z)) -> sel(X,Z)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex3_12_Luc96a
+)

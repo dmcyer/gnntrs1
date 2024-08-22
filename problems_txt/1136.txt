@@ -1,0 +1,8 @@
+(PROBLEM INFEASIBILITY)
+(COPS 1134)
+(CONDITION f(b,a) == f(a,b))
+(COMMENT
+submitted by: Sarah Winkler
+secret problem 2019
+category: INF
+)

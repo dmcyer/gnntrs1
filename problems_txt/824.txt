@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 279)
+(VAR x4 x5 x6)
+(CONDITION leq(x6,length(x5)) == false, empty(fstsplit(x6,app(map_f(three,head(x4)),x5))) == false, empty(map_f(three,head(x4))) == true)
+(COMMENT
+submitted by: Naoki Nishida
+)

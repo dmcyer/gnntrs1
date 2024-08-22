@@ -1,0 +1,46 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x n h t m pid store)
+(REPLACEMENT-MAP
+  (app)
+  (empty)
+  (fstsplit)
+  (length)
+  (leq)
+  (map_f)
+  (process)
+  (sndsplit)
+  (0)
+  (cons)
+  (f)
+  (false)
+  (nil)
+  (s)
+  (self)
+  (true)
+)
+(RULES
+  app(cons(h,t),x) -> cons(h,app(t,x))
+  app(nil,x) -> x
+  empty(cons(h,t)) -> false
+  empty(nil) -> true
+  fstsplit(0,x) -> nil
+  fstsplit(s(n),cons(h,t)) -> cons(h,fstsplit(n,t))
+  fstsplit(s(n),nil) -> nil
+  length(cons(h,t)) -> s(length(t))
+  length(nil) -> 0
+  leq(0,m) -> true
+  leq(s(n),0) -> false
+  leq(s(n),s(m)) -> leq(n,m)
+  map_f(pid,cons(h,t)) -> app(f(pid,h),map_f(pid,t))
+  map_f(pid,nil) -> nil
+  process(store,m) -> process(app(map_f(self,nil),sndsplit(m,store)),m) | leq(m,length(store)) == true, empty(fstsplit(m,store)) == false
+  process(store,m) -> process(sndsplit(m,app(map_f(self,nil),store)),m) | leq(m,length(store)) == false, empty(fstsplit(m,app(map_f(self,nil),store))) == false
+  sndsplit(0,x) -> x
+  sndsplit(s(n),cons(h,t)) -> sndsplit(n,t)
+  sndsplit(s(n),nil) -> nil
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #278
+bottom replacement map
+)

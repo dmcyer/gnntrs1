@@ -1,0 +1,25 @@
+(VAR N X XS Y YS ZS)
+(REPLACEMENT-MAP
+  (U11 1) (U12 1)
+  (afterNth 1, 2) (and 1) (fst 1) (head 1) (natsFrom 1)
+  (sel 1, 2) (snd 1) (splitAt 1, 2) (tail 1) (take 1, 2)
+  (0) (cons 1) (nil) (pair 1, 2) (s 1) (tt)
+)
+(RULES
+  U11(tt,N,X,XS) -> U12(splitAt(N,XS),X)
+  U12(pair(YS,ZS),X) -> pair(cons(X,YS),ZS)
+  afterNth(N,XS) -> snd(splitAt(N,XS))
+  and(tt,X) -> X
+  fst(pair(X,Y)) -> X
+  head(cons(N,XS)) -> N
+  natsFrom(N) -> cons(N,natsFrom(s(N)))
+  sel(N,XS) -> head(afterNth(N,XS))
+  snd(pair(X,Y)) -> Y
+  splitAt(0,XS) -> pair(nil,XS)
+  splitAt(s(N),cons(X,XS)) -> U11(tt,N,X,XS)
+  tail(cons(N,XS)) -> XS
+  take(N,XS) -> fst(splitAt(N,XS))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/LISTUTILITIES_nosorts
+)

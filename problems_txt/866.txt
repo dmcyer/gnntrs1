@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 365)
+(VAR x)
+(CONDITION pos(p(x)) == true)
+(COMMENT
+submitted by: Naoki Nishida
+)

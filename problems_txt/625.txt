@@ -1,0 +1,25 @@
+(SIG
+   (le      Nat Nat -> Bool)
+   (if      Bool Nat Nat -> Nat)
+   (min     Nat Nat -> Nat)
+   (max     Nat Nat -> Nat)
+   (true    -> Bool)
+   (false   -> Bool)
+   (s       Nat -> Nat)
+   (0       -> Nat)
+)
+(RULES
+   le(0,y) -> true
+   le(s(x),0) -> false
+   le(s(x),s(y)) -> le(x,y)
+   if(true,y,z) -> y
+   if(false,y,z) -> z
+   min(x,y) -> if(le(x,y),x,y)
+   max(x,y) -> if(le(x,y),y,x)
+   min(x,y) -> min(y,x)
+   max(x,y) -> max(y,x)
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

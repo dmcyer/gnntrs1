@@ -1,0 +1,24 @@
+(VAR x)
+(RULES
+  f(x,x) -> g
+  a -> b
+  a -> c
+  d -> c
+  d -> e
+  c -> c
+  f(a,x) -> g
+  f(b,x) -> g
+  f(c,x) -> g
+  f(d,x) -> g
+  f(e,x) -> g
+  f(x,a) -> g
+  f(x,b) -> g
+  f(x,c) -> g
+  f(x,d) -> g
+  f(x,e) -> g
+)
+(COMMENT
+doi:10.1006/jsco.1996.0002
+[112] p. 31 (signature extension and currying do not preserve UNR)
+submitted by: Bertram Felgenhauer
+)

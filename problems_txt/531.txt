@@ -1,0 +1,16 @@
+(VAR x y z)
+(RULES
+   +(x,0) -> x
+   -(0) -> 0
+   -(-(x)) -> x
+   -(+(x,y)) -> +(-(x),-(y))
+   +(x,-(x)) -> 0
+   +(+(x,-(x)),y) -> y
+   +(+(x,y),z) -> +(x,+(y,z))
+   +(x,+(y,z)) -> +(+(x,y),z)
+   +(x,y) -> +(y,x)
+)
+(COMMENT
+[113] Example 3.26
+submitted by: Aart Middeldorp
+)

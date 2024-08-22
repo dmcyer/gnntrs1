@@ -1,0 +1,19 @@
+(VAR x)
+(RULES
+  if(true,a,x) -> a
+  if(true,b,x) -> b
+  if(true,g(a),x) -> g(a)
+  if(true,g(b),x) -> g(b)
+  if(false,x,a) -> a
+  if(false,x,b) -> b
+  if(false,x,g(a)) -> g(a)
+  if(false,x,g(b)) -> g(b)
+  g(a) -> g(g(a))
+  g(b) -> a
+  f(a,b) -> b
+  f(g(g(a)),x) -> b
+)
+(COMMENT
+handcrafted "UNC & ~NFP"
+submitted by: Franziska Rapp
+)

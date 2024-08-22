@@ -1,0 +1,9 @@
+(VAR x)
+(RULES
+  a(b(a(x))) -> a(a(b(a(b(x)))))
+)
+(COMMENT
+submitted by: Johannes Waldmann
+secret problem 2020
+category: SRS
+)

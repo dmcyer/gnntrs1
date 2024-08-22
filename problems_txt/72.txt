@@ -1,0 +1,10 @@
+(VAR x)
+(RULES
+  F(c(x)) -> G(x)
+  G(x) -> F(x)
+  c(x) -> x
+)
+(COMMENT
+[20] Example 4.3.3
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

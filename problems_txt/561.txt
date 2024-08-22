@@ -1,0 +1,21 @@
+(SIG
+   (* Const Nat -> Nat)
+   (+ Nat Nat -> Nat)
+   (0 -> Nat)
+   (1 -> Const)
+   (s Nat -> Nat)
+)
+(RULES
+   +(x,0) -> x
+   +(x,s(y)) -> s(+(x,y))
+   +(0,y) -> y
+   +(s(x),y) -> s(+(x,y))
+   *(1,0) -> 0
+   *(1,s(y)) -> s(*(1,y))
+   +(x,y) -> +(y,x)
+   +(+(x,y),z) -> +(x,+(y,z))
+)
+(COMMENT
+Cops #156 with sort attachment
+submitted by: anonymous
+)

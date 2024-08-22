@@ -1,0 +1,17 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y)
+(REPLACEMENT-MAP
+  (pin)
+  (f)
+  (g)
+  (pout)
+)
+(RULES
+  pin(x) -> pout(f(y)) | pin(x) == pout(g(y))
+  pin(x) -> pout(g(x))
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #330
+bottom replacement map
+)

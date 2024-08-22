@@ -1,0 +1,9 @@
+(PROBLEM INFEASIBILITY)
+(COPS 797)
+(VAR x)
+(CONDITION f(a,c) == f(x,x))
+(COMMENT 
+doi:10.1016/j.ipl.2018.04.002
+[150] Example 9
+submitted by: Raul Gutierrez and Salvador Lucas
+)

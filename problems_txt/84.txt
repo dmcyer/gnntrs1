@@ -1,0 +1,10 @@
+(VAR )
+(RULES
+  a -> b
+  f(a) -> g(a)
+  f(b) -> g(b)
+)
+(COMMENT
+[26] Example 5.1
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

@@ -1,0 +1,26 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (gcd 1, 2)
+  (iadd 1)
+  (u1 1)
+  (0)
+  (add)
+  (s)
+  (tp2)
+)
+(RULES
+  gcd(0,x) -> x
+  gcd(x,0) -> x
+  gcd(y,z) -> gcd(x,y) | iadd(z) == tp2(x,y)
+  gcd(z,y) -> gcd(x,y) | iadd(z) == tp2(x,y)
+  iadd(add(x,y)) -> tp2(x,y)
+  iadd(s(z)) -> u1(iadd(z))
+  iadd(y) -> tp2(0,y)
+  u1(tp2(x,y)) -> tp2(s(x),y)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #312
+canonical replacement map
+)

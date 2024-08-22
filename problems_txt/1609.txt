@@ -1,0 +1,20 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z1 z2 z3)
+(REPLACEMENT-MAP
+  (fib)
+  (plus)
+  (0)
+  (pair)
+  (s)
+)
+(RULES
+  fib(0) -> pair(s(0),0)
+  fib(s(x)) -> pair(z3,z1) | fib(x) == pair(z1,z2), plus(z1,z2) == z3
+  plus(0,y) -> y
+  plus(s(x),y) -> s(plus(x,y))
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #528
+bottom replacement map
+)

@@ -1,0 +1,10 @@
+(VAR x y)
+(RULES
+  a(f(x),y) -> f(a(f(y),x))
+  a(b(x),y) -> a(x,b(x))
+  a(g(x),x) -> g(b(g(x)))
+)
+(COMMENT
+from Toyama (LA symposium 1998)
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

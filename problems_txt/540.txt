@@ -1,0 +1,14 @@
+(VAR x y z)
+(RULES
+   max(L(x)) -> x
+   max(N(L(0),L(y))) -> y
+   max(N(L(s(x)),L(s(y)))) -> s(max(N(L(x),L(y))))
+   max(N(L(x),N(y,z))) -> max(N(L(x),L(max(N(y,z)))))
+   N(x,N(y,z)) -> N(N(x,y),z)
+   N(N(x,y),z) -> N(x,N(y,z))
+   N(x,y) -> N(y,x)
+)
+(COMMENT
+[117] Example 4.3.12
+submitted by: Aart Middeldorp
+)

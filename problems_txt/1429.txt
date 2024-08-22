@@ -1,0 +1,24 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y)
+(REPLACEMENT-MAP
+  (add 1)
+  (gcd 1, 2)
+  (0)
+  (false)
+  (leq)
+  (s)
+)
+(RULES
+  add(0,y) -> y
+  add(s(x),y) -> s(add(x,y))
+  gcd(add(x,y),y) -> gcd(x,y)
+  gcd(0,x) -> x
+  gcd(x,0) -> x
+  gcd(x,y) -> gcd(y,x) | leq(y,x) == false
+  gcd(y,add(x,y)) -> gcd(x,y)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #310
+canonical replacement map
+)

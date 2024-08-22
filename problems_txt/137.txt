@@ -1,0 +1,10 @@
+(VAR x y)
+(RULES
+  max(x,0)  -> x
+  max(s(x),s(y)) -> s(max(y,x))
+  max(x,y) -> max(y,x)
+)
+(COMMENT
+full experiments for [35]
+submitted by: Takahito Aoto and Yoshihito Toyama
+)

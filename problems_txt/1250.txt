@@ -1,0 +1,25 @@
+(VAR X Y)
+(REPLACEMENT-MAP
+  (div 1)
+  (geq)
+  (if 1)
+  (minus)
+  (0)
+  (false)
+  (s 1)
+  (true)
+)
+(RULES
+  div(0,s(Y)) -> 0
+  div(s(X),s(Y)) -> if(geq(X,Y),s(div(minus(X,Y),s(Y))),0)
+  geq(0,s(Y)) -> false
+  geq(s(X),s(Y)) -> geq(X,Y)
+  geq(X,0) -> true
+  if(false,X,Y) -> Y
+  if(true,X,Y) -> X
+  minus(0,Y) -> 0
+  minus(s(X),s(Y)) -> minus(X,Y)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex49_GM04
+)

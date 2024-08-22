@@ -1,0 +1,26 @@
+(SIG
+   (null    List -> Bool)
+   (cons    Nat List -> List)
+   (nil     -> List)
+   (0       -> Nat)
+   (s       Nat -> Nat)
+   (true    -> Bool)
+   (false   -> Bool)
+   (count   List -> Nat)
+   (if      Bool Nat Nat -> Nat)
+   (tl      List -> List)
+)
+(RULES
+   null(nil) -> true
+   null(cons(x,ys)) -> false
+   count(xs) -> if(null(xs),0,s(count(tl(xs))))
+   tl(nil) -> nil
+   tl(cons(x,ys)) -> ys
+   if(true,y,z) -> y
+   if(false,y,z) -> z
+   if(x,y,y) -> y
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

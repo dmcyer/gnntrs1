@@ -1,0 +1,23 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y)
+(REPLACEMENT-MAP
+  (f 1, 2)
+  (g)
+  (h 1)
+  (a)
+  (b)
+  (c)
+  (d)
+  (k 1)
+)
+(RULES
+  f(k(a),k(b),x) -> f(x,x,x)
+  g(x) -> k(y) | h(x) == d, h(x) == c(y)
+  h(d) -> c(a)
+  h(d) -> c(b)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #360
+canonical replacement map
+)

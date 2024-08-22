@@ -1,0 +1,40 @@
+(VAR IL L M N T)
+(REPLACEMENT-MAP
+  (and 1, 2)
+  (isNat)
+  (isNatIList)
+  (isNatList)
+  (length 1)
+  (take 1, 2)
+  (uLength 1)
+  (uTake1 1)
+  (uTake2 1)
+  (zeros)
+  (0)
+  (cons 1)
+  (nil)
+  (s 1)
+  (tt)
+)
+(RULES
+  and(tt,T) -> T
+  isNat(length(L)) -> isNatList(L)
+  isNat(0) -> tt
+  isNat(s(N)) -> isNat(N)
+  isNatIList(zeros) -> tt
+  isNatIList(cons(N,IL)) -> and(isNat(N),isNatIList(IL))
+  isNatIList(IL) -> isNatList(IL)
+  isNatList(take(N,IL)) -> and(isNat(N),isNatIList(IL))
+  isNatList(cons(N,L)) -> and(isNat(N),isNatList(L))
+  isNatList(nil) -> tt
+  length(cons(N,L)) -> uLength(and(isNat(N),isNatList(L)),L)
+  take(0,IL) -> uTake1(isNatIList(IL))
+  take(s(M),cons(N,IL)) -> uTake2(and(isNat(M),and(isNat(N),isNatIList(IL))),M,N,IL)
+  uLength(tt,L) -> s(length(L))
+  uTake1(tt) -> nil
+  uTake2(tt,M,N,IL) -> cons(N,take(M,IL))
+  zeros -> cons(0,zeros)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex4_DLMMU04
+)

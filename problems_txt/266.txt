@@ -1,0 +1,12 @@
+(CONDITIONTYPE ORIENTED)
+(VAR a b c)
+(RULES
+  App(App(App(S,a),b),c) -> App(App(a,c),App(b,c)) | a == I, b == I, c == I
+  App(App(K,a),b) -> a | a == I, b == I
+  App(I,a) -> a | a == I
+)
+(COMMENT
+doi:10.1016/0022-0000(86)90033-4
+[47] Example 2.3.ii
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

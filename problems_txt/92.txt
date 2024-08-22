@@ -1,0 +1,9 @@
+(VAR x)
+(RULES
+  W(B(x)) -> W(x)
+  B(I(x)) -> J(x)
+  W(I(x)) -> W(J(x))
+)
+(COMMENT
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

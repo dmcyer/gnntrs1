@@ -1,0 +1,21 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(REPLACEMENT-MAP
+  (pos)
+  (0)
+  (false)
+  (p)
+  (s)
+  (true)
+)
+(RULES
+  pos(0) -> false
+  pos(p(x)) -> false | pos(x) == false
+  pos(s(0)) -> true
+  pos(s(x)) -> true | pos(x) == true
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #354
+bottom replacement map
+)

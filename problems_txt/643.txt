@@ -1,0 +1,21 @@
+(SIG
+   (+      Nat Nat -> Nat)
+   (s      Nat -> Nat)
+   (0      -> Nat)
+   (node   Tree Tree -> Tree)
+   (leaf   -> Tree)
+   (size   Tree -> Nat)
+)
+(RULES
+   size(leaf) -> s(0)
+   size(node(x,y)) -> +(size(y),size(x))
+   +(0,y) -> y
+   +(s(x),y) -> s(+(x,y))
+   +(x,0) -> x
+   +(x,s(y)) -> s(+(x,y))
+   node(x,y) -> node(y,x)
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

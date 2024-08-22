@@ -1,0 +1,17 @@
+(FUN
+  c : v -> a
+  g : b -> b
+  0 : b
+  1 : b
+)
+(VAR
+  x : v
+  M : a -> b
+)
+(RULES
+  g(M(c(x))) -> 1,
+  g(0) -> 0
+)
+(COMMENT
+submitted by: Makoto Hamana
+)

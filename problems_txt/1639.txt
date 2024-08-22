@@ -1,0 +1,14 @@
+(CONDITIONTYPE SEMI-EQUATIONAL)
+(VAR x y z w)
+(REPLACEMENT-MAP
+  (f)
+)
+(RULES
+  f(f(x,y),f(z,w)) -> f(f(x,z),f(y,w))
+  f(f(x,y),x) -> x
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #1134
+bottom replacement map
+)

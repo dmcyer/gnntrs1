@@ -1,0 +1,27 @@
+(VAR x y z)
+(REPLACEMENT-MAP
+  (and 1, 2)
+  (imply)
+  (not 1)
+  (or 1, 2)
+  (F)
+  (T)
+)
+(RULES
+  and(and(x,y),z) -> and(x,and(y,z))
+  and(x,F) -> F
+  and(x,T) -> x
+  and(x,y) -> and(y,x)
+  imply(x,y) -> or(not(x),y)
+  not(F) -> T
+  not(T) -> F
+  or(or(x,y),z) -> or(x,or(y,z))
+  or(x,F) -> x
+  or(x,T) -> T
+  or(x,y) -> or(y,x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #127
+canonical replacement map
+)

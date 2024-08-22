@@ -1,0 +1,16 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y)
+(REPLACEMENT-MAP
+  (+)
+  (0)
+)
+(RULES
+  +(0,x) -> x
+  +(x,0) -> 0 | x == 0
+  +(x,y) -> +(y,x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #790
+bottom replacement map
+)

@@ -1,0 +1,11 @@
+(VAR y x)
+(RULES
+   min(0,y) -> 0
+   min(x,0) -> 0
+   min(s(x),s(y)) -> min(x,y)
+   min(x,x) -> x
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

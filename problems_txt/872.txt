@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 391)
+(VAR x3 x1 x2)
+(CONDITION pin(x2) == pout(x1), tc(x1) == x3)
+(COMMENT
+submitted by: Naoki Nishida
+)

@@ -1,0 +1,14 @@
+(VAR x y z)
+(RULES
+  +(0,x) -> x
+  +(1,-(1)) -> 0
+  -(0) -> 0
+  -(-(x)) -> x
+  -(+(x,y)) -> +(-(x),-(y))
+  +(+(x,y),z) -> +(x,+(y,z))
+  +(x,y) -> +(y,x)
+)
+(COMMENT
+full experiments for [35]
+submitted by: Takahito Aoto and Yoshihito Toyama
+)

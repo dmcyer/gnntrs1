@@ -1,0 +1,13 @@
+(VAR x)
+(RULES
+  g(a) -> f(g(a))
+  g(b) -> c(a)
+  a -> b
+  f(x) -> h(x)
+  h(x) -> c(b)
+)
+(COMMENT
+doi:10.1007/11805618_6
+[7] Example 5
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

@@ -1,0 +1,26 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y ys zs1 zs2)
+(REPLACEMENT-MAP
+  (le 1, 2)
+  (split 2)
+  (0)
+  (cons)
+  (false)
+  (nil)
+  (s)
+  (tp2)
+  (true)
+)
+(RULES
+  le(0,y) -> true
+  le(s(x),0) -> false
+  le(s(x),s(y)) -> le(x,y)
+  split(x,cons(y,ys)) -> tp2(cons(y,zs1),zs2) | split(x,ys) == tp2(zs1,zs2), le(x,y) == false
+  split(x,cons(y,ys)) -> tp2(zs1,cons(y,zs2)) | split(x,ys) == tp2(zs1,zs2), le(x,y) == true
+  split(x,nil) -> tp2(nil,nil)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #322
+canonical replacement map
+)

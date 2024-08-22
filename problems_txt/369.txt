@@ -1,0 +1,16 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y)
+(RULES
+  a -> c
+  a -> d
+  b -> c
+  b -> d
+  s(c) -> t(k)
+  s(c) -> t(l)
+  g(x, x) -> h(x, x)
+  f(x) -> pair(x, y) | s(x) == t(y)
+)
+(COMMENT
+[75] Example 22
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

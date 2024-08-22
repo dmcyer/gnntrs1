@@ -1,0 +1,18 @@
+(VAR M N)
+(REPLACEMENT-MAP
+  (U11 1)
+  (U12 1)
+  (plus 1, 2)
+  (0)
+  (s 1)
+  (tt)
+)
+(RULES
+  U11(tt,M,N) -> U12(tt,M,N)
+  U12(tt,M,N) -> s(plus(N,M))
+  plus(N,0) -> N
+  plus(N,s(M)) -> U11(tt,M,N)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/MYNAT_nosorts-noand-peanoSimple
+)

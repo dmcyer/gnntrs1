@@ -1,0 +1,32 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y xs ys zs)
+(REPLACEMENT-MAP
+  (app 1)
+  (le 1, 2)
+  (qsort 1)
+  (split 2)
+  (0)
+  (cons)
+  (false)
+  (nil)
+  (pair)
+  (s)
+  (true)
+)
+(RULES
+  app(cons(x,xs),ys) -> cons(x,app(xs,ys))
+  app(nil,x) -> x
+  le(0,x) -> true
+  le(s(x),0) -> false
+  le(s(x),s(y)) -> le(x,y)
+  qsort(cons(x,xs)) -> app(qsort(ys),cons(x,qsort(zs))) | split(x,xs) == pair(ys,zs)
+  qsort(nil) -> nil
+  split(x,cons(y,ys)) -> pair(cons(y,xs),zs) | split(x,ys) == pair(xs,zs), le(x,y) == false
+  split(x,cons(y,ys)) -> pair(xs,cons(y,zs)) | split(x,ys) == pair(xs,zs), le(x,y) == true
+  split(x,nil) -> pair(nil,nil)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #329
+canonical replacement map
+)

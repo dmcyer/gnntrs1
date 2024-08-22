@@ -1,0 +1,16 @@
+(VAR N X XS)
+(REPLACEMENT-MAP
+  (after 1, 2)
+  (from 1)
+  (0)
+  (cons 1)
+  (s 1)
+)
+(RULES
+  after(0,XS) -> XS
+  after(s(N),cons(X,XS)) -> after(N,XS)
+  from(X) -> cons(X,from(s(X)))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex4_7_56_Bor03
+)

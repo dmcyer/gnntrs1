@@ -1,0 +1,16 @@
+(VAR M N X)
+(REPLACEMENT-MAP
+  (and 1)
+  (plus 1, 2)
+  (0)
+  (s 1)
+  (tt)
+)
+(RULES
+  and(tt,X) -> X
+  plus(N,0) -> N
+  plus(N,s(M)) -> s(plus(N,M))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/MYNAT_nosorts-peanoSimple
+)

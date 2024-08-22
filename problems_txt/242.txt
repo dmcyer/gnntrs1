@@ -1,0 +1,11 @@
+(VAR x)
+(RULES
+  a -> h(c)
+  a -> h(f(c))
+  g(x) -> g(x)
+  h(f(x)) -> h(f(g(x)))
+)
+(COMMENT
+from experiments for [44]
+submitted by: Tsubasa Suzuki, Takahito Aoto, and Yoshihito Toyama
+)

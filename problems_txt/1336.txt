@@ -1,0 +1,14 @@
+(VAR x y)
+(REPLACEMENT-MAP
+  (f)
+  (plus)
+)
+(RULES
+  f(x,x) -> plus(plus(x,x),x)
+  plus(x,y) -> plus(y,x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #117
+bottom replacement map
+)

@@ -1,0 +1,17 @@
+(FUN 
+  abs : (term -> term) -> term
+  app : term -> term -> term
+)
+(VAR
+  x : term
+  S : term
+  G : term
+  F : term -> term -> term
+)
+(RULES
+  app(abs(\x.G),S) -> G,
+  app(abs(\x.F x x),S) -> app(abs(\x.F S x),S)
+)
+(COMMENT
+untyped lambda calculus with mini beta
+)

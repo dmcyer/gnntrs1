@@ -1,0 +1,11 @@
+(VAR x y z)
+(RULES
+  c(t(x,y,z)) -> c(t(y,x,z))
+  c(t(x,y,z)) -> c(t(x,z,y))
+  c(t(x,x,z)) -> true
+)
+(COMMENT
+submitted by: Kiraku Shintani
+secret problem 2019
+category: TRS
+)

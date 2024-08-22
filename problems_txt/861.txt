@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 353)
+(VAR x4 x3 x2)
+(CONDITION get(x2) == tp2(x3,x4))
+(COMMENT
+submitted by: Naoki Nishida
+)

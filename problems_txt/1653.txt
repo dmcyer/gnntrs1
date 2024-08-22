@@ -1,0 +1,13 @@
+(VAR x y)
+(RULES
+  c -> f(a,h(b))
+  f(h(f(f(a,a),h(a))),g(f(x,g(b)))) -> c
+  c -> c
+  g(g(a)) -> f(h(g(f(c,c))),f(f(g(c),a),g(f(a,a))))
+  f(x,y) -> f(y,x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+secret problem 2022
+category: TRS
+)

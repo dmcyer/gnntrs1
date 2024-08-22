@@ -1,0 +1,14 @@
+(VAR x y z)
+(RULES
+   +(a,x) -> a
+   +(b,g(a)) -> a
+   +(0,x) -> x
+   +(x,+(y,z)) -> +(+(x,y),z)
+   +(+(x,y),z) -> +(x,+(y,z))
+   +(x,y) -> +(y,x)
+)
+(COMMENT
+doi:10.4230/LIPIcs.RTA.2013.319
+[115] Example 4.1
+submitted by: Aart Middeldorp
+)

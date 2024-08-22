@@ -1,0 +1,56 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x n h t m pid in_2 in_3 st_1 st_2 st_3)
+(REPLACEMENT-MAP
+  (app 1)
+  (empty 1)
+  (fstsplit 1, 2)
+  (head 1)
+  (length 1)
+  (leq 1, 2)
+  (map_f 2)
+  (ring)
+  (sndsplit 1, 2)
+  (tail 1)
+  (0)
+  (cons)
+  (f)
+  (false)
+  (nil)
+  (s)
+  (three)
+  (true)
+  (two)
+)
+(RULES
+  app(cons(h,t),x) -> cons(h,app(t,x))
+  app(nil,x) -> x
+  empty(cons(h,t)) -> false
+  empty(nil) -> true
+  fstsplit(0,x) -> nil
+  fstsplit(s(n),cons(h,t)) -> cons(h,fstsplit(n,t))
+  fstsplit(s(n),nil) -> nil
+  head(cons(h,t)) -> h
+  length(cons(h,t)) -> s(length(t))
+  length(nil) -> 0
+  leq(0,m) -> true
+  leq(s(n),0) -> false
+  leq(s(n),s(m)) -> leq(n,m)
+  map_f(pid,cons(h,t)) -> app(f(pid,h),map_f(pid,t))
+  map_f(pid,nil) -> nil
+  ring(st_1,in_2,st_2,in_3,st_3,m) -> ring(sndsplit(m,st_1),cons(fstsplit(m,st_1),in_2),st_2,in_3,st_3,m) | empty(fstsplit(m,st_1)) == false
+  ring(st_1,in_2,st_2,in_3,st_3,m) -> ring(st_1,tail(in_2),sndsplit(m,app(map_f(two,head(in_2)),st_2)),cons(fstsplit(m,app(map_f(two,head(in_2)),st_2)),in_3),st_3,m) | leq(m,length(st_2)) == false, empty(fstsplit(m,app(map_f(two,head(in_2)),st_2))) == false
+  ring(st_1,in_2,st_2,in_3,st_3,m) -> ring(st_1,tail(in_2),st_2,in_3,st_3,m) | empty(map_f(two,head(in_2))) == true
+  ring(st_1,in_2,st_2,in_3,st_3,m) -> ring(st_1,in_2,sndsplit(m,st_2),cons(fstsplit(m,st_2),in_3),st_3,m) | leq(m,length(st_2)) == true, empty(fstsplit(m,st_2)) == false
+  ring(st_1,in_2,st_2,in_3,st_3,m) -> ring(st_1,in_2,st_2,tail(in_3),sndsplit(m,app(map_f(three,head(in_3)),st_3)),m) | leq(m,length(st_3)) == false, empty(fstsplit(m,app(map_f(three,head(in_3)),st_3))) == false
+  ring(st_1,in_2,st_2,in_3,st_3,m) -> ring(st_1,in_2,st_2,tail(in_3),st_3,m) | empty(map_f(three,head(in_3))) == true
+  ring(st_1,in_2,st_2,in_3,st_3,m) -> ring(st_1,in_2,st_2,in_3,sndsplit(m,st_3),m) | leq(m,length(st_3)) == true, empty(fstsplit(m,st_3)) == false
+  sndsplit(0,x) -> x
+  sndsplit(s(n),cons(h,t)) -> sndsplit(n,t)
+  sndsplit(s(n),nil) -> nil
+  tail(cons(h,t)) -> t
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #279
+canonical replacement map
+)

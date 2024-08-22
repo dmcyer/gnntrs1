@@ -1,0 +1,6 @@
+(PROBLEM INFEASIBILITY)
+(COPS 410)
+(CONDITION a == d, b == d)
+(COMMENT
+submitted by: Naoki Nishida
+)

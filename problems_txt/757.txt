@@ -1,0 +1,36 @@
+(VAR
+  X: nat 
+  Y: nat 
+  P: nat -> bool
+  n: nat
+  z: natvar
+)
+(FUN
+  0 : nat
+  s : nat -> nat
+  err : nat
+  pre : nat -> nat
+  id : nat -> nat
+  add : nat -> nat -> nat
+  eq : nat -> natp
+  true : bool
+  false : bool
+  fn : (natvar -> bool) -> natp
+  nul : nat -> bool
+  at : natp -> nat -> bool
+  v : natvar -> nat
+)
+(RULES
+  nul(0) -> true,
+  nul(s(X)) -> false,
+  nul(err) -> false,
+  pre(0) -> err,
+  pre(s(X)) -> X,
+  id(X) -> X,
+  eq(0) -> fn (\z.nul (v z)),
+  eq(s(X)) -> fn (\z.at (eq X) (pre (v z))),
+  at(fn (\z.P (v z)),n) -> P n
+)
+(COMMENT
+submitted by: Makoto Hamana
+)

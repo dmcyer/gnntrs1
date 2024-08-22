@@ -1,0 +1,23 @@
+(VAR X Y)
+(REPLACEMENT-MAP
+  (adx 1)
+  (hd 1)
+  (incr 1)
+  (nats)
+  (tl 1)
+  (zeros)
+  (0)
+  (cons)
+  (s)
+)
+(RULES
+  adx(cons(X,Y)) -> incr(cons(X,adx(Y)))
+  hd(cons(X,Y)) -> X
+  incr(cons(X,Y)) -> cons(s(X),incr(Y))
+  nats -> adx(zeros)
+  tl(cons(X,Y)) -> Y
+  zeros -> cons(0,zeros)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/ExIntrod_GM04
+)

@@ -1,0 +1,8 @@
+(VAR x y)
+(RULES
+  x -> f(x)
+  y -> g(y)
+)
+(COMMENT
+[77] Example 2
+)

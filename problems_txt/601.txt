@@ -1,0 +1,31 @@
+(SIG
+   (zero    Nat -> Bool)
+   (fact    Nat -> Nat)
+   (if      Bool Nat Nat -> Nat)
+   (-       Nat Nat -> Nat)
+   (*       Nat Nat -> Nat)
+   (+       Nat Nat -> Nat)
+   (s       Nat -> Nat)
+   (0       -> Nat)
+   (true    -> Bool)
+   (false   -> Bool)
+)
+(RULES
+   zero(0) -> true
+   zero(s(x)) -> false
+   fact(x) -> if(zero(x),s(0),*(x,fact(-(x,s(0)))))
+   +(0,y) -> y
+   +(s(x),y) -> s(+(x,y))
+   *(0,y) -> 0
+   *(s(x),y) -> +(*(x,y),y)
+   if(true,y,z) -> y
+   if(false,y,z) -> z
+   if(x,y,y) -> y
+   -(x,0) -> x
+   -(0,s(y)) -> 0
+   -(s(x),s(y)) -> -(x,y)
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

@@ -1,0 +1,9 @@
+(VAR x y)
+(RULES
+  -(+(x,y)) -> +(-(x),-(y))
+  +(-(x),-(y)) -> -(+(x,y))
+)
+(COMMENT
+full experiments for [35]
+submitted by: Takahito Aoto and Yoshihito Toyama
+)

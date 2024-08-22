@@ -1,0 +1,28 @@
+(VAR X Y)
+(REPLACEMENT-MAP
+  (add 1, 2)
+  (fact 1)
+  (if 1)
+  (p 1)
+  (prod 1, 2)
+  (zero 1)
+  (0)
+  (false)
+  (s 1)
+  (true)
+)
+(RULES
+  add(0,X) -> X
+  add(s(X),Y) -> s(add(X,Y))
+  fact(X) -> if(zero(X),s(0),prod(X,fact(p(X))))
+  if(false,X,Y) -> Y
+  if(true,X,Y) -> X
+  p(s(X)) -> X
+  prod(0,X) -> 0
+  prod(s(X),Y) -> add(Y,prod(X,Y))
+  zero(0) -> true
+  zero(s(X)) -> false
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/ExIntrod_Zan97
+)

@@ -1,0 +1,14 @@
+(CONDITIONTYPE SEMI-EQUATIONAL)
+(VAR x)
+(RULES
+  u -> a
+  w -> a
+  v -> b
+  w -> b
+  G -> D | u == v
+)
+(COMMENT
+doi:10.1016/0304-3975(84)90087-2
+[56] p. 183
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

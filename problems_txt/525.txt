@@ -1,0 +1,19 @@
+(VAR x)
+(RULES
+  f(x,x) -> g
+  a -> b
+  a -> c
+  b -> b
+  c -> c
+  f(a,x) -> g
+  f(b,x) -> g
+  f(c,x) -> g
+  f(x,a) -> g
+  f(x,b) -> g
+  f(x,c) -> g
+)
+(COMMENT
+doi:10.1006/jsco.1996.0002
+[112] p. 31 (signature extension and currying do not preserve NFP)
+submitted by: Bertram Felgenhauer
+)

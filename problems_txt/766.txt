@@ -1,0 +1,15 @@
+(VAR
+  F : o -> o
+  X : o
+)
+(FUN
+  f : o -> o
+  g : o -> o
+)
+(RULES
+  f(F(X)) -> g(X)
+)
+(COMMENT
+doi:10.1016/S0304-3975(97)00143-6
+[94] p. 8
+)

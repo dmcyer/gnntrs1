@@ -1,0 +1,9 @@
+(VAR x)
+(RULES
+	f(f(x)) -> f(g(f(f(x))))
+	f(x) -> x
+)
+(COMMENT
+For an infeasibility problem.
+submitted by: Akihisa Yamada
+)

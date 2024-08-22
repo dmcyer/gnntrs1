@@ -1,0 +1,14 @@
+(VAR x)
+(RULES
+  f(a,a) -> b
+  a -> a'
+  f(a',x) -> f(x,x)
+  f(x,a') -> f(x,x)
+  f(a',a') -> b
+  b -> f(a',a')
+)
+(COMMENT
+doi:10.1007/3-540-61064-2_39
+[10] Example 2
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

@@ -1,0 +1,10 @@
+(VAR x)
+(RULES
+  g(f(b,x)) -> g(h(h(f(f(h(k(k(x,x),x)),h(k(k(x,x),x))),h(k(k(x,x),x))))))
+  f(x,b) -> h(f(f(x,x),x))
+  k(x,b) -> f(x,b)
+)
+(COMMENT
+from van Oostrom (AJSW 2016)
+submitted by: anonymous
+)

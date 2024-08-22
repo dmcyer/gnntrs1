@@ -1,0 +1,15 @@
+(VAR x)
+(RULES
+  c(a(x)) -> a(b(x))
+  c(b(x)) -> b(b(x))
+  b(b(x)) -> a(a(x))
+  a(a(x)) -> b(a(x))
+  c(c(x)) -> a(a(x))
+  a(b(x)) -> c(c(x))
+  a(b(x)) -> b(a(x))
+  b(c(x)) -> c(c(x))
+  c(a(x)) -> a(a(x))
+)
+(COMMENT
+submitted by: Johannes Waldmann
+)

@@ -1,0 +1,15 @@
+(VAR x)
+(RULES
+  a -> c
+  b -> c
+  f(a,b) -> d
+  f(x,c) -> f(c,c)
+  f(c,x) -> f(c,c)
+  d -> f(a,c)
+  d -> f(c,b)
+)
+(COMMENT
+doi:10.1007/BFb0052357
+[21] TRS R_2
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

@@ -1,0 +1,18 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z z')
+(REPLACEMENT-MAP
+  (f)
+  (plus)
+  (0)
+  (s)
+)
+(RULES
+  f(x,y) -> z | plus(x,y) == plus(z,z')
+  plus(0,y) -> y
+  plus(s(x),y) -> plus(x,s(y))
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #262
+bottom replacement map
+)

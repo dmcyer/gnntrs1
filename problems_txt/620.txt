@@ -1,0 +1,22 @@
+(SIG
+   (len    List -> Nat)
+   (qrev   List List -> List)
+   (+      Nat Nat -> Nat)
+   (cons   Nat List -> List)
+   (nil    -> List)
+   (s      Nat -> Nat)
+   (0      -> Nat)
+)
+(RULES
+   len(nil) -> 0
+   len(cons(x,xs)) -> s(len(xs))
+   qrev(nil,ys) -> ys
+   qrev(cons(x,xs),ys) -> qrev(xs,cons(x,ys))
+   +(0,y) -> y
+   +(s(x),y) -> s(+(x,y))
+   len(qrev(xs,ys)) -> +(len(xs),len(ys))
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

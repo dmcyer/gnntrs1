@@ -1,0 +1,17 @@
+(FUN
+  app : arrab -> a -> b
+  lam : (Va -> b) -> arrab
+  var : Va -> a
+)
+(VAR
+  x : Va
+  M : a -> b
+  N : a
+)
+(RULES
+  app(lam(\x.M (var x)), N) -> M N
+)
+(COMMENT
+simply-typed lambda calculus in the style of [137,138]
+submitted by: Makoto Hamana
+)

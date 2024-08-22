@@ -1,0 +1,12 @@
+(VAR x y)
+(RULES
+   +(x,0) -> x
+   +(x,s(y)) -> s(+(x,y))
+   -(0,x) -> 0
+   -(x,0) -> x
+   -(s(x),s(y)) -> -(x,y)
+)
+(COMMENT
+experiments for [36]
+submitted by: Takahito Aoto
+)

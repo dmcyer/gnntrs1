@@ -1,0 +1,18 @@
+(VAR x y)
+(RULES
+  plus(x,0) -> x
+  plus(0,1) -> 1
+  plus(x,plus(y,1)) -> plus(plus(x,y),1)
+  times(x,0) -> 0
+  times(x,1) -> x
+  times(x,plus(y,1)) -> plus(times(x,y),x)
+  m(0) -> 0
+  plus(m(1),1) -> 0
+  plus(m(plus(x,1)),1) -> m(x)
+  m(m(x)) -> x
+  plus(x,m(y)) -> m(plus(m(x),y))
+  times(x,m(y)) -> m(times(x,y))
+)
+(COMMENT
+submitted by: Alban Ponse
+)

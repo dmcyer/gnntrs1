@@ -1,0 +1,22 @@
+(SIG
+   (zero    Nat -> Bool)
+   (if      Bool Nat Nat -> Nat)
+   (f       Nat -> Nat)
+   (s       Nat -> Nat)
+   (0       -> Nat)
+   (true    -> Bool)
+   (false   -> Bool)
+)
+(RULES
+   zero(0) -> true
+   zero(s(x)) -> false
+   if(true,y,z) -> y
+   if(false,y,z) -> z
+   f(0) -> 0
+   f(x) -> if(zero(x),s(0),0)
+)
+(COMMENT
+doi:10.4230/LIPIcs.FSCD.2017.7
+[125] Example 9
+submitted by: Takahito Aoto
+)

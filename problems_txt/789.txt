@@ -1,0 +1,25 @@
+(FUN
+  abs : (var -> term) -> term
+  app : term -> term -> term
+  sub : (var -> term) -> term -> term
+  var : var -> term
+)
+(VAR
+  x : var
+  y : var
+  X : term -> term
+  X' : term -> term
+  X2 : term -> term -> term
+  Y : term
+  Z : var
+)
+(RULES
+  sub (\y.(var y)) Y -> Y,
+  sub (\y.(var Z)) Y -> var Z,
+  sub (\y.abs (\x.X2 (var x) (var y))) Y -> abs (\x.sub (\y.X2 (var x) (var y)) Y),
+  sub (\y.app (X (var y)) (X' (var y))) Y -> app (sub (\y.X (var y)) Y) (sub (\y.X' (var y)) Y)
+)
+(COMMENT
+[142] Definition 3.4 without Beta rule
+submitted by: Kentaro Kikuchi
+)

@@ -1,0 +1,14 @@
+(VAR X XS)
+(REPLACEMENT-MAP
+  (tail 1)
+  (zeros)
+  (0)
+  (cons 1)
+)
+(RULES
+  tail(cons(X,XS)) -> XS
+  zeros -> cons(0,zeros)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex4_7_77_Bor03
+)

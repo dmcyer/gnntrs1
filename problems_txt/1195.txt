@@ -1,0 +1,41 @@
+(VAR IL L M N V V1 V2)
+(REPLACEMENT-MAP
+  (U11 1) (U21 1) (U31 1) (U41 1) (U42 1) (U51 1) (U52 1) (U61 1)
+  (U62 1) (U71 1) (U72 1) (U81 1) (U91 1) (U92 1) (U93 1) (isNat)
+  (isNatIList) (isNatList) (length 1) (take 1, 2)
+  (zeros) (0) (cons 1) (nil) (s 1) (tt)
+)
+(RULES
+  U11(tt) -> tt
+  U21(tt) -> tt
+  U31(tt) -> tt
+  U41(tt,V2) -> U42(isNatIList(V2))
+  U42(tt) -> tt
+  U51(tt,V2) -> U52(isNatList(V2))
+  U52(tt) -> tt
+  U61(tt,V2) -> U62(isNatIList(V2))
+  U62(tt) -> tt
+  U71(tt,L,N) -> U72(isNat(N),L)
+  U72(tt,L) -> s(length(L))
+  U81(tt) -> nil
+  U91(tt,IL,M,N) -> U92(isNat(M),IL,M,N)
+  U92(tt,IL,M,N) -> U93(isNat(N),IL,M,N)
+  U93(tt,IL,M,N) -> cons(N,take(M,IL))
+  isNat(length(V1)) -> U11(isNatList(V1))
+  isNat(0) -> tt
+  isNat(s(V1)) -> U21(isNat(V1))
+  isNatIList(zeros) -> tt
+  isNatIList(cons(V1,V2)) -> U41(isNat(V1),V2)
+  isNatIList(V) -> U31(isNatList(V))
+  isNatList(take(V1,V2)) -> U61(isNat(V1),V2)
+  isNatList(cons(V1,V2)) -> U51(isNat(V1),V2)
+  isNatList(nil) -> tt
+  length(cons(N,L)) -> U71(isNatList(L),L,N)
+  length(nil) -> 0
+  take(0,IL) -> U81(isNatIList(IL))
+  take(s(M),cons(N,IL)) -> U91(isNatIList(IL),IL,M,N)
+  zeros -> cons(0,zeros)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/OvConsOS_nokinds-noand
+)

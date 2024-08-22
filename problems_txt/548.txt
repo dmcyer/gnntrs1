@@ -1,0 +1,9 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z)
+(RULES
+  g(x) -> y | x == y, z == a
+)
+(COMMENT
+[121] Example 4.11
+submitted by: Thomas Sternagel
+)

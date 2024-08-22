@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 798)
+(VAR x y z)
+(CONDITION implies(x,0) == y, implies(x,y) == z, implies(z,0) == 1)
+(COMMENT
+submitted by: Raul Gutierrez and Salvador Lucas
+)

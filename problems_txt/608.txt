@@ -1,0 +1,30 @@
+(SIG
+   (null    List -> Bool)
+   (hd      List -> Nat)
+   (tl      List -> List)
+   (inc     List -> List)
+   (if      Bool List List -> List)
+   (true    -> Bool)
+   (false   -> Bool)
+   (cons    Nat List -> List)
+   (nil     -> List)
+   (s       Nat -> Nat)
+   (0       -> Nat)
+)
+(RULES
+   null(nil) -> true
+   null(cons(x,xs)) -> false
+   hd(nil) -> 0
+   hd(cons(x,xs)) -> x
+   tl(nil) -> nil
+   tl(cons(x,xs)) -> xs
+   inc(xs) -> if(null(xs),nil,cons(s(hd(xs)),inc(tl(xs))))
+   if(true,ys,zs) -> ys
+   if(false,ys,zs) -> zs
+   nil -> inc(nil)
+   inc(cons(x,xs)) -> cons(s(x),inc(xs))
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

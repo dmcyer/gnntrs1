@@ -1,0 +1,12 @@
+(CONDITIONTYPE JOIN)
+(VAR x)
+(RULES
+  a -> f(x) | p(x) == tt
+  p(b) -> tt
+  p(c) -> tt
+)
+(COMMENT
+doi:10.1007/3-540-19242-5_3
+[49] p. 43
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

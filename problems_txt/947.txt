@@ -1,0 +1,9 @@
+(VAR x)
+(RULES 
+  a(a(b(b(x)))) -> b(b(b(a(a(a(x))))))
+  c(x) -> c(a(x))
+  c(x) -> c(b(x))
+)
+(COMMENT
+TPDB SRS_Standard/Zantema_06/05
+)

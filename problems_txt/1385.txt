@@ -1,0 +1,20 @@
+(CONDITIONTYPE JOIN)
+(VAR x y)
+(REPLACEMENT-MAP
+  (lte 1, 2)
+  (0)
+  (ff)
+  (s)
+  (tt)
+)
+(RULES
+  lte(0,0) -> tt
+  lte(s(x),0) -> ff
+  lte(s(x),s(y)) -> lte(x,y)
+  lte(x,s(y)) -> tt | lte(x,y) == tt
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #276
+canonical replacement map
+)

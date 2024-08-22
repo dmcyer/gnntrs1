@@ -1,0 +1,11 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y)
+(RULES
+  f(x,x) -> b | f(x,x) == a, x == a
+  f(y,y) -> a
+)
+(COMMENT
+submitted by: Raul Gutierrez
+secret problem 2021
+category: CTRS
+)

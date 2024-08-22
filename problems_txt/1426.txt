@@ -1,0 +1,36 @@
+(CONDITIONTYPE ORIENTED)
+(VAR w x y z)
+(REPLACEMENT-MAP
+  (iadd)
+  (ihalf)
+  (imh)
+  (imul)
+  (0)
+  (add)
+  (half)
+  (mh)
+  (mul)
+  (s)
+  (tp)
+  (tp1)
+  (tp2)
+)
+(RULES
+  iadd(add(x,y)) -> tp2(x,y)
+  iadd(s(z)) -> tp2(s(x),y) | iadd(z) == tp2(x,y)
+  iadd(y) -> tp2(0,y)
+  ihalf(0) -> tp1(0)
+  ihalf(half(x)) -> tp1(x)
+  ihalf(s(y)) -> tp1(s(s(x))) | ihalf(y) == tp(x)
+  imh(mh(x)) -> tp1(x)
+  imh(y) -> tp1(x) | imul(y) == tp2(x,z), ihalf(z) == tp1(s(x))
+  imul(0) -> tp2(0,y)
+  imul(0) -> tp2(x,0)
+  imul(mul(x,y)) -> tp2(x,y)
+  imul(s(z)) -> tp2(s(x),s(y)) | iadd(z) == tp2(w,y), imul(w) == tp2(x,s(y))
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #309
+bottom replacement map
+)

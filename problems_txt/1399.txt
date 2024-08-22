@@ -1,0 +1,21 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y z)
+(REPLACEMENT-MAP
+  (lte 2)
+  (max)
+  (false)
+  (true)
+)
+(RULES
+  lte(x,max(x,y)) -> true
+  lte(x,x) -> true
+  lte(x,z) -> true | lte(x,y) == true, lte(y,z) == true
+  lte(y,max(x,y)) -> true
+  max(x,y) -> x | lte(x,y) == false
+  max(x,y) -> y | lte(x,y) == true
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #285
+canonical replacement map
+)

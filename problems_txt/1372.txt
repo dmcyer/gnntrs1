@@ -1,0 +1,33 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y)
+(REPLACEMENT-MAP
+  (le 1, 2)
+  (m)
+  (pop 1)
+  (size 1)
+  (top 1)
+  (0)
+  (eentry)
+  (empty)
+  (false)
+  (push)
+  (s)
+  (true)
+)
+(RULES
+  le(0,s(x)) -> true
+  le(s(x),s(y)) -> le(x,y)
+  le(x,0) -> false
+  m -> s(s(s(s(0))))
+  pop(empty) -> empty
+  pop(push(x,y)) -> x | le(size(x),m) == true
+  size(empty) -> 0
+  size(push(x,y)) -> s(size(x))
+  top(empty) -> eentry
+  top(push(x,y)) -> y | le(size(x),m) == true
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #267
+canonical replacement map
+)

@@ -1,0 +1,12 @@
+(CONDITIONTYPE JOIN)
+(VAR x y)
+(RULES
+  g(x) -> f(x) | g(x) == f(x)
+  f(a) -> g(a)
+  a -> b
+)
+(COMMENT
+doi:10.1007/3-540-60381-6_10
+[52] Example 2
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

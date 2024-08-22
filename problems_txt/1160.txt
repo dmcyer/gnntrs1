@@ -1,0 +1,12 @@
+(VAR x)
+(RULES
+d(x,x) -> x
+f(x) -> d(x,f(x))
+a -> f(a)
+)
+(COMMENT
+submitted by: Mizuhito Ogawa
+
+Nao Hirokawa submitted this problem as his proxy. The TRS was presented by Mizuhito Ogawa
+at a TRS meeting around 2000.
+)

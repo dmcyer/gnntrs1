@@ -1,0 +1,14 @@
+(VAR x)
+(REPLACEMENT-MAP
+  (f)
+  (a)
+)
+(RULES
+  f(a) -> f(f(a))
+  f(x) -> f(a)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #82
+bottom replacement map
+)

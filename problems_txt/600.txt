@@ -1,0 +1,32 @@
+(SIG
+   (zero    Nat -> Bool)
+   (fact    Nat -> Nat)
+   (if      Bool Nat Nat -> Nat)
+   (-       Nat Nat -> Nat)
+   (*       Nat Nat -> Nat)
+   (+       Nat Nat -> Nat)
+   (s       Nat -> Nat)
+   (0       -> Nat)
+   (true    -> Bool)
+   (false   -> Bool)
+)
+(RULES
+   zero(0) -> true
+   zero(s(x)) -> false
+   fact(x) -> if(zero(x),s(0),*(x,fact(-(x,s(0)))))
+   +(0,0) -> 0
+   +(s(x),y) -> s(+(x,y))
+   +(x,s(y)) -> s(+(y,x))
+   *(0,y) -> 0
+   *(s(x),y) -> +(*(x,y),y)
+   if(true,y,z) -> y
+   if(false,y,z) -> z
+   -(x,0) -> x
+   -(0,s(y)) -> 0
+   -(s(x),s(y)) -> -(x,y)
+)
+(COMMENT
+doi:10.4230/LIPIcs.FSCD.2017.7
+[125] Example 4
+submitted by: Takahito Aoto
+)

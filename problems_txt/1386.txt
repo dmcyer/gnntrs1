@@ -1,0 +1,20 @@
+(CONDITIONTYPE JOIN)
+(VAR x)
+(REPLACEMENT-MAP
+  (a)
+  (p)
+  (b)
+  (c)
+  (f)
+  (tt)
+)
+(RULES
+  a -> f(x) | p(x) == tt
+  p(b) -> tt
+  p(c) -> tt
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #277
+bottom replacement map
+)

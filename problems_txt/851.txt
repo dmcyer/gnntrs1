@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 326)
+(VAR x4 x3)
+(CONDITION isnoc(nil) == tp2(x3,x4))
+(COMMENT
+submitted by: Naoki Nishida
+)

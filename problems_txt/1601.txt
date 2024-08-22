@@ -1,0 +1,42 @@
+(CONDITIONTYPE ORIENTED)
+(VAR n q x y z)
+(REPLACEMENT-MAP
+  (add 1)
+  (div 1, 2)
+  (lte 1, 2)
+  (minus 1, 2)
+  (mod 1, 2)
+  (mult 1)
+  (power 2)
+  (0)
+  (false)
+  (s)
+  (true)
+)
+(RULES
+  add(0,x) -> x
+  add(s(x),y) -> s(add(x,y))
+  div(0,s(x)) -> 0
+  div(s(x),s(y)) -> 0 | lte(s(x),y) == true
+  div(s(x),s(y)) -> s(q) | lte(s(x),y) == false, div(minus(x,y),s(y)) == q
+  lte(0,y) -> true
+  lte(s(x),0) -> false
+  lte(s(x),s(y)) -> lte(x,y)
+  minus(0,s(y)) -> 0
+  minus(s(x),s(y)) -> minus(x,y)
+  minus(x,0) -> x
+  mod(0,y) -> 0
+  mod(x,0) -> x
+  mod(x,s(y)) -> mod(minus(x,s(y)),s(y)) | lte(s(y),x) == true
+  mod(x,s(y)) -> x | lte(s(y),x) == false
+  mult(0,y) -> 0
+  mult(s(x),y) -> add(mult(x,y),y)
+  power(x,0) -> s(0)
+  power(x,n) -> mult(mult(y,y),s(0)) | mod(n,s(s(0))) == 0, power(x,div(n,s(s(0)))) == y
+  power(x,n) -> mult(mult(y,y),x) | mod(n,s(s(0))) == s(z), power(x,div(n,s(s(0)))) == y
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #499
+canonical replacement map
+)

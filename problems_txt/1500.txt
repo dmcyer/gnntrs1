@@ -1,0 +1,22 @@
+(CONDITIONTYPE ORIENTED)
+(VAR v w y z xs xs' ys')
+(REPLACEMENT-MAP
+  (ssp)
+  (sub)
+  (0)
+  (cons)
+  (nil)
+  (s)
+)
+(RULES
+  ssp(cons(y,ys'),v) -> cons(y,xs') | sub(v,y) == w, ssp(ys',w) == xs'
+  ssp(cons(y,ys'),v) -> xs | ssp(ys',v) == xs
+  ssp(nil,0) -> nil
+  sub(s(v),s(w)) -> z | sub(v,w) == z
+  sub(z,0) -> z
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #351
+bottom replacement map
+)

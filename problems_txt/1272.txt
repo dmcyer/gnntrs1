@@ -1,0 +1,11 @@
+(REPLACEMENT-MAP
+  (f)
+  (a)
+  (g 1)
+)
+(RULES
+  f(f(a)) -> f(g(f(a)))
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex15_Luc06
+)

@@ -1,0 +1,10 @@
+(VAR x y)
+(RULES
+  f(0,0) -> f(0,1)
+  f(1,0) -> f(0,0)
+  f(x,y) -> f(y,x)
+)
+(COMMENT
+full experiments for [35]
+submitted by: Takahito Aoto and Yoshihito Toyama
+)

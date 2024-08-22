@@ -1,0 +1,20 @@
+(VAR x y z)
+(RULES
+   E(+(x,y)) -> *(E(x),E(y))
+   E(0) -> 1
+   +(x,0) -> x
+   +(0,x) -> x
+   *(x,1) -> x
+   *(1,x) -> x
+   +(+(x,y),z) -> +(x,+(y,z))
+   +(x,+(y,z)) -> +(+(x,y),z)
+   +(x,y) -> +(y,x)
+   *(*(x,y),z) -> *(x,*(y,z))
+   *(x,*(y,z)) -> *(*(x,y),z)
+   *(x,y) -> *(y,x)
+)
+(COMMENT
+doi:10.1145/322217.322230
+[12] p. 819
+submitted by: Aart Middeldorp
+)

@@ -1,0 +1,21 @@
+(VAR x)
+(REPLACEMENT-MAP
+  (*top*_0 1)
+  (f_0 1)
+  (f_1)
+  (a_1)
+  (c_0)
+)
+(RULES
+  *top*_0(f_0(f_0(a_1))) -> *top*_0(f_0(f_0(f_0(a_1))))
+  *top*_0(f_0(a_1)) -> *top*_0(f_0(f_0(a_1)))
+  *top*_0(a_1) -> *top*_0(f_0(a_1))
+  f_0(f_0(f_0(a_1))) -> f_1(f_0(f_0(f_0(a_1))))
+  f_1(f_0(f_0(f_0(x)))) -> c_0
+  f_1(f_1(f_0(f_0(x)))) -> c_0
+  f_1(f_1(f_1(f_0(x)))) -> c_0
+  f_1(f_1(f_1(f_1(x)))) -> c_0
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Transformed_outermost_08/f4
+)

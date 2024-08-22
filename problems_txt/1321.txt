@@ -1,0 +1,23 @@
+(VAR x y z z0 z1)
+(REPLACEMENT-MAP
+  (Ap)
+  (D)
+  (D0)
+  (D1)
+  (I)
+  (K)
+  (S)
+)
+(RULES
+  Ap(Ap(Ap(S,x),y),z) -> Ap(Ap(x,z),Ap(y,z))
+  Ap(Ap(D,Ap(D0,z)),Ap(D1,z)) -> z
+  Ap(Ap(K,x),y) -> x
+  Ap(D0,Ap(Ap(D,z0),z1)) -> z0
+  Ap(D1,Ap(Ap(D,z0),z1)) -> z1
+  Ap(I,x) -> x
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #58
+bottom replacement map
+)

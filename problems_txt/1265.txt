@@ -1,0 +1,24 @@
+(VAR X Y)
+(REPLACEMENT-MAP
+  (diff 1, 2)
+  (if 1)
+  (leq 1, 2)
+  (p 1)
+  (0)
+  (false)
+  (s 1)
+  (true)
+)
+(RULES
+  diff(X,Y) -> if(leq(X,Y),0,s(diff(p(X),Y)))
+  if(false,X,Y) -> Y
+  if(true,X,Y) -> X
+  leq(0,Y) -> true
+  leq(s(X),0) -> false
+  leq(s(X),s(Y)) -> leq(X,Y)
+  p(0) -> 0
+  p(s(X)) -> X
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex1_GM03
+)

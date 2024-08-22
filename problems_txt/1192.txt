@@ -1,0 +1,23 @@
+(VAR IL L M N X)
+(REPLACEMENT-MAP
+  (and 1)
+  (length 1)
+  (take 1, 2)
+  (zeros)
+  (0)
+  (cons 1)
+  (nil)
+  (s 1)
+  (tt)
+)
+(RULES
+  and(tt,X) -> X
+  length(cons(N,L)) -> s(length(L))
+  length(nil) -> 0
+  take(0,IL) -> nil
+  take(s(M),cons(N,IL)) -> cons(N,take(M,IL))
+  zeros -> cons(0,zeros)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/OvConsOS_nosorts
+)

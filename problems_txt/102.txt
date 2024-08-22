@@ -1,0 +1,12 @@
+(VAR x)
+(RULES
+  I(x) -> I(J(x))
+  J(x) -> J(K(J(x)))
+  H(I(x)) -> K(J(x))
+  J(x) -> K(J(x))
+)
+(COMMENT
+doi:10.11309/jssst.26.2_76
+[29] Example 9
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

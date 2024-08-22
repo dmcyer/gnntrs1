@@ -1,0 +1,13 @@
+(VAR x)
+(RULES
+  foo(0(x)) -> 0(s(p(p(p(s(s(s(p(s(x))))))))))
+  foo(s(x)) -> p(s(p(p(p(s(s(p(s(s(p(s(foo(p(p(s(s(p(s(bar(p(p(s(s(p(s(x))))))))))))))))))))))))))
+  bar(0(x)) -> 0(p(s(s(s(x)))))
+  bar(s(x)) -> p(s(p(p(s(s(foo(s(p(p(s(s(x))))))))))))
+  p(p(s(x))) -> p(x)
+  p(s(x)) -> x
+  p(0(x)) -> 0(s(s(s(s(x)))))
+)
+(COMMENT
+TPDB SRS_Standard/Secret_06_SRS/aprove07
+)

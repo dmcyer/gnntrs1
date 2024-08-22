@@ -1,0 +1,41 @@
+(FUN
+  app : arrAB -> A -> B
+  lam : (vA -> B) -> arrAB
+  case : SAB -> (A -> C) -> (B -> C) -> C
+  inl : A -> SAB
+  inr : B -> SAB
+  piA : PAB -> A
+  piB : PAB -> B
+  pair : A -> B -> PAB
+  var : vA -> A
+)
+(VAR
+  M: A -> B
+  N: A
+  L: arrAB
+  x: vA
+  y: B
+  X: A
+  Y: B
+  Z: SAB
+  F: A -> C
+  G: B -> C
+  H: SAB -> C
+  M1 : A
+  N1 : B
+  M2 : PAB
+  x0: A
+)
+(RULES
+  app(lam(\x.M (var x)), N) -> M N,
+  lam(\x.app(L, (var x))) -> L,
+  piA(pair(M1,N1)) -> M1,
+  piB(pair(M1,N1)) -> N1,
+  case(inl(X), \x0.F x0 , \y.G y ) -> F X ,
+  case(inr(Y), \x0.F x0 , \y.G y ) -> G Y 
+)
+(COMMENT
+doi:10.1007/3-540-56939-1_109
+[131] Section 3.3 (subsystem)
+submitted by: Makoto Hamana
+)

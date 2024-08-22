@@ -1,0 +1,13 @@
+(VAR x)
+(RULES
+ g(x) -> h(k(x),x)
+ g(x) -> x
+ h(k(x),x) -> x
+ k(c) -> c
+ h(k(c),c) -> g(c)
+ h(c,c) -> c
+)
+(COMMENT
+[120] Example 14
+submitted by: Aart Middeldorp
+)

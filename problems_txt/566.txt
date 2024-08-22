@@ -1,0 +1,20 @@
+(SIG
+   (nats -> List)
+   (inc List -> List)
+   (hd List -> Nat)
+   (tl List -> List)
+   (s Nat -> Nat)
+   (0 -> Nat)
+   (cons Nat List -> List)
+)
+(RULES
+   nats -> cons(0,inc(nats))
+   inc(cons(x,ys)) -> cons(s(x),inc(ys))
+   hd(cons(x,ys)) -> x
+   tl(cons(x,ys)) -> ys
+   inc(tl(nats)) -> tl(inc(nats))
+)
+(COMMENT
+Cops #20 with sort attachment
+submitted by: anonymous
+)

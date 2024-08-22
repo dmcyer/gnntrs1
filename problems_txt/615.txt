@@ -1,0 +1,28 @@
+(SIG
+   (eq        Nat Nat -> Bool)
+   (count     Int Nat Nat -> Bool)
+   (intZero   Int -> Bool)
+   (true      -> Bool)
+   (false     -> Bool)
+   (pred      Int -> Int)
+   (succ      Int -> Int)
+   (zero      -> Int)
+   (s         Nat -> Nat)
+   (0         -> Nat)
+)
+(RULES
+   eq(0,0) -> true
+   eq(s(x),0) -> false
+   eq(0,s(y)) -> false
+   eq(s(x),s(y)) -> eq(x,y)
+   count(zero,y,z) -> eq(y,z)
+   count(succ(x),y,z) -> count(x,s(y),z)
+   count(pred(x),y,z) -> count(x,y,s(z))
+   intZero(x) -> count(x,0,0)
+   succ(pred(x)) -> x
+   pred(succ(x)) -> x
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

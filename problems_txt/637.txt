@@ -1,0 +1,20 @@
+(SIG
+   (+      Nat Nat -> Nat)
+   (s      Nat -> Nat)
+   (0      -> Nat)
+   (node   Nat Tree Tree -> Tree)
+   (leaf   Nat -> Tree)
+   (sum    Tree -> Nat)
+)
+(RULES
+   sum(leaf(x)) -> x
+   sum(node(x,yt,zt)) -> +(+(x,sum(yt)),sum(zt))
+   +(0,y) -> y
+   +(s(x),y) -> s(+(x,y))
+   +(x,y) -> +(y,x)
+   node(x,yt,zt) -> node(x,zt,yt)
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

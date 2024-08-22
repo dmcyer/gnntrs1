@@ -1,0 +1,27 @@
+(CONDITIONTYPE ORIENTED)
+(VAR v w x y z xs ys)
+(REPLACEMENT-MAP
+  (add 2)
+  (ssp)
+  (subL 1, 2)
+  (sum 1)
+  (0)
+  (cons)
+  (nil)
+  (s)
+  (tt)
+)
+(RULES
+  add(x,0) -> x
+  add(x,s(y)) -> s(z) | add(x,y) == z
+  ssp(xs,v) -> ys | subL(ys,xs) == tt, sum(ys) == v
+  subL(nil,nil) -> tt
+  subL(xs,cons(y,ys)) -> z | subL(xs,ys) == z
+  sum(cons(x,xs)) -> z | sum(xs) == w, add(w,x) == z
+  sum(nil) -> 0
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #350
+canonical replacement map
+)

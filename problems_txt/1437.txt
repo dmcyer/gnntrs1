@@ -1,0 +1,21 @@
+(CONDITIONTYPE ORIENTED)
+(VAR w x y z)
+(REPLACEMENT-MAP
+  (iadd 1)
+  (imult 1)
+  (0)
+  (s)
+  (tp2)
+)
+(RULES
+  iadd(s(z)) -> tp2(s(x),y) | iadd(z) == tp2(x,y)
+  iadd(y) -> tp2(0,y)
+  imult(0) -> tp2(0,y)
+  imult(0) -> tp2(x,0)
+  imult(s(z)) -> tp2(s(x),s(y)) | iadd(z) == tp2(w,y), imult(w) == tp2(x,s(y))
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #314
+canonical replacement map
+)

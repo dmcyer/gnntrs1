@@ -1,0 +1,33 @@
+(VAR L N V V1 V2 X)
+(REPLACEMENT-MAP
+  (U11 1)
+  (and 1)
+  (isNat)
+  (isNatIList)
+  (isNatList)
+  (length 1)
+  (zeros)
+  (0)
+  (cons 1)
+  (nil)
+  (s 1)
+  (tt)
+)
+(RULES
+  U11(tt,L) -> s(length(L))
+  and(tt,X) -> X
+  isNat(length(V1)) -> isNatList(V1)
+  isNat(0) -> tt
+  isNat(s(V1)) -> isNat(V1)
+  isNatIList(zeros) -> tt
+  isNatIList(cons(V1,V2)) -> and(isNat(V1),isNatIList(V2))
+  isNatIList(V) -> isNatList(V)
+  isNatList(cons(V1,V2)) -> and(isNat(V1),isNatList(V2))
+  isNatList(nil) -> tt
+  length(cons(N,L)) -> U11(and(isNatList(L),isNat(N)),L)
+  length(nil) -> 0
+  zeros -> cons(0,zeros)
+)
+(COMMENT
+TPDB TRS_Contextsensitive/Maude_06/LengthOfFiniteLists_nokinds
+)

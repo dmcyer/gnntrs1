@@ -1,0 +1,36 @@
+(FUN
+  abs : (var -> term) -> term
+  let : var -> term -> (var -> term) -> term
+  sub : (var -> term) -> term -> term
+  var : var -> term
+)
+(VAR
+  x : var
+  y : var
+  z : var
+  u : var
+  M : term -> term -> term
+  N : term
+  L : term -> term
+  K : term -> term
+  J : term
+  Y : var
+)
+(RULES
+  sub (\x.(var x)) N -> N,
+  sub (\x.(var Y)) N -> var Y,
+  sub (\x.abs (\z.M (var z) (var x))) N -> abs (\z.sub (\x.M (var z) (var x)) N),
+  sub (\x.let (Y, L (var x), \z.M (var z) (var x))) N ->
+    let (Y, sub (\x. L (var x)) N, \z.sub (\x.M (var z) (var x)) N),
+  sub (\x.let (x, L (var x), \z.M (var z) (var x))) (var Y) ->
+    sub (\x.let (Y, L (var x), \z.M (var z) (var x))) (var Y),
+  sub (\x.let (x, L (var x), \z.M (var z) (var x))) (let (Y, J, \u.K (var u))) ->
+    let (Y, J, \u.sub (\x.let (x, L (var x), \z.M (var z) (var x)), K (var u))),
+  sub (\x.let (x, L (var x), \z.M (var z) (var x))) (abs (\y.K (var y))) ->
+    sub (\x.sub (\z.M (var z) (var x)) (sub (\y.K (var y)) (L (var x)))) (abs (\y.K (var y)))
+)
+(COMMENT
+doi:10.2178/jsl/1230396755
+[148] p. 920
+submitted by: Kentaro Kikuchi
+)

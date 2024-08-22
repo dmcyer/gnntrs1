@@ -1,0 +1,164 @@
+(VAR x y z w)
+(REPLACEMENT-MAP
+	(handle 1) (select 1) (guard 1)	(isData) (raise) (fire)
+	(if 1) (not) (not1 1) (not2) (succ 1)
+	(+) (+1 1) (+2 2) (+3)
+	(-) (-1 1) (-2 2) (-3)
+	(*) (*1 1) (*2 2) (*3)
+	(div) (div1 1) (div2 2)	(div3)
+	(quot) (quot1 1) (quot2 2) (quot3 3) (quot4)
+	(mod) (mod1 1) (mod2 2) (mod3)
+	(mquot) (mquot1 1) (mquot2 2) (mquot3 3) (mquot4 4) (mquot5)
+	(le) (le1 1) (le2 2) (le3)
+	(lt) (lt1 1) (lt2 2) (lt3)
+	(ge) (ge1 1) (ge2 2) (ge3)
+	(gt) (gt1 1) (gt2 2) (gt3)
+	(eq) (eq1 1) (eq2 2) (eq3)
+	(neq) (neq1 1) (neq2 2) (neq3)
+	(f) (f1 1) (f2)	    
+)
+(RULES
+	guard(tt,y) -> y
+	guard(fire(x),y) -> fire(x)
+	isData(succ(x)) -> isData(x)
+	isData(0) -> tt
+	isData(True) -> tt
+	isData(False) -> tt
+	isData(fire(x)) -> fire(x)
+	handle(x,Negative,z) -> select(isData(x),x,Negative,z)
+	handle(x,Div,z) -> select(isData(x),x,Div,z)
+	handle(x,Exn1,z) -> select(isData(x),x,Exn1,z)
+	handle(x,Exn2,z) -> select(isData(x),x,Exn2,z)
+	select(tt,x,y,z) -> x
+	select(fire(Negative),x,Negative,z) -> z
+	select(fire(Div),x,Div,z) -> z
+	select(fire(Exn1),x,Exn1,z) -> z
+	select(fire(Exn2),x,Exn2,z) -> z
+	select(fire(Negative),x,Div,z) -> fire(Negative)
+	select(fire(Negative),x,Exn1,z) -> fire(Negative)
+	select(fire(Negative),x,Exn2,z) -> fire(Negative)
+	select(fire(Div),x,Div,z) -> fire(Div)
+	select(fire(Div),x,Exn1,z) -> fire(Div)
+	select(fire(Div),x,Exn2,z) -> fire(Div)
+	select(fire(Exn1),x,Negative,z) -> fire(Exn1)
+	select(fire(Exn1),x,Div,z) -> fire(Exn1)
+	select(fire(Exn1),x,Exn2,z) -> fire(Exn1)
+	select(fire(Exn2),x,Negative,z) -> fire(Exn2)
+	select(fire(Exn2),x,Div,z) -> fire(Exn2)
+	select(fire(Exn2),x,Exn1,z) -> fire(Exn2)
+	raise(Negative) -> fire(Negative)
+	raise(Div) -> fire(Div)
+	raise(Exn1) -> fire(Exn1)
+	raise(Exn2) -> fire(Exn2)
+
+	if(True,y,z) -> y
+	if(False,y,z) -> z
+	if(fire(x),y,z) -> fire(x)
+
+	not(x) -> not1(x)
+	not1(x) -> guard(isData(x),not2(x))
+	not2(True) -> False
+	not2(False) -> True
+
+	succ(fire(x)) -> fire(x)
+
+	+(x,y) -> +1(x,y)
+	+1(x,y) -> guard(isData(x),+2(x,y))
+	+2(x,y) -> guard(isData(y),+3(x,y))
+	+3(0,y) -> y
+	+3(succ(x),y) -> succ(+(x,y))
+
+	-(x,y) -> -1(x,y)
+	-1(x,y) -> guard(isData(x),-2(x,y))
+	-2(x,y) -> guard(isData(y),-3(x,y))
+	-3(x,0) -> x
+	-3(0,succ(y)) -> raise(Negative)
+	-3(succ(x),succ(y)) -> -(x,y)
+
+	*(x,y) -> *1(x,y)
+	*1(x,y) -> guard(isData(x),*2(x,y))
+	*2(x,y) -> guard(isData(y),*3(x,y))
+	*3(0,y) -> 0
+	*3(succ(x),y) -> +(x,*(x,y))
+
+	div(x,y) -> div1(x,y)
+	div1(x,y) -> guard(isData(x),div2(x,y))
+	div2(x,y) -> guard(isData(y),div3(x,y))
+	div3(x,y) -> quot(x,y,y)
+
+	quot(x,y,z) -> quot1(x,y,z)
+	quot1(x,y,z) -> guard(isData(x),quot2(x,y,z))
+	quot2(x,y,z) -> guard(isData(y),quot3(x,y,z))
+	quot3(x,y,z) -> guard(isData(z),quot4(x,y,z))
+	quot4(0,succ(y),succ(z)) -> 0
+	quot4(succ(x),succ(y),z) -> quot(x,y,z)
+	quot4(x,0,succ(z)) -> succ(quot(x,succ(z),succ(z)))
+	quot4(x,y,0) -> raise(Div)
+
+	mod(x,y) -> mod1(x,y)
+	mod1(x,y) -> guard(isData(x),mod2(x,y))
+	mod2(x,y) -> guard(isData(y),mod3(x,y))
+	mod3(x,y) -> mquot(x,y,y,x)
+
+	mquot(x,y,z,w) -> mquot1(x,y,z,w)
+	mquot1(x,y,z,w) -> guard(isData(x),mquot2(x,y,z,w))
+	mquot2(x,y,z,w) -> guard(isData(y),mquot3(x,y,z,w))
+	mquot3(x,y,z,w) -> guard(isData(z),mquot4(x,y,z,w))
+	mquot4(x,y,z,w) -> guard(isData(w),mquot5(x,y,z,w))
+	mquot5(0,succ(y),succ(z),w) -> w
+	mquot5(succ(x),succ(y),z,w) -> mquot(x,y,z,w)
+	mquot5(x,0,succ(z),w) -> mquot(x,succ(z),succ(z),x)
+	mquot5(x,y,0,w) -> raise(Div)
+
+	le(x,y) -> le1(x,y)
+	le1(x,y) -> guard(isData(x),le2(x,y))
+	le2(x,y) -> guard(isData(y),le3(x,y))
+	le3(0,y) -> True
+	le3(succ(x),0) -> False
+	le3(succ(x),succ(y)) -> le(x,y)
+
+	gt(x,y) -> gt1(x,y)
+	gt1(x,y) -> guard(isData(x),gt2(x,y))
+	gt2(x,y) -> guard(isData(y),gt3(x,y))
+	gt3(x,y) -> not(le(x,y))
+	
+	ge(x,y) -> ge1(x,y)
+	ge1(x,y) -> guard(isData(x),ge2(x,y))
+	ge2(x,y) -> guard(isData(y),ge3(x,y))
+	ge3(x,0) -> True
+	ge3(0,succ(y)) -> False
+	ge3(succ(x),succ(y)) -> ge(x,y)
+
+	lt(x,y) -> lt1(x,y)
+	lt1(x,y) -> guard(isData(x),lt2(x,y))
+	lt2(x,y) -> guard(isData(y),lt3(x,y))
+	lt3(x,y) -> not(ge(x,y))
+
+	eq(x,y) -> eq1(x,y)
+	eq1(x,y) -> guard(isData(x),eq2(x,y))
+	eq2(x,y) -> guard(isData(y),eq3(x,y))
+	eq3(0,0) -> True
+	eq3(0,succ(y)) -> False
+	eq3(succ(x),0) -> False
+	eq3(succ(x),succ(y)) -> eq(x,y)
+
+	neq(x,y) -> neq1(x,y)
+	neq1(x,y) -> guard(isData(x),neq2(x,y))
+	neq2(x,y) -> guard(isData(y),neq3(x,y))
+	neq3(x,y) -> not(eq(x,y))
+
+	f(x) -> f1(x)
+	f1(x) -> guard(isData(x),f2(x))
+	f2(x) -> handle(if(le(0,succ(0)),raise(Exn1),f(x)),Exn1,succ(0))
+)
+(COMMENT
+Takeshi Hamaguchi, Masahiko Sakai, Masataka Baba, and Kiyoshi Agusa,
+Proving Method of Termination/Non-Termination for Functional Programs with Exception Handling,
+IPSJ Transaction on Programming, Vol.4, No.2, pp.13-30, 2011 (in Japanese)
+http://id.nii.ac.jp/1001/00073761/
+
+Prepared by Takeshi Hamaguchi.
+Submitted by Naoki Nishida
+
+This example assumes INNERMOST strategy in the above paper. 
+)

@@ -1,0 +1,16 @@
+(VAR x y z)
+(REPLACEMENT-MAP
+  (and3)
+  (F)
+  (T)
+)
+(RULES
+  and3(T,T,T) -> T
+  and3(x,y,F) -> F
+  and3(x,y,z) -> and3(y,z,x)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #130
+bottom replacement map
+)

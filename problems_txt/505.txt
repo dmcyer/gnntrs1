@@ -1,0 +1,9 @@
+(VAR x)
+(RULES
+  a -> b
+  f(x,a) -> b
+  f(b,b) -> b
+)
+(COMMENT
+[111] p. 27
+)

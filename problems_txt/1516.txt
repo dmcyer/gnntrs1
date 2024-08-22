@@ -1,0 +1,28 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y q r)
+(REPLACEMENT-MAP
+  (div)
+  (greater 1, 2)
+  (leq 1, 2)
+  (m 1, 2)
+  (0)
+  (pair)
+  (s)
+  (true)
+)
+(RULES
+  div(x,y) -> pair(0,y) | greater(y,x) == true
+  div(x,y) -> pair(s(q),r) | leq(y,x) == true, div(m(x,y),y) == pair(q,r)
+  greater(s(x),0) -> true
+  greater(s(x),s(y)) -> greater(x,y)
+  leq(0,x) -> true
+  leq(s(x),s(y)) -> leq(x,y)
+  m(0,y) -> 0
+  m(s(x),s(y)) -> m(x,y)
+  m(x,0) -> x
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #361
+canonical replacement map
+)

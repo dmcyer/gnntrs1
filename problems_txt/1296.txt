@@ -1,0 +1,8 @@
+(CONDITIONTYPE ORIENTED)
+(VAR )
+(RULES
+  a -> b | a == a
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+)

@@ -1,0 +1,21 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x y ys)
+(REPLACEMENT-MAP
+  (cons)
+  (lt)
+  (0)
+  (false)
+  (s)
+  (true)
+)
+(RULES
+  cons(x,cons(y,ys)) -> cons(y,cons(x,ys)) | lt(x,y) == true
+  lt(0,s(y)) -> true
+  lt(s(x),s(y)) -> lt(x,y)
+  lt(x,0) -> false
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #337
+bottom replacement map
+)

@@ -1,0 +1,10 @@
+(VAR x y z)
+(RULES
+  a -> b
+  f(x,a) -> f(b,b)
+  f(b,x) -> f(b,b)
+  f(f(x,y),z) -> f(b,b)
+)
+(COMMENT
+[111] Example 1
+)

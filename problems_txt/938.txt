@@ -1,0 +1,11 @@
+(VAR x)
+(RULES 
+  a(b(c(x))) -> c(c(c(b(b(b(a(a(a(x)))))))))
+  c(b(x)) -> a(a(a(x)))
+  a(x) -> x
+  b(x) -> x
+  c(x) -> x
+)
+(COMMENT
+TPDB SRS_Standard/Secret_06_SRS/secr6
+)

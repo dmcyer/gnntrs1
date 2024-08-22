@@ -1,0 +1,13 @@
+(CONDITIONTYPE JOIN)
+(VAR x y)
+(RULES
+  lte(0, 0) -> tt
+  lte(s(x), 0) -> ff
+  lte(s(x), s(y)) -> lte(x, y)
+  lte(x, s(y)) -> tt | lte(x, y) == tt
+)
+(COMMENT
+doi:10.1007/3-540-19242-5_3
+[49] p. 32
+submitted by: Thomas Sternagel and Aart Middeldorp
+)

@@ -1,0 +1,10 @@
+(VAR x)
+(RULES
+  f(g(x)) -> h(g(x),g(x))
+  f(s(x)) -> h(s(x),s(x)) 
+  g(x) -> s(x)
+)
+(COMMENT
+[26] english abstract
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

@@ -1,0 +1,15 @@
+(SIG 
+  (a -> 0)
+  (b -> 0)
+  (c -> 0)
+  (f 0 0 -> 1)
+)
+(RULES
+  a -> b
+  f(b,b) -> f(a,a)
+  f(x,a) -> f(a,a)
+)
+(COMMENT
+[111] p. 29 (GNFP & ~NFP & ~GCR) with sort attachment and constant c
+submitted by: anonymous
+)

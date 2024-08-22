@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 551)
+(VAR x3 x1 y x2)
+(CONDITION min(x2) == y, le(x1,y) == true, min(x2) == x3, le(x1,x3) == false)
+(COMMENT
+submitted by: Naoki Nishida
+)

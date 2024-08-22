@@ -1,0 +1,26 @@
+(CONDITIONTYPE ORIENTED)
+(VAR xs y' ws v ys' w x' xs' zs z ys y)
+(REPLACEMENT-MAP
+  (get)
+  (ssp')
+  (sub)
+  (0)
+  (cons)
+  (nil)
+  (s)
+  (tp2)
+)
+(RULES
+  get(cons(x',xs')) -> tp2(y,cons(x',zs)) | get(xs') == tp2(y,zs)
+  get(cons(y,ys)) -> tp2(y,ys)
+  ssp'(cons(y',ws),v) -> cons(y',ys') | sub(v,y') == w, ssp'(ws,w) == ys'
+  ssp'(cons(x',xs'),v) -> cons(y',ys') | get(xs') == tp2(y',zs), sub(v,y') == w, ssp'(cons(x',zs),w) == ys'
+  ssp'(xs,0) -> nil
+  sub(s(v),s(w)) -> z | sub(v,w) == z
+  sub(z,0) -> z
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #353
+bottom replacement map
+)

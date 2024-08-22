@@ -1,0 +1,9 @@
+(PROBLEM INFEASIBILITY)
+(COPS 1123)
+(VAR x)
+(CONDITION even(x) == true, odd(x) == true)
+(COMMENT
+submitted by: Naoki Nishida
+secret problem 2019
+category: INF
+)

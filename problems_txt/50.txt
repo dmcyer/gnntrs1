@@ -1,0 +1,12 @@
+(VAR x y)
+(RULES
+  F(G(x,A,B)) -> x
+  G(F(H(C,D)),x,y) -> H(K1(x),K2(y))
+  K1(A) -> C
+  K2(B) -> D
+)
+(COMMENT
+doi:10.1145/322217.322230
+[12] p. 816
+submitted by: Takahito Aoto, Junichi Yoshida, and Yoshihito Toyama
+)

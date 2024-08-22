@@ -1,0 +1,16 @@
+(VAR x y z)
+(REPLACEMENT-MAP
+  (+)
+  (-)
+)
+(RULES
+  +(+(x,y),z) -> +(x,+(y,z))
+  +(x,y) -> +(y,x)
+  -(+(x,y)) -> +(-(x),-(y))
+  -(-(x)) -> x
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #132
+bottom replacement map
+)

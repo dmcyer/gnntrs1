@@ -1,0 +1,9 @@
+(PROBLEM INFEASIBILITY)
+(COPS 807)
+(VAR x)
+(CONDITION f(b) == x, c == x)
+(COMMENT
+[68] Example 3.3
+doi:10.1007/3-540-59200-8_56
+submitted by: Raul Gutierrez and Salvador Lucas
+)

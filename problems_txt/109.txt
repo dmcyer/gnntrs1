@@ -1,0 +1,15 @@
+(VAR x y z)
+(RULES
+  join(x,meet(x,y)) -> x
+  meet(x,join(y,z)) -> join(meet(x,y),meet(x,z))
+  meet(x,x) -> x
+  join(x,x) -> x
+  meet(meet(x,y),z) -> meet(x,meet(y,z))
+  meet(x,y) -> meet(y,x)
+  join(join(x,y),z) -> join(x,join(y,z))
+  join(x,y) -> join(y,x)
+)
+(COMMENT
+doi:10.1145/322248.322251
+[22] Example 12.4
+)

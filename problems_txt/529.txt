@@ -1,0 +1,30 @@
+(CONDITIONTYPE ORIENTED)
+(VAR n q x y z n')
+(RULES
+  add(0,x) -> x
+  add(s(x),y) -> s(add(x,y))
+  mult(0,y) -> 0
+  mult(s(x),y) -> add(mult(x,y),y)
+  lte(0,y) -> true
+  lte(s(x),0) -> false
+  lte(s(x),s(y)) -> lte(x,y)
+  minus(0,s(y)) -> 0
+  minus(x,0) -> x
+  minus(s(x),s(y)) -> minus(x,y)
+  mod(0,y) -> 0
+  mod(x,0) -> x
+  mod(x,s(y)) -> mod(minus(x,s(y)),s(y)) | lte(s(y),x) == true
+  mod(x,s(y)) -> x | lte(s(y),x) == false
+  div(0,s(x)) -> 0
+  div(s(x),s(y)) -> 0 | lte(s(x),y) == true
+  div(s(x),s(y)) -> s(q) | lte(s(x),y) == false, div(minus(x,y),s(y)) == q
+  power(x,0) -> s(0)
+  power(x,n) -> mult(mult(y,y),s(0)) | n == s(n'), mod(n,s(s(0))) == 0, power(x,div(n,s(s(0)))) == y
+  power(x,n) -> mult(mult(y,y),x) | n == s(n'), mod(n,s(s(0))) == s(z), power(x,div(n,s(s(0)))) == y
+)
+(COMMENT
+doi:10.4230/LIPIcs.FSCD.2016.10
+[91] derived from Figure 1, with modified conditions in last two rules to
+conform to Haskell's evaluation strategy; cf. Cops #499
+submitted by: Thomas Sternagel
+)

@@ -1,0 +1,16 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(REPLACEMENT-MAP
+  (not)
+  (false)
+  (true)
+)
+(RULES
+  not(x) -> false | x == true
+  not(x) -> true | x == false
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #308
+bottom replacement map
+)

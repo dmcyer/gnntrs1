@@ -1,0 +1,30 @@
+(VAR x)
+(RULES 
+  a(b(x)) -> C(x)
+  b(c(x)) -> A(x)
+  c(a(x)) -> B(x)
+  A(C(x)) -> b(x)
+  C(B(x)) -> a(x)
+  B(A(x)) -> c(x)
+  a(a(a(a(x)))) -> A(A(A(x)))
+  A(A(A(A(x)))) -> a(a(a(x)))
+  b(b(b(b(x)))) -> B(B(B(x)))
+  B(B(B(B(x)))) -> b(b(b(x)))
+  c(c(c(c(x)))) -> C(C(C(x)))
+  C(C(C(C(x)))) -> c(c(c(x)))
+  B(a(a(a(x)))) -> c(A(A(A(x))))
+  A(A(A(b(x)))) -> a(a(a(C(x))))
+  C(b(b(b(x)))) -> a(B(B(B(x))))
+  B(B(B(c(x)))) -> b(b(b(A(x))))
+  A(c(c(c(x)))) -> b(C(C(C(x))))
+  C(C(C(a(x)))) -> c(c(c(B(x))))
+  a(A(x)) -> x
+  A(a(x)) -> x
+  b(B(x)) -> x
+  B(b(x)) -> x
+  c(C(x)) -> x
+  C(c(x)) -> x
+)
+(COMMENT
+TPDB SRS_Standard/Zantema_04/z069
+)

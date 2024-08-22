@@ -1,0 +1,9 @@
+(VAR x)
+(RULES
+  f(f(x)) -> x
+  f(x) -> f(f(x))
+)
+(COMMENT
+doi:10.4230/LIPIcs.RTA.2015.257
+[81] Example 1
+)

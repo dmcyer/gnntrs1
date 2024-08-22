@@ -1,0 +1,7 @@
+(PROBLEM INFEASIBILITY)
+(COPS 353)
+(VAR x7 x2 x1 x6 ys' x4 w x3 x5)
+(CONDITION sub(x5,x3) == w, ssp'(x4,w) == ys', get(x4) == tp2(x6,x1), sub(x5,x6) == x2, ssp'(cons(x3,x1),x2) == x7)
+(COMMENT
+submitted by: Naoki Nishida
+)

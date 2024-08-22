@@ -1,0 +1,21 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x z)
+(REPLACEMENT-MAP
+  (a)
+  (f)
+  (g)
+  (h)
+  (b)
+  (c)
+)
+(RULES
+  a -> c
+  f(x) -> z | g(x) == h(z)
+  g(a) -> h(b)
+  h(b) -> g(c)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #263
+bottom replacement map
+)

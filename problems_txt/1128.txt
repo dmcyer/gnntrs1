@@ -1,0 +1,9 @@
+(PROBLEM INFEASIBILITY)
+(COPS 1127)
+(VAR x)
+(CONDITION -(x, x) == s(x))
+(COMMENT
+submitted by: Yusuke Oi
+secret problem 2019
+category: INF
+)

@@ -1,0 +1,16 @@
+(VAR X Y)
+(REPLACEMENT-MAP
+  (f 1)
+  (if 1, 2)
+  (c)
+  (false)
+  (true)
+)
+(RULES
+  f(X) -> if(X,c,f(true))
+  if(false,X,Y) -> Y
+  if(true,X,Y) -> X
+)
+(COMMENT
+TPDB TRS_Contextsensitive/CSR_04/Ex5_Zan97
+)

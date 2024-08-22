@@ -1,0 +1,9 @@
+(PROBLEM INFEASIBILITY)
+(COPS 546)
+(VAR x)
+(CONDITION g(x) == f(a,b))
+(COMMENT 
+doi:10.4230/LIPIcs.FSCD.2016.29
+[90] Example 23
+submitted by: Raul Gutierrez and Salvador Lucas
+)

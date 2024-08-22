@@ -1,0 +1,22 @@
+(CONDITIONTYPE SEMI-EQUATIONAL)
+(VAR x y)
+(REPLACEMENT-MAP
+  (F)
+  (b)
+  (c)
+  (a)
+  (d)
+)
+(RULES
+  F(x,y) -> x | x == y
+  F(x,y) -> y | x == y
+  b -> c
+  b -> a
+  c -> b
+  c -> d
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #299
+bottom replacement map
+)

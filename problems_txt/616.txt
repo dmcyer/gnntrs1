@@ -1,0 +1,27 @@
+(SIG
+   (zero    Nat -> Bool)
+   (prec    Nat -> Nat)
+   (le      Nat Nat -> Bool)
+   (ge      Nat Nat -> Bool)
+   (if      Bool Bool Bool -> Bool)
+   (true    -> Bool)
+   (false   -> Bool)
+   (s       Nat -> Nat)
+   (0       -> Nat)
+)
+(RULES
+   zero(0) -> true
+   zero(s(x)) -> false
+   prec(0) -> 0
+   prec(s(x)) -> x
+   le(x,y) -> if(zero(x),true,le(prec(x),prec(y)))
+   ge(x,y) -> if(zero(y),true,ge(prec(x),prec(y)))
+   if(true,y,z) -> y
+   if(false,y,z) -> z
+   le(s(x),s(y)) -> le(x,y)
+   ge(s(x),s(y)) -> ge(x,y)
+)
+(COMMENT
+experiments for [125]
+submitted by: Takahito Aoto
+)

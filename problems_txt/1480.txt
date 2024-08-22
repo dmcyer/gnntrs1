@@ -1,0 +1,16 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x' x'' x y' y y'')
+(REPLACEMENT-MAP
+  (f 2)
+  (g)
+  (h)
+)
+(RULES
+  f(x',x'') -> g(x) | x' == x, x'' == x
+  f(y',h(y'')) -> g(y) | y' == y, y'' == y
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+COPS #340
+canonical replacement map
+)

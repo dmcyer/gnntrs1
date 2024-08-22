@@ -1,0 +1,11 @@
+(CONDITIONTYPE ORIENTED)
+(VAR x)
+(RULES
+  f(x) -> g(a) | g(x) == x
+  f(x) -> g(b)
+)
+(COMMENT
+submitted by: Raul Gutierrez
+secret problem 2021
+category: CTRS
+)

@@ -1,0 +1,9 @@
+(VAR x)
+(RULES
+  f(f(f(f(x)))) -> f(f(f(g(x,f(x)))))
+  f(x) -> g(x,f(x))
+)
+(COMMENT
+doi:10.4230/LIPIcs.RTA.2015.257
+[81] Example 13
+)

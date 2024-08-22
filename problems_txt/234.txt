@@ -1,0 +1,12 @@
+(VAR x y)
+(RULES
+ eq(x,x) -> true
+ eq(0,s(x)) -> false
+ eq(s(x),0) -> false
+ eq(s(x),s(y)) -> eq(x,y)
+ eq(x,y) -> eq(y,x)
+)
+(COMMENT
+from experiments for [43]
+submitted by: Tsubasa Suzuki, Takahito Aoto, and Yoshihito Toyama
+)

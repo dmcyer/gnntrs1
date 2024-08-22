@@ -1,0 +1,9 @@
+(CONDITIONTYPE ORIENTED)
+(VAR )
+(RULES
+  g(a,b) -> d
+  c -> a | g(g(a,b),c) == g(d,c)
+)
+(COMMENT
+submitted by: Miguel Vitores and Salvador Lucas
+)
